@@ -26,6 +26,7 @@ export interface Page {
   verification_status?: VerificationStatus | 'legacy_unverified';
   verified_at?: string | null;
   updated_at?: string;
+  book_part_id?: string | null;
 }
 
 export interface Bookmark {
@@ -60,6 +61,55 @@ export type InitialContentBlockType =
 export type ContentBlockType = InitialContentBlockType | (string & {});
 export type InitialStructuralNodeType = 'chapter' | 'section' | 'hadith';
 export type StructuralNodeType = InitialStructuralNodeType | (string & {});
+export type BookPartType = 'part' | 'ancillary';
+export type TranslationProposalReviewStatus =
+  | 'draft'
+  | 'awaiting_review'
+  | 'approved'
+  | 'rejected';
+
+export interface BookPart {
+  id: string;
+  book_id: string;
+  part_type: BookPartType;
+  source_title: string;
+  display_title: string | null;
+  source_part_identifier: string | null;
+  sequence_index: number;
+  source_pdf_start_page: number | null;
+  source_pdf_end_page: number | null;
+  printed_page_start: string | null;
+  printed_page_end: string | null;
+  verification_status: VerificationStatus;
+  verification_notes: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface BookPartSourceEvidence {
+  id: string;
+  book_part_id: string;
+  source_document_id: string | null;
+  evidence_type: string;
+  source_pdf_page: number | null;
+  printed_identifier: string | null;
+  printed_title: string | null;
+  notes: string | null;
+  created_at: string;
+}
+
+export interface ContentBlockTranslationProposal {
+  id: string;
+  content_block_id: string;
+  original_translation: string;
+  proposed_modern_translation: string;
+  reason_comment: string | null;
+  review_status: TranslationProposalReviewStatus;
+  reviewer_notes: string | null;
+  created_at: string;
+  updated_at: string;
+  reviewed_at: string | null;
+}
 
 export interface BookEdition {
   id: string;
@@ -183,6 +233,7 @@ export interface ReaderPage {
   sequenceIndex: number | null;
   editionId: string | null;
   sourceDocumentId: string | null;
+  bookPartId: string | null;
   verificationStatus: ReaderVerificationStatus;
   isStructured: boolean;
   structuralNodes: ReaderStructuralMetadata[];

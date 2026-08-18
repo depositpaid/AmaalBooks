@@ -10,6 +10,7 @@ import type {
   ReaderPage,
   ReaderStructuralMetadata,
   ReaderVerificationStatus,
+  BookPart,
 } from '@/types';
 
 // Keep each request well below Supabase's commonly configured 1,000-row limit.
@@ -56,6 +57,44 @@ export async function fetchBook(bookId: string): Promise<Book | null> {
     .maybeSingle();
   if (error) throw error;
   return data;
+}
+
+/**
+ * Returns a publication's authoritative internal parts in stored source order.
+ * Legacy books simply return an empty array; no title or chapter inference is
+ * performed.
+ */
+export async function fetchBookParts(bookId: string): Promise<BookPart[]> {
+  return fetchAllRows<BookPart>((from, to) =>
+    supabase
+      .from('book_parts')
+      .select('*')
+      .eq('book_id', bookId)
+      .order('sequence_index', { ascending: true })
+      .order('id', { ascending: true })
+      .range(from, to)
+  );
+}
+
+/**
+ * Part-scoped page access for the future Book -> Parts -> Pages navigation.
+ * Existing fetchPages/fetchReaderPages behavior remains unchanged.
+ */
+export async function fetchPagesForBookPart(
+  bookId: string,
+  bookPartId: string
+): Promise<Page[]> {
+  return fetchAllRows<Page>((from, to) =>
+    supabase
+      .from('pages')
+      .select('*')
+      .eq('book_id', bookId)
+      .eq('book_part_id', bookPartId)
+      .order('sequence_index', { ascending: true, nullsFirst: false })
+      .order('page_number', { ascending: true })
+      .order('id', { ascending: true })
+      .range(from, to)
+  );
 }
 
 export async function fetchPages(bookId: string): Promise<Page[]> {
@@ -170,6 +209,7 @@ export async function fetchReaderPages(bookId: string): Promise<ReaderPage[]> {
       sequenceIndex: page.sequence_index ?? null,
       editionId: page.edition_id ?? null,
       sourceDocumentId: page.source_document_id ?? null,
+      bookPartId: page.book_part_id ?? null,
       verificationStatus: toReaderVerificationStatus(page.verification_status),
       isStructured: false,
       structuralNodes: [],
@@ -241,6 +281,7 @@ export async function fetchReaderPages(bookId: string): Promise<ReaderPage[]> {
       sequenceIndex: page.sequence_index ?? null,
       editionId: page.edition_id ?? null,
       sourceDocumentId: page.source_document_id ?? null,
+      bookPartId: page.book_part_id ?? null,
       verificationStatus: toReaderVerificationStatus(page.verification_status),
       isStructured: pageBlocks.length > 0,
       structuralNodes: [...associatedNodes.values()]

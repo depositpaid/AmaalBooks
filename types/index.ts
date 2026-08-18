@@ -141,6 +141,54 @@ export interface ContentBlock {
   verified_at: string | null;
 }
 
+export type ReaderVerificationStatus = VerificationStatus | 'legacy_unverified';
+
+export interface ReaderStructuralMetadata {
+  id: string;
+  type: StructuralNodeType;
+  label: string | null;
+  identifier: string | null;
+  title: string | null;
+  parentId: string | null;
+  sequenceIndex: number;
+}
+
+export interface ReaderBlock {
+  id: string;
+  type: ContentBlockType | 'legacy';
+  language: string | null;
+  direction: ContentDirection;
+  text: string;
+  sequenceIndex: number;
+  structuralNodeId: string | null;
+  structuralType: StructuralNodeType | null;
+  structuralLabel: string | null;
+  structuralIdentifier: string | null;
+  ttsEligible: boolean;
+  verificationStatus: ReaderVerificationStatus;
+}
+
+/**
+ * Stable reader-facing representation. Legacy fields remain explicit so a
+ * consumer never has to reinterpret page_number or chapter_title.
+ */
+export interface ReaderPage {
+  id: string;
+  bookId: string;
+  legacyPageNumber: number;
+  legacyChapterTitle: string | null;
+  printedPageLabel: string | null;
+  printedPageNumber: number | null;
+  pdfPageNumber: number | null;
+  sequenceIndex: number | null;
+  editionId: string | null;
+  sourceDocumentId: string | null;
+  verificationStatus: ReaderVerificationStatus;
+  isStructured: boolean;
+  structuralNodes: ReaderStructuralMetadata[];
+  blocks: ReaderBlock[];
+}
+
 export interface SearchResult {
   page: Page;
   book: Book;

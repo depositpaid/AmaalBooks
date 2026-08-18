@@ -1,26 +1,3 @@
-/*
-# Seed the verified Faza'il-e-A'maal publication parts
-
-Source of truth:
-- Filename: Fazail-e-amaalComplete.pdf
-- SHA-256: 2617AA897D3B23AA7BBC9DEAE7CE424771C291F3C46D6E88553BE62222500867
-- Physical page count: 958
-
-Safety and compatibility:
-- This migration targets only the manually verified canonical Faza'il-e-A'maal
-  books.id: 3cbdc749-e9c9-44f3-8330-ecc1e3b38cc8.
-- It inserts fixed-ID book_parts and source-evidence rows only.
-- It never updates or deletes books, pages, content_blocks, structural_nodes,
-  or any existing source-faithful text or UUID.
-- In particular, it does not touch the temporary Virtues of Salaat book
-  25e9e7c2-ee8d-43e2-ae59-f93b6402922e or its six test pages.
-- Fixed IDs plus exact postcondition checks make a byte-for-byte equivalent
-  rerun safe. Any conflicting IDs, sequences, or values abort transactionally.
-- The Qur'aan constituent's Part identifier remains NULL because the scan has
-  contradictory Part 3 (constituent cover) and Part 2 (combined-volume list)
-  evidence. Both observations are retained without choosing between them.
-*/
-
 DO $$
 DECLARE
   v_book_id constant uuid := '3cbdc749-e9c9-44f3-8330-ecc1e3b38cc8';

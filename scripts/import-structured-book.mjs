@@ -82,13 +82,20 @@ if (!manifestArgument) {
 
     try {
       for (const page of manifest.pages) {
-        const { error } = await supabase.rpc('import_structured_page_v1', {
+        const insertNewPage = manifest.pageWriteMode === 'insert';
+        const rpcName = insertNewPage
+          ? 'import_new_structured_page_v1'
+          : 'import_structured_page_v1';
+        const rpcArguments = {
           p_book_id: manifest.bookId,
           p_edition_id: manifest.edition.id,
           p_source_document_id: manifest.sourceDocument.id,
           p_import_batch_id: manifest.importBatch.id,
           p_page: page,
-        });
+        };
+        if (insertNewPage) rpcArguments.p_book_part_id = manifest.bookPartId;
+
+        const { error } = await supabase.rpc(rpcName, rpcArguments);
         if (error) throw new Error(`Page ${page.pageId} failed atomically: ${error.message}`);
         console.log(`Imported page ${page.pageId} (PDF page ${page.pdfPageNumber})`);
       }

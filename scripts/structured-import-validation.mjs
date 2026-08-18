@@ -43,6 +43,10 @@ function requireNonNegativeInteger(value, path, errors) {
 
 function validateMetadata(payload, errors) {
   requireUuid(payload.bookId, 'bookId', errors);
+  if (payload.pageWriteMode !== undefined && !['existing', 'insert'].includes(payload.pageWriteMode)) {
+    errors.push('pageWriteMode must be existing or insert');
+  }
+  if (payload.pageWriteMode === 'insert') requireUuid(payload.bookPartId, 'bookPartId', errors);
 
   if (requireObject(payload.edition, 'edition', errors)) {
     requireUuid(payload.edition.id, 'edition.id', errors);
@@ -78,6 +82,10 @@ function validatePage(page, pageIndex, errors) {
   if (!requireObject(page, path, errors)) return;
 
   requireUuid(page.pageId, `${path}.pageId`, errors);
+  if (page.pageNumber !== undefined && !Number.isInteger(page.pageNumber)) {
+    errors.push(`${path}.pageNumber must be an integer compatibility locator`);
+  }
+  if (page.bookPartId !== undefined) requireUuid(page.bookPartId, `${path}.bookPartId`, errors);
   if (typeof page.sourceShowsPrintedPageLabel !== 'boolean') {
     errors.push(`${path}.sourceShowsPrintedPageLabel must be boolean`);
   } else if (page.sourceShowsPrintedPageLabel) {
@@ -248,6 +256,14 @@ export function validateStructuredImport(payload) {
     payload.pages.forEach((page, index) => {
       validatePage(page, index, errors);
       if (isObject(page)) {
+        if (payload.pageWriteMode === 'insert') {
+          if (!Number.isInteger(page.pageNumber)) {
+            errors.push(`pages[${index}].pageNumber is required for insert mode`);
+          }
+          if (page.bookPartId !== payload.bookPartId) {
+            errors.push(`pages[${index}].bookPartId must match the payload bookPartId`);
+          }
+        }
         if (pageIds.has(page.pageId)) errors.push(`pages[${index}].pageId is duplicated`);
         pageIds.add(page.pageId);
         if (pageSequences.has(page.sequenceIndex)) errors.push(`pages[${index}].sequenceIndex is duplicated`);

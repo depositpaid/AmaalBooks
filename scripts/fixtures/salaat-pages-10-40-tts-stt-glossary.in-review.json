@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "datasetKind": "tts_stt_glossary_review",
+  "scope": {
+    "bookId": "3cbdc749-e9c9-44f3-8330-ecc1e3b38cc8",
+    "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+    "printedPageStart": "10",
+    "printedPageEnd": "40"
+  },
+  "canonicalTextModified": false,
+  "readerTtsReplacementImplemented": false,
+  "entries": [
+    {
+      "id": "e1000000-0000-4000-8000-000000000001",
+      "sourceText": "Sallallaho alaihe wasallam",
+      "ttsExpansion": "May Allah bless him and grant him peace",
+      "sttSearchAliases": [],
+      "sourceLanguage": "en",
+      "expansionLanguage": "en",
+      "reviewStatus": "draft",
+      "adminNotes": "Initial expansion supplied for review. Do not activate in reader TTS before approval.",
+      "readerVisible": false
+    },
+    {
+      "id": "e1000000-0000-4000-8000-000000000002",
+      "sourceText": "Radhiyallaho anho",
+      "ttsExpansion": null,
+      "sttSearchAliases": [],
+      "sourceLanguage": "en",
+      "expansionLanguage": null,
+      "reviewStatus": "draft",
+      "adminNotes": "Recurring honorific; expansion and aliases require review.",
+      "readerVisible": false
+    },
+    {
+      "id": "e1000000-0000-4000-8000-000000000003",
+      "sourceText": "Radhiyallaho anha",
+      "ttsExpansion": null,
+      "sttSearchAliases": [],
+      "sourceLanguage": "en",
+      "expansionLanguage": null,
+      "reviewStatus": "draft",
+      "adminNotes": "Recurring honorific; expansion and aliases require review.",
+      "readerVisible": false
+    },
+    {
+      "id": "e1000000-0000-4000-8000-000000000004",
+      "sourceText": "Radhiyallaho anhum",
+      "ttsExpansion": null,
+      "sttSearchAliases": [],
+      "sourceLanguage": "en",
+      "expansionLanguage": null,
+      "reviewStatus": "draft",
+      "adminNotes": "Recurring plural honorific; expansion and aliases require review.",
+      "readerVisible": false
+    },
+    {
+      "id": "e1000000-0000-4000-8000-000000000005",
+      "sourceText": "Rahmatullah alaih",
+      "ttsExpansion": null,
+      "sttSearchAliases": [],
+      "sourceLanguage": "en",
+      "expansionLanguage": null,
+      "reviewStatus": "draft",
+      "adminNotes": "Recurring honorific; expansion and aliases require review.",
+      "readerVisible": false
+    },
+    {
+      "id": "e1000000-0000-4000-8000-000000000006",
+      "sourceText": "Rahmatullah alaihim",
+      "ttsExpansion": null,
+      "sttSearchAliases": [],
+      "sourceLanguage": "en",
+      "expansionLanguage": null,
+      "reviewStatus": "draft",
+      "adminNotes": "Recurring plural honorific; expansion and aliases require review.",
+      "readerVisible": false
+    },
+    {
+      "id": "e1000000-0000-4000-8000-000000000007",
+      "sourceText": "Alayhis salaam",
+      "ttsExpansion": null,
+      "sttSearchAliases": [],
+      "sourceLanguage": "en",
+      "expansionLanguage": null,
+      "reviewStatus": "draft",
+      "adminNotes": "Recurring honorific; expansion and aliases require review.",
+      "readerVisible": false
+    },
+    {
+      "id": "e1000000-0000-4000-8000-000000000008",
+      "sourceText": "Aameen",
+      "ttsExpansion": null,
+      "sttSearchAliases": [],
+      "sourceLanguage": "en",
+      "expansionLanguage": null,
+      "reviewStatus": "draft",
+      "adminNotes": "Recurring devotional expression; pronunciation/alias handling requires review.",
+      "readerVisible": false
+    },
+    {
+      "id": "e1000000-0000-4000-8000-000000000009",
+      "sourceText": "Inshaa-allaah",
+      "ttsExpansion": null,
+      "sttSearchAliases": [],
+      "sourceLanguage": "en",
+      "expansionLanguage": null,
+      "reviewStatus": "draft",
+      "adminNotes": "Recurring devotional expression; pronunciation/alias handling requires review.",
+      "readerVisible": false
+    },
+    {
+      "id": "e1000000-0000-4000-8000-000000000010",
+      "sourceText": "Ma’athallaah",
+      "ttsExpansion": null,
+      "sttSearchAliases": [],
+      "sourceLanguage": "en",
+      "expansionLanguage": null,
+      "reviewStatus": "draft",
+      "adminNotes": "Recurring devotional expression; pronunciation/alias handling requires review.",
+      "readerVisible": false
+    }
+  ]
+}

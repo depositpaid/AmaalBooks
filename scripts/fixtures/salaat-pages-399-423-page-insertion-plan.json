@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "datasetKind": "structured_page_insertion_plan",
+  "bookId": "3cbdc749-e9c9-44f3-8330-ecc1e3b38cc8",
+  "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+  "collisionPolicy": "fail_if_page_id_or_part_page_number_or_pdf_page_number_exists",
+  "legacyContentPolicy": "empty_compatibility_text_until_atomic_structured_import",
+  "notes": "Preparation only. These fixed UUIDs are permanent identities for the approved Salaat pages. Insert no row unless all 25 identities and scoped locators are absent; never upsert or overwrite.",
+  "pages": [
+    {
+      "pageId": "c0160000-0000-4000-8000-000000000001",
+      "pageNumber": 16,
+      "printedPageLabel": "16",
+      "printedPageNumber": 16,
+      "pdfPageNumber": 399,
+      "sequenceIndex": 6,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0170000-0000-4000-8000-000000000001",
+      "pageNumber": 17,
+      "printedPageLabel": "17",
+      "printedPageNumber": 17,
+      "pdfPageNumber": 400,
+      "sequenceIndex": 7,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0180000-0000-4000-8000-000000000001",
+      "pageNumber": 18,
+      "printedPageLabel": "18",
+      "printedPageNumber": 18,
+      "pdfPageNumber": 401,
+      "sequenceIndex": 8,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0190000-0000-4000-8000-000000000001",
+      "pageNumber": 19,
+      "printedPageLabel": "19",
+      "printedPageNumber": 19,
+      "pdfPageNumber": 402,
+      "sequenceIndex": 9,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0200000-0000-4000-8000-000000000001",
+      "pageNumber": 20,
+      "printedPageLabel": "20",
+      "printedPageNumber": 20,
+      "pdfPageNumber": 403,
+      "sequenceIndex": 10,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0210000-0000-4000-8000-000000000001",
+      "pageNumber": 21,
+      "printedPageLabel": "21",
+      "printedPageNumber": 21,
+      "pdfPageNumber": 404,
+      "sequenceIndex": 11,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0220000-0000-4000-8000-000000000001",
+      "pageNumber": 22,
+      "printedPageLabel": "22",
+      "printedPageNumber": 22,
+      "pdfPageNumber": 405,
+      "sequenceIndex": 12,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0230000-0000-4000-8000-000000000001",
+      "pageNumber": 23,
+      "printedPageLabel": "23",
+      "printedPageNumber": 23,
+      "pdfPageNumber": 406,
+      "sequenceIndex": 13,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0240000-0000-4000-8000-000000000001",
+      "pageNumber": 24,
+      "printedPageLabel": "24",
+      "printedPageNumber": 24,
+      "pdfPageNumber": 407,
+      "sequenceIndex": 14,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0250000-0000-4000-8000-000000000001",
+      "pageNumber": 25,
+      "printedPageLabel": "25",
+      "printedPageNumber": 25,
+      "pdfPageNumber": 408,
+      "sequenceIndex": 15,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0260000-0000-4000-8000-000000000001",
+      "pageNumber": 26,
+      "printedPageLabel": "26",
+      "printedPageNumber": 26,
+      "pdfPageNumber": 409,
+      "sequenceIndex": 16,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0270000-0000-4000-8000-000000000001",
+      "pageNumber": 27,
+      "printedPageLabel": "27",
+      "printedPageNumber": 27,
+      "pdfPageNumber": 410,
+      "sequenceIndex": 17,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0280000-0000-4000-8000-000000000001",
+      "pageNumber": 28,
+      "printedPageLabel": "28",
+      "printedPageNumber": 28,
+      "pdfPageNumber": 411,
+      "sequenceIndex": 18,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0290000-0000-4000-8000-000000000001",
+      "pageNumber": 29,
+      "printedPageLabel": "29",
+      "printedPageNumber": 29,
+      "pdfPageNumber": 412,
+      "sequenceIndex": 19,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0300000-0000-4000-8000-000000000001",
+      "pageNumber": 30,
+      "printedPageLabel": "30",
+      "printedPageNumber": 30,
+      "pdfPageNumber": 413,
+      "sequenceIndex": 20,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0310000-0000-4000-8000-000000000001",
+      "pageNumber": 31,
+      "printedPageLabel": "31",
+      "printedPageNumber": 31,
+      "pdfPageNumber": 414,
+      "sequenceIndex": 21,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0320000-0000-4000-8000-000000000001",
+      "pageNumber": 32,
+      "printedPageLabel": "32",
+      "printedPageNumber": 32,
+      "pdfPageNumber": 415,
+      "sequenceIndex": 22,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0330000-0000-4000-8000-000000000001",
+      "pageNumber": 33,
+      "printedPageLabel": "33",
+      "printedPageNumber": 33,
+      "pdfPageNumber": 416,
+      "sequenceIndex": 23,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0340000-0000-4000-8000-000000000001",
+      "pageNumber": 34,
+      "printedPageLabel": "34",
+      "printedPageNumber": 34,
+      "pdfPageNumber": 417,
+      "sequenceIndex": 24,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0350000-0000-4000-8000-000000000001",
+      "pageNumber": 35,
+      "printedPageLabel": "35",
+      "printedPageNumber": 35,
+      "pdfPageNumber": 418,
+      "sequenceIndex": 25,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0360000-0000-4000-8000-000000000001",
+      "pageNumber": 36,
+      "printedPageLabel": "36",
+      "printedPageNumber": 36,
+      "pdfPageNumber": 419,
+      "sequenceIndex": 26,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0370000-0000-4000-8000-000000000001",
+      "pageNumber": 37,
+      "printedPageLabel": "37",
+      "printedPageNumber": 37,
+      "pdfPageNumber": 420,
+      "sequenceIndex": 27,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0380000-0000-4000-8000-000000000001",
+      "pageNumber": 38,
+      "printedPageLabel": "38",
+      "printedPageNumber": 38,
+      "pdfPageNumber": 421,
+      "sequenceIndex": 28,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0390000-0000-4000-8000-000000000001",
+      "pageNumber": 39,
+      "printedPageLabel": "39",
+      "printedPageNumber": 39,
+      "pdfPageNumber": 422,
+      "sequenceIndex": 29,
+      "verificationStatus": "in_review"
+    },
+    {
+      "pageId": "c0400000-0000-4000-8000-000000000001",
+      "pageNumber": 40,
+      "printedPageLabel": "40",
+      "printedPageNumber": 40,
+      "pdfPageNumber": 423,
+      "sequenceIndex": 30,
+      "verificationStatus": "in_review"
+    }
+  ]
+}

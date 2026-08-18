@@ -1,0 +1,2626 @@
+{
+  "schemaVersion": 1,
+  "datasetKind": "production",
+  "bookId": "3cbdc749-e9c9-44f3-8330-ecc1e3b38cc8",
+  "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+  "edition": {
+    "id": "a2000000-0000-4000-8000-000000000001",
+    "editionLabel": "Fazail-e-amaalComplete.pdf — Virtues of Salaat",
+    "publisher": "ALTAF & SONS",
+    "publicationLabel": null,
+    "isbn": null,
+    "languageCode": "en-ar",
+    "notes": "Production preparation for printed Salaat pages 16–40. Master PDF remains authoritative."
+  },
+  "sourceDocument": {
+    "id": "a3000000-0000-4000-8000-000000000001",
+    "originalFilename": "Fazail-e-amaalComplete.pdf",
+    "storagePath": null,
+    "sha256Checksum": "2617AA897D3B23AA7BBC9DEAE7CE424771C291F3C46D6E88553BE62222500867",
+    "pdfPageCount": 958,
+    "notes": "Authoritative master provenance; source file was not modified."
+  },
+  "secondarySourceDocument": {
+    "originalFilename": "fazail-e-salat-secondary.pdf",
+    "sha256Checksum": "ec7167bf59209ce5a1ca28c073d2b3405e17fccce88687633fc5fa9158335540",
+    "pdfPageCount": 104,
+    "sourceUrl": "https://tanzilone.files.wordpress.com/2024/02/fazail-e-salat.pdf",
+    "role": "secondary_transcription_verification_only",
+    "equivalenceCheckedAgainstPrintedPages": [
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15"
+    ]
+  },
+  "importBatch": {
+    "id": "a4000000-0000-4000-8000-000000000002",
+    "importedBy": "scan-transcription-preparation",
+    "notes": "Preparation only. Do not import until live page UUIDs and remaining technical IDs are reconciled and human review is approved."
+  },
+  "pages": [
+    {
+      "pageId": "c0160000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "16",
+      "printedPageNumber": 16,
+      "pdfPageNumber": 399,
+      "sequenceIndex": 6,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": false,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000005",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—IV(b)",
+          "sourceIdentifier": "IV(b)",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0160000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000005",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "\"The likeness of five times daily salaat is as the likeness of a deep brook running in front of the door of a person who bathes therein five times a day.\" Running water is generally free from dirt, and the deeper it runs the cleaner and purer it is. A bath in such water surely removes dirt from the body and makes it clean. Salaat offered with due regard for its essentials likewise cleanses the soul of all sins. There are several ahaadith of the same meaning, though. with slight variations in expression, narrated by different companions of the Prophet (Sallallaho alaihe wasallam). Hadhrat Abu Sa'eed Khudri (Radhiyallaho anho) narrates that he heard the Prophet (Sallallaho alaihe wasallam) saying: 'Each of the five salaats expiates the sins committed since the salaat preceding it. To explain. let us take the case of a person working in a factory. His job is such that his body gets covered with dust. But there are five streams of running water in between the factory and his house and, on his return from the job, he takes a bath in each stream. The effect of five times daily salaat is quite similar. Any sins of omission and commission between two salaats are.forgiven on account of 'istighfaar and taubah in each salaat.' The Prophet (Sallallaho alaihe wasallam) through such parables, aims at impressing that salaat has the wonderful power of removing the sins. If we fail to avail of Allah's mercy, surely we ourselves are the losers. To err is human. We are -likely to commit innumerable acts of displeasing Allah and deserve thereby. His wrath and punishment, but look how relenting our dear Allah is! He has most graciously shown us the way to earn His mercy and forgiveness. It is a great pity if we do not avail of this great favour. Our Allah is always eager to show us His mercy on very small younds. It is said in a hadith, that if a person goes to bed with the intention of getting up for Tahajjud and perchance does not wake up, he receives the full reward for Tahajjud, although he has been enjoying his sleep at the time of Tahajjud. How boundless is the grace of Allah and what a tremendous loss and deprivation if we do not receive blessings from such a Giver.",
+          "rawOcrText": "16 Virtues of Salaat \"The likeness of five times daily salaat is as the like- ness of a deep brook running in front of the door of a person who bathes therein five times a day.\" Running water is generally free from dirt, and the deeper it runs the cleaner and purer it is. A bath in such water surely removes dirt from the body and makes it clean. Salaat offered with due regard for its essentials like- wise cleanses the soul of all sins. There are several ahaa- dith of the same meaning, though. with slight variations in expression, narrated by different companions of the Prophet (Sallallaho alaihe wasallam). Hadhrat Abu Sa'eed Khudri (Radhiyallaho anho) narrates that he heard the Prophet (Sallallaho alame wasallam) saying: 'Each of the five salaats expiates the sins committed since the salaat preceding it. To explain. let us take the case of a person working in a factory. His job is such that his body gets covered with dust. But there are five streams of running water in between the factory and his house and, on his return from the job, he takes a bath in each stream. The effect of five times daily salaat is quite similar. Any sins of omission and com- mission between two salaats are .forgiven on account of 'istighfaar and taubah in each salaat.' The Prophet (Sallallaho alaihe wasallam) through such parables, aims at impressing that salaat has the wonderful power of removing the sins. If we fail to avail of Allah's mercy, surely we ourselves are the losers. To err is human. We are -likely to commit innumerable acts of displeasing Allah and deserve thereby. His wrath and punishment, but look how relenting our dear Allah is! He has most graciously shown us the way to earn His mercy and forgiveness. It is a great pity if we do not avail of this great favour. Our Allah is always eager to show us His mercy on very small younds. It is said in a hadith, that if a person goes to bed with the intention of getting up for Ta- hajjud and perchance does not wake up, he receives the full reward for Tahajjud, although he has been enjoying his sleep at the time of Tahajjud. How boundless is the grace of Allah and what a tremendous loss and deprivation if we do not receive blessings from such a Giver.",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 16
+    },
+    {
+      "pageId": "c0170000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "17",
+      "printedPageNumber": 17,
+      "pdfPageNumber": 400,
+      "sequenceIndex": 7,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000006",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—V",
+          "sourceIdentifier": "V",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0170000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000006",
+          "sequenceIndex": 0,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith.—V",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0170000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000006",
+          "sequenceIndex": 1,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "عَنْ حُذَيْفَةَ رَضِيَ اللَّهُ عَنْهُ قَالَ كَانَ رَسُولُ اللَّهِ ﷺ إِذَا حَزَبَهُ أَمْرٌ فَزِعَ إِلَى الصَّلَاةِ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0170000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000006",
+          "sequenceIndex": 2,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "أخرجه أحمد وأبو داود وابن جرير كذا في الدر المنثور",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0170000-0000-4000-8000-000000000004",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000006",
+          "sequenceIndex": 3,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "\"Hadhrat Huzaifah (Radhiyallaho anho) says that, whenever the Prophet (Sallallaho alaihe wasallam) happened to face any difficulty, he would at once resort to.salaat. \" Salaat is a great blessing of Allah. To resort to salaat at the time of worry is to hasten towards His mercy, and when Allah's mercy comes to rescue, there can remain no trace of any worry. There are many traditions concerning this practice of the Holy Prophet (Sallallaho alaihe wasallam). Similar was the practice of his companions, who followed him in the minutest detail: Abu Darda (Radhiyallaho anho) says: -\"Whenever a strong wind blew, the Prophet (Sallallaho alaihe wasallam) would immediately enter the musjid and would not leave until the wind had subsided. Similarly, at the time of a solar or lunar eclipse, the Prophet (Sallallaho alaihe wasallam) would at once start offering salaat. Hadhrat Suhaib (Radhiyallaho anho) was informed by the Prophet (Sallallaho alaihe wasallam) that all the previous Apostles of Allah (peace be upon them) also used to resort to salaat in all adversities. Hadhrat Ibno Abbas (Radhiyallaho anho) was once on journey. On his way he got the news of the death of his son. He got down from his camel and offered two rakaats of salaat, praying in Tashahhud for a long time. He then recited 'Innaa lillaahi wa innaallaihi raaji-oon' and said, \"I have done what Allah has ordered us to do in His Holy Book i.e.: \" Seek Allah's help with patience and salaat\" (II: 45). Another similar story is narrated about him. He was on a journey when he received the news about the death of his brother Quthum. He descended from his camel by the roadside, and performed two rakaats of salaat and kept praying in Tashahhud for a long time. After finishing his salaat, he",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 17
+    },
+    {
+      "pageId": "c0180000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "18",
+      "printedPageNumber": 18,
+      "pdfPageNumber": 401,
+      "sequenceIndex": 8,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000006",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—V",
+          "sourceIdentifier": "V",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0180000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000006",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "rode his camel reciting the following verse of the Holy Qur'an:",
+          "rawOcrText": "18 Virtues of Salaat rode his camel reciting the following verse of the Holy Qur'an: \"Seek Allah's help with patience and salaat, and truly it is indeed hard except to the humble minded.\" (11:45). There is yet another story about him. On hearing of the death of a wife of the Holy Prophet (Sallallaho alaihe wa- sallam), he fell down prostrate. When somebody asked him the reason he said, \"Our dear Prophet (SaHal-laho alaihe wasallam) had enjoined on us to prostrate (in salaat) when- ever a calamity were to béfall What calamity can be g•eater than the death of the Ummul-üo'mineen?\" When Hadhrat Ubaada (Radhiyallaho anho) was about to breathe his last, he said to the people around him, \"1_ prohibit one and all from crying over me. When my \"ul departs, I ask every one to perform wudhu, observing all its essentials, and to go to the musjid and pray for my forgive- ness, because our Gracious Allah has enjoined on us to \"Seek help with patience and salaat.\" After that, lay me down in the pit of my grave.\" Hadhrat Nadhr (Radhiyallaho anho) narrates, \"Once it became very dark during the day in Madina. I hurriedly went to Hadhrat Anas (Radhiyallaho anho) to know if he had ever experienced similar conditions during the life- time of the Holy Prophet (Sallallaho alaibe wasallam). He said to me, During those blessed days, whenever the. wind blew strong, we would hurry to the musjid lest it should be the approach of the Last Day. \" Hadhrat Abdullah bin Salaam (Radhiyallaho anho) narrates that whenever the members of the Prophet's family were hardpressed in any . way, the Prophet (Sallallaho alaihe wasallam) would enjoin upon them to say salaat, and would recite the following verse of the Holy Qur'an:",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0180000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000006",
+          "sequenceIndex": 1,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "وَاسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ وَإِنَّهَا لَكَبِيرَةٌ إِلَّا عَلَى الْخَاشِعِينَ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0180000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000006",
+          "sequenceIndex": 2,
+          "blockType": "translation",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "“Seek Allah's help with patience and salaat, and truly it is indeed hard except to the humble minded.” (II: 45).",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0180000-0000-4000-8000-000000000006",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000006",
+          "sequenceIndex": 3,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "There is yet another story about him. On hearing of the death of a wife of the Holy Prophet (Sallallaho alaihe wasallam), he fell down prostrate. When somebody asked him the reason he said, “Our dear Prophet (Sallallaho alaihe wasallam) had enjoined on us to prostrate (in salaat) whenever a calamity were to befall us. What calamity can be greater than the death of the Ummul-Mo’mineen?” When Hadhrat Ubaada (Radhiyallaho anho) was about to breathe his last, he said to the people around him, “I prohibit one and all from crying over me. When my soul departs, I ask every one to perform wudhu, observing all its essentials, and to go to the musjid and pray for my forgiveness, because our Gracious Allah has enjoined on us to “Seek help with patience and salaat.” After that, lay me down in the pit of my grave.” Hadhrat Nadhr (Radhiyallaho anho) narrates, “Once it became very dark during the day in Madina. I hurriedly went to Hadhrat Anas (Radhiyallaho anho) to know if he had ever experienced similar conditions during the lifetime of the Holy Prophet (Sallallaho alaihe wasallam). He said to me, “Ma’athallaah! During those blessed days, whenever the wind blew strong, we would hurry to the musjid lest it should be the approach of the Last Day.”",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0180000-0000-4000-8000-000000000004",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000006",
+          "sequenceIndex": 4,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadhrat Abdullah bin Salaam (Radhiyallaho anho) narrates that whenever the members of the Prophet's family were hardpressed in any way, the Prophet (Sallallaho alaihe wasallam) would enjoin upon them to say salaat, and would recite the following verse of the Holy Qur'an:",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0180000-0000-4000-8000-000000000005",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000006",
+          "sequenceIndex": 5,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "وَأْمُرْ أَهْلَكَ بِالصَّلَاةِ وَاصْطَبِرْ عَلَيْهَا لَا نَسْأَلُكَ رِزْقًا نَحْنُ نَرْزُقُكَ وَالْعَاقِبَةُ لِلتَّقْوَى",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 18
+    },
+    {
+      "pageId": "c0190000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "19",
+      "printedPageNumber": 19,
+      "pdfPageNumber": 402,
+      "sequenceIndex": 9,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000006",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—V",
+          "sourceIdentifier": "V",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0190000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000006",
+          "sequenceIndex": 0,
+          "blockType": "translation",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "\"And enjoin salaat upon thy people and be thyself constant therein. We ask not of thee to provide sustenance. We provide it for thee. And the Hereafter is for the righteousness.” (XX: 132).\"",
+          "rawOcrText": "Part I (a)—lmportance of Salaat 19 \"And enjoin salaat upon thy people and be thyself constant therein. We ask not of to provide suste- nance. We provide it for thee. And the Hereafter •is for (xx:.132). the righteousness.\" It is said in a hadith that when somebody is confronted with a need, whether pertaining to this life or the Hereafter, or whether it concerns Allah or a mortal, he should per- form a perfect wudhu, offer salaat of two rakaats, glorify Allah, then ask blessing for the Prophet (Sallallaho alaihe wasallam), and then pray as under: \"There is no god save Allah—the Clemént—the Bounti- ful. Glorified be Allah, the Lord of the tremendous throne. Praise be to Allah, the Lord of the worlds. I ask Thee all that leadeth to Thy Mercy and deserveth Thy forgiveness. I ask Thee abundance in all that is good and refuge from all that is evil. Leave me no sin but Thou pardOnest it, and no distress but Thou removest it, and no need but Thou fulfillest it. O, most Merciful of those who show mercy!\" Wahb bin Munabbih writes: \"Have your needs fulfilled by Allah through salaat. In the good old time, if a calamity befell the people, they would hurry towards salaat.\" It said that in Koofah there was a porter who was well known for his honesty. People trusted him with their valuables and money, which he carried from one place to another. Once he was on his usual errand when a person met him on the way and asked him about his destination. When the porter gave him the required information, he said, \"I am also bound for the same destination. If I could walk, I would have accompanied you on foot. Will you kindly give me a lift on your mule for one dinaar?\" The porter agreed and allowed him to share the mule with him. They came to a crossing on the way. The person said, 'Now, which road will you take?' 'The main road, of course,' replied the porter. The person said, 'No, brother. We should go by the",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0190000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000006",
+          "sequenceIndex": 1,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "It is said in a hadith that when somebody is confronted with a need, whether pertaining to this life or the Hereafter, or whether it concerns Allah or a mortal, he should perform a perfect wudhu, offer salaat of two rakaats, glorify Allah, then ask blessing for the Prophet (Sallallaho alaihe wasallam), and then pray as under:",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0190000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000006",
+          "sequenceIndex": 2,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "لَا إِلٰهَ إِلَّا اللَّهُ الْحَلِيمُ الْكَرِيمُ سُبْحَانَ اللَّهِ رَبِّ الْعَرْشِ الْعَظِيمِ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ أَسْأَلُكَ مُوجِبَاتِ رَحْمَتِكَ وَعَزَائِمَ مَغْفِرَتِكَ وَالْغَنِيمَةَ مِنْ كُلِّ بِرٍّ وَالسَّلَامَةَ مِنْ كُلِّ إِثْمٍ لَا تَدَعْ لِي ذَنْبًا إِلَّا غَفَرْتَهُ وَلَا هَمًّا إِلَّا فَرَّجْتَهُ وَلَا حَاجَةً هِيَ لَكَ رِضًا إِلَّا قَضَيْتَهَا يَا أَرْحَمَ الرَّاحِمِينَ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0190000-0000-4000-8000-000000000004",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000006",
+          "sequenceIndex": 3,
+          "blockType": "translation",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "\"There is no god save Allah—the Clement—the Bountiful. Glorified be Allah, the Lord of the tremendous throne. Praise be to Allah, the Lord of the worlds. I ask Thee all that leadeth to Thy Mercy and deserveth Thy forgiveness. I ask Thee abundance in all that is good and refuge from all that is evil. Leave me no sin but Thou pardonest it, and no distress but Thou removest it, and no need but Thou fulfillest it. O, most Merciful of those who show mercy!\"",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0190000-0000-4000-8000-000000000005",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000006",
+          "sequenceIndex": 4,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Wahb bin Munabbih writes: \"Have your needs fulfilled by Allah through salaat. In the good old time, if a calamity befell the people, they would hurry towards salaat.\" It is said that in Koofah there was a porter who was well known for his honesty. People trusted him with their valuables and money, which he carried from one place to another. Once he was on his usual errand when a person met him on the way and asked him about his destination. When the porter gave him the required information, he said, \"I am also bound for the same destination. If I could walk, I would have accompanied you on foot. Will you kindly give me a lift on your mule for one dinaar?\" The porter agreed and allowed him to share the mule with him. They came to a crossing on the way. The person said, 'Now, which road will you take?' 'The main road, of course,' replied the porter. The person said, 'No, brother. We should go by the",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 19
+    },
+    {
+      "pageId": "c0200000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "20",
+      "printedPageNumber": 20,
+      "pdfPageNumber": 403,
+      "sequenceIndex": 10,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000006",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—V",
+          "sourceIdentifier": "V",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0200000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000006",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "other road which is a shortcut and there is plenty of grass. enroute to feed the animal.' The porter said, 'I have never been on this path.' The person remarked, 'But I have travelled by this route quite often'. The porter believed him and put the animal on that path. After some distance, the path ended in a terrifying forest where a large number of dead bodies were lying about. All of a sudden the person jumped down from the mule and took out his knife with the intention of slaying the porter. 'Hold your hand', shouted the porter, 'Take the animal and its load, but do not kill me'. The person refused to listen to his entreaty and swore that he would first kill the porter and then take possession of the animal and the goods. Seeing that his entreaties fell on deaf ears and that his cruel heart would not melt, the porter said to him, 'All right if you must kill me, then permit to say my salaat of only two rakaats.' The person agreed and remarked, 'You can please yourself. All the dead you see over here made the same request, but their salaat was of no avail to them.'. The porter started the salaat, but could not recollect any soorah to connect with the Fatihah, in spite-of his best efforts. Meanwhile the person grew impatient and pressed him hard to hurry up with the salaat. All of a sudden the following verse flashed to his mind:",
+          "rawOcrText": "20 Virtues of Salaat other road which is a shortcut and there is plenty of grass. enroute to feed the animal.' The porter said, 'I hive never been on this path.' The person remarked, 'But I have travel- led by this route quite often'. The porter believed him and put the animal on that path. After some distance, the path ended in a terrifying forest where a large number of dead bodies were lying about. All of a sudden the person jumped down from the mule and took out his knife with the intention of slaying the porter. 'Hold your hand', shouted the porter, 'Take the animal and its load, but do not kill me'. The person refused to listen to his entreaty and swore that he would first kill the porter and then take possession of the animal and the goods. Seeing that his en- treaties fell on deaf ears and that his cruel heart would not melt, the porter said to him, 'All right if you must kill me, then permit to say my salaat of only two rakaats.' The person ageed and remarked, 'You can please yourself. All the dead you see over here made the same request, but their salaat was of no avail to them.'. The porter started the salaat, but could not recollect any soorah to connect with the Fatihah, in spite-of his best efforts. Meanwhile the person grew impatient and pressed him hard to hurry up with the salaat. All of a sudden the following verse flashed to his mind: 'Is it not He Who answereth the vwonged one when he crieth unto Him, and removeth the evil. •.. (XXVII-62). The porter was reciting the verse and the tears welled up in his eyes, when a horseman suddenly appeared on the scene. He was wearing a glittering helmet and held a spear in his hand. He pierced the body of the pitiless rogue with his spear and killed him there and then. A flame of fire rose from the spot where•the dead body fell. The porter fell down prostrate and thanked Allah. After finishing his salaat, he ran towards the horseman and requested him to disclose his identity. He replied, 'I am a slave to Him •who answereth the wronged one. You are now safe and can go wherever you like.' Saying this, the horseman rode away and disappeared.\" Indeed salaat is a tremendous asset. Besides pleasing Allah it often gets us deliverence from the calamities of this",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0200000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000006",
+          "sequenceIndex": 1,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "أَمَّنْ يُجِيبُ الْمُضْطَرَّ إِذَا دَعَاهُ وَيَكْشِفُ السُّوءَ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0200000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000006",
+          "sequenceIndex": 2,
+          "blockType": "translation",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "'Is it not He Who answereth the wronged one when he crieth unto Him, and removeth the evil . . .” (XXVII-62).",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0200000-0000-4000-8000-000000000004",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000006",
+          "sequenceIndex": 3,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "The porter was reciting the verse and the tears welled up in his eyes, when a horseman suddenly appeared on the scene. He was wearing a glittering helmet and held a spear in his hand. He pierced the body of the pitiless rogue with his spear and killed him there and then. A flame of fire rose from the spot where the dead body fell. The porter fell down prostrate and thanked Allah. After finishing his salaat, he ran towards the horseman and requested him to disclose his identity. He replied, 'I am a slave to Him who answereth the wronged one. You are now safe and can go wherever you like.' Saying this, the horseman rode away and disappeared.\" Indeed salaat is a tremendous asset. Besides pleasing Allah it often gets us deliverence from the calamities of this",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 20
+    },
+    {
+      "pageId": "c0210000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "21",
+      "printedPageNumber": 21,
+      "pdfPageNumber": 404,
+      "sequenceIndex": 11,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000007",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—VI",
+          "sourceIdentifier": "VI",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0210000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000007",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "life and provides us with tranquility and peace of mind. Ibn Seereen writes: \"If I be allowed to choose between Paradise and salaat of two rakaats, I would prefer salaat. The reason is quite clear. Paradise is for my own pleasure while salaat is for the pleasure of my dear Lord.\" The Holy Prophet (Sallallaho alaihe wasallam) has said: \"Enviable is the lot of that Muslim who is with least encumbrance, whose main fortune is salaat, who remains content with humble provision throughout his life, who worships his Lord in a dutiful manner, who lives a nameless life and who dies an early death, with very little to bequeath and very few to mourn him.\" In another hadith, the Holy Prophet (Sallallaho alaihe wasallam) is reported to have said: 'Offer your salaat at your homes quite frequently, so that these may be blessed with Allah's Grace and Mercy. \"",
+          "rawOcrText": "Part I (a)—lmportance of Salaat 21 life and provides us with tranquility and peace of mind. Ibn Seereen writes: \"If I be allowed to choose between Paradise and salaat of two rakaats, I would prefer salaat. The reason is quite clear. Paradise is for my own pleasure while salaat is for the pleasure of my dear Lord.\" The Holy Prophet (Sallallaho alaihe wasallam) has said: \"Enviable is the lot of that Muslim who is with least encumbrance, whose main fortune is salaat, who remains content with humble provision throughout his life, who worships his Lord in a dutiful manner, who lives a nameless life and who dies an early death, with very little to bequeath and very few to mourn him.\" In anothef hadith, the Holy Prophet (Sallallaho alaihe wasallam) is reported to have said: 'Offer your salaat at your homes quite frequently, so that these may be blessed with Allah's Grace and Mercy. \" Hadith.—VI \"Abu Muslim narrates: I went to see Abu Umaamah (Radhiyallaho anho) while he was in the musjid. I asked him if he had really heard the Holy Prophet (Sal- lallaho alaihe wasallam) saying, \"When a person per- forms wudhu with right performance and then says his fardh salaat, Allah forgives him all the sins committed that day by his feet in going towards evil, by his hands in doing evil, by his ears in listening to evil, by his eyes in looking at evil and by his heart in thinking of evil.' He replied, 'By Allah, I have heard these words from the Holy Prophet (Sallallaho alaihe wasallam) again and again. \" Many of the companions have narrated this Hadith with slight variations. Those endowed with the power of Kashf can even witness the sins being shed. It is said of",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0210000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000007",
+          "sequenceIndex": 1,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith.—VI",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0210000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000007",
+          "sequenceIndex": 2,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "عَنْ أَبِي مُسْلِمٍ الْخَوْلَانِيِّ رَضِيَ اللَّهُ عَنْهُ قَالَ دَخَلْتُ عَلَى أَبِي أُمَامَةَ وَهُوَ فِي الْمَسْجِدِ فَقُلْتُ يَا أَبَا أُمَامَةَ إِنَّ رَجُلًا حَدَّثَنِي عَنْكَ أَنَّكَ سَمِعْتَ رَسُولَ اللَّهِ ﷺ يَقُولُ مَنْ تَوَضَّأَ فَأَسْبَغَ الْوُضُوءَ فَغَسَلَ يَدَيْهِ وَوَجْهَهُ وَمَسَحَ عَلَى رَأْسِهِ وَأُذُنَيْهِ ثُمَّ قَامَ إِلَى صَلَاةٍ مَفْرُوضَةٍ غَفَرَ اللَّهُ لَهُ فِي ذَلِكَ الْيَوْمِ مَا مَشَتْ إِلَيْهِ رِجْلَاهُ وَقَبَضَتْ عَلَيْهِ يَدَاهُ وَسَمِعَتْ إِلَيْهِ أُذُنَاهُ وَنَظَرَتْ إِلَيْهِ عَيْنَاهُ وَحَدَّثَتْ بِهِ نَفْسُهُ مِنْ سُوءٍ فَقَالَ وَاللَّهِ لَقَدْ سَمِعْتُهُ مِنَ النَّبِيِّ ﷺ مِرَارًا",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0210000-0000-4000-8000-000000000004",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000007",
+          "sequenceIndex": 3,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "رواه أحمد والطبراني على سنده الحسن",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0210000-0000-4000-8000-000000000005",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000007",
+          "sequenceIndex": 4,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "\"Abu Muslim narrates: I went to see Abu Umaamah (Radhiyallaho anho) while he was in the musjid. I asked him if he had really heard the Holy Prophet (Sallallaho alaihe wasallam) saying, \"When a person performs wudhu with right performance and then says his fardh salaat, Allah forgives him all the sins committed that day by his feet in going towards evil, by his hands in doing evil, by his ears in listening to evil, by his eyes in looking at evil and by his heart in thinking of evil.' He replied, 'By Allah, I have heard these words from the Holy Prophet (Sallallaho alaihe wasallam) again and again. \" Many of the companions have narrated this Hadith with slight variations. Those endowed with the power of Kashf can even witness the sins being shed. It is said of",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 21
+    },
+    {
+      "pageId": "c0220000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "22",
+      "printedPageNumber": 22,
+      "pdfPageNumber": 405,
+      "sequenceIndex": 12,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000008",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—VII",
+          "sourceIdentifier": "VII",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0220000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000008",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Imam Abu Haneefa (Rahmatullah alaih) that he could tell from the water falling down from the limbs of the person performing wudhu as to which sins had been washed off therewith. In a narration by Hadhrat Uthman (Radhiyallaho anho), the Holy Prophet (Sallallaho alaihe wasallam) is reported to have warned against being wrong-headed in committing sins in the hope of getting them redeemed through salaat. We have, really, no ground to behave as such on this account. After all, what is the quality of the salaat that we offer? If Allah merely absolves us of our obligation it is His very special favour and grace. Again it is the height of ingratitude to disobey Allah just because He is Clement, Merciful and Forgiving.",
+          "rawOcrText": "22 Virtues of Salaat Imam Abu Haneefa (Rahmatullah alaih) that he could tell from the water falling down from the limbs of the person peRorming wudhu as to which sins had been washed off therewith. In a narration by Hadhrat Uthman (Radhiyallaho anho), the Holy Prophet (Sallallaho alaihe wasallam) is re- ported to have warned against being wrong-headed in come mitting sins in the hope of getting them redeemed thröugh salaat. We have, really, no ground to behavm as such on this account. After all, what is the quality of the salaat that we offer? If Allah merely absolves us of our obligation it is His very special favour and gace. Again it is .the height of ing•atitude to disobey Allah just because He is Clement, Merciful and Forgiving. Hadith—VII Hadhrat Abu Hurairah (Radhiyallaho anho) narrates, \"Two persons of one clan came to Prophet (Sallallaho alaihe wasallam) embraced Islam at one and the same time. One of these was martyred in a battle and the other died a year later, Hadhrat Talha bin Ubaidul- lah (Radhiyallaho anho) says that he saw in his dream that the person who had died later was admitted into Paradise before .the martyr. This surprised him. I do not •recollect whether it was he .or somebody else who narrated this dream. The Prophet (Sallallaho alaihe wasallam) thereupon remarked: \"Has not the person dying later fasted for one additional month of Rama- dhaan, and has he not offered six thousand or odd ra- kaats of salaat more during the year he lived after the Really, we do not know how valuable salaat is! The Holy Prophet (Sallallaho alaihe wasallam) was often heard",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0220000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000008",
+          "sequenceIndex": 1,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith.—VII",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0220000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000008",
+          "sequenceIndex": 2,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "عَنْ أَبِي هُرَيْرَةَ رَضِيَ اللَّهُ عَنْهُ قَالَ كَانَ رَجُلَانِ مِنْ بَلِيٍّ حَيٍّ مِنْ قُضَاعَةَ أَسْلَمَا مَعَ رَسُولِ اللَّهِ ﷺ فَاسْتُشْهِدَ أَحَدُهُمَا وَأُخِّرَ الْآخَرُ سَنَةً قَالَ طَلْحَةُ بْنُ عُبَيْدِ اللَّهِ فَرَأَيْتُ الْمُؤَخَّرَ مِنْهُمَا أُدْخِلَ الْجَنَّةَ قَبْلَ الشَّهِيدِ فَتَعَجَّبْتُ لِذَلِكَ فَأَصْبَحْتُ فَذَكَرْتُ ذَلِكَ لِلنَّبِيِّ ﷺ أَوْ ذُكِرَ لِرَسُولِ اللَّهِ ﷺ فَقَالَ رَسُولُ اللَّهِ أَلَيْسَ قَدْ صَامَ بَعْدَهُ رَمَضَانَ وَصَلَّى سِتَّةَ آلَافِ رَكْعَةٍ وَكَذَا وَكَذَا رَكْعَةً صَلَاةَ سَنَةٍ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0220000-0000-4000-8000-000000000004",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000008",
+          "sequenceIndex": 3,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "رواه أحمد بإسناد حسن ورواه ابن ماجه",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0220000-0000-4000-8000-000000000005",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000008",
+          "sequenceIndex": 4,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadhrat Abu Hurairah (Radhiyallaho anho) narrates, \"Two persons of one clan came to Prophet (Sallallaho alaihe wasallam) embraced Islam at one and the same time. One of these was martyred in a battle and the other died a year later, Hadhrat Talha bin Ubaidullah (Radhiyallaho anho) says that he saw in his dream that the person who had died later was admitted into Paradise before the martyr. This surprised him. I do not recollect whether it was he or somebody else who narrated this dream. The Prophet (Sallallaho alaihe wasallam) thereupon remarked: \"Has not the person dying later fasted for one additional month of Ramadhaan, and has he not offered six thousand or odd rakaats of salaat more during the year he lived after the Really, we do not know how valuable salaat is! The Holy Prophet (Sallallaho alaihe wasallam) was often heard",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 22
+    },
+    {
+      "pageId": "c0230000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "23",
+      "printedPageNumber": 23,
+      "pdfPageNumber": 406,
+      "sequenceIndex": 13,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000009",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—VIII",
+          "sourceIdentifier": "VIII",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000010",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—IX",
+          "sourceIdentifier": "IX",
+          "title": null,
+          "sequenceIndex": 3,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0230000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000009",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "saying, \"The comfort of my eyes is in salaat.\" This is an expression of his profound love for salaat. As Such, what else can be more valuable than salaat?",
+          "rawOcrText": "Part I (a)—lmportance of Salaat 23 saying, \"The comfort of my eyes is in salaat.\" This is an ex- pression of his profound love for salaat. As Such, what else can be more valuable than salaat? Hadith.—vm IJS Hadhrat Ibn Mas'ood (Radhiyallaho anho) nafrates that he heard the Holy Prophet (Sallallaho alaihe wasallam) saying: \"At the approach of the hour of a salaat, van An el is deputed to roclaim, 'Arise, O Children of Aa am! and extinguisk the fire that you have (by com- mitting sins) kindled to burn yourselves. So, the people rise up, perform wudhu and offer their Zuhr prayer. This causes forgiveness of their sins committed since day-break. The same is repeated at Asr, Maghrib and Ishaa. After Ishaa people go to bed, but there are some who busy themselves in good, while some others in evil deeds. Hadhrat Salmagn (Radhiyallaho anho) says, \"After Ishaa the people get divided into three goups. There are some for whom the night is a source of blessing and gain. They are those who spend .it in the worship of Allah, while other people are asleep. For them the night brings geat reward from their Lord.' There are others who turn their night into a burden and curse for themselves, for they in- dulge in various dark deeds in the dead of night. To them the night brings woe and misery. There is the third group of people who go to bed immediately after Ishaa; they neither gain nor lose.\" Hadith.—1X Jij J;..j Jj Jj u; '{i y JWj",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0230000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000009",
+          "sequenceIndex": 1,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith.—VIII",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0230000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000009",
+          "sequenceIndex": 2,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "عَنْ ابْنِ مَسْعُودٍ رَضِيَ اللَّهُ عَنْهُ عَنْ رَسُولِ اللَّهِ ﷺ أَنَّهُ قَالَ يُبْعَثُ مُنَادٍ عِنْدَ حَضْرَةِ كُلِّ صَلَاةٍ فَيَقُولُ يَا بَنِي آدَمَ قُومُوا فَأَطْفِئُوا مَا أَوْقَدْتُمْ عَلَى أَنْفُسِكُمْ فَيَقُومُونَ فَيَتَطَهَّرُونَ وَيُصَلُّونَ الظُّهْرَ فَيُغْفَرُ لَهُمْ مَا بَيْنَهَا فَإِذَا حَضَرَتِ الْعَصْرُ فَمِثْلُ ذَلِكَ فَإِذَا حَضَرَ الْمَغْرِبُ فَمِثْلُ ذَلِكَ فَإِذَا حَضَرَتِ الْعَتَمَةُ فَمِثْلُ ذَلِكَ فَيَنَامُونَ فَمُدْلِجٌ فِي خَيْرٍ وَمُدْلِجٌ فِي شَرٍّ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0230000-0000-4000-8000-000000000004",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000009",
+          "sequenceIndex": 3,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "رواه الطبراني في الكبير كذا في الترغيب",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0230000-0000-4000-8000-000000000005",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000009",
+          "sequenceIndex": 4,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadhrat Ibn Mas'ood (Radhiyallaho anho) narrates that he heard the Holy Prophet (Sallallaho alaihe wasallam) saying: \"At the approach of the hour of a salaat, an Angel is deputed to proclaim, 'Arise, O Children of Aadam! and extinguish the fire that you have (by committing sins) kindled to burn yourselves. So, the people rise up, perform wudhu and offer their Zuhr prayer. This causes forgiveness of their sins committed since day-break. The same is repeated at Asr, Maghrib and Ishaa. After Ishaa people go to bed, but there are some who busy themselves in good, while some others in evil deeds. Hadhrat Salmaan (Radhiyallaho anho) says, \"After Ishaa the people get divided into three groups. There are some for whom the night is a source of blessing and gain. They are those who spend it in the worship of Allah, while other people are asleep. For them the night brings great reward from their Lord.' There are others who turn their night into a burden and curse for themselves, for they indulge in various dark deeds in the dead of night. To them the night brings woe and misery. There is the third group of people who go to bed immediately after Ishaa; they neither gain nor lose.\"",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0230000-0000-4000-8000-000000000006",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000010",
+          "sequenceIndex": 5,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith.—IX",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0230000-0000-4000-8000-000000000007",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000010",
+          "sequenceIndex": 6,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "عَنْ أَبِي قَتَادَةَ بْنِ رِبْعِيٍّ رَضِيَ اللَّهُ عَنْهُ قَالَ قَالَ رَسُولُ اللَّهِ ﷺ قَالَ اللَّهُ تَبَارَكَ وَتَعَالَى إِنِّي افْتَرَضْتُ عَلَى أُمَّتِكَ خَمْسَ صَلَوَاتٍ وَعَهِدْتُ عِنْدِي عَهْدًا أَنَّهُ مَنْ جَاءَنِي يُحَافِظُ عَلَيْهِنَّ لِوَقْتِهِنَّ أَدْخَلْتُهُ الْجَنَّةَ وَمَنْ لَمْ يُحَافِظْ عَلَيْهِنَّ فَلَا عَهْدَ لَهُ عِنْدِي",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0230000-0000-4000-8000-000000000008",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000010",
+          "sequenceIndex": 7,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Jij J;..j Jj Jj u; '{i y JWj",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 23
+    },
+    {
+      "pageId": "c0240000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "24",
+      "printedPageNumber": 24,
+      "pdfPageNumber": 407,
+      "sequenceIndex": 14,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000010",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—IX",
+          "sourceIdentifier": "IX",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000011",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—X",
+          "sourceIdentifier": "X",
+          "title": null,
+          "sequenceIndex": 3,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0240000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000010",
+          "sequenceIndex": 0,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "كذا في الدر المنثور برواية أبي داود وابن ماجه وفيه أيضا أخرج مالك وابن أبي شيبة وأحمد وأبو داود والنسائي وابن ماجه وابن حبان والبيهقي عن عبادة بن الصامت ذكر معنى حديث الباب مرفوعا بأطول منه",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0240000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000010",
+          "sequenceIndex": 1,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadhrat Abu. Qataadah bin Rab'iyy (Radhiyallaho anho) says, \"He heard the Prophet (Sallallaho alaihe wasallam) saying, Allah has said, \"O, Muhammad! I have ordained five times daily salaat for thy followers. I have made a covenant with myself that whosoever is regular in performing his salaat at its fixed hour, he shall be admitted into the Paradise. Those of thy followers who do not guard their salaat, are not included in this covenant. \" In another hadith, it is said that Allah has ordained five times salaat and whosoever is mindful of his salaat, by doing wudhu properly and by praying at fixed hours with sincerity and devotion, is assured by Allah of his entry into Paradise; and whosoever does not guard his salaat, there is no such guarantee for him; he. may—or may not be forgiven. salaat has indeed a tremendous value. It affords us an opportunity to receive Allah's guarantee for Paradise. When an honourable person of some financial standing or having executive power gives us a guarantee or stands surety for meeting any of our requirements of this world, we feel quite satisfied and happy and we consider it our duty to remain obliged and devoted to him. Here Allah,the Absolute Sovereign of both the worlds, is giving the guarantee and is standing surety for the real success after death in return for five times daily salaat, which does not involve much effort on our part. If even then we do not avail of the opportunity, we shall have none to blame, but ourselves for the dreadful doom that awaits us.",
+          "rawOcrText": "24 Virtues-of Salaat 4.*I.a 4.'rb Hadhrat Abu. Qataadah bin Rab'iyy (Radhiyallaho anho) says, \"He heard the Prophet (Sallallaho alaihe wasallam) saying, Allah has said, \"O, Muhammad! I have ordained five times daily salaat for thy followers. I have made a covenant with myself that whosoever is regular in performing his salaat at its fixed hour, he shall be admitted into the Paradisev Those of thy föl• lowers who do not guard their salaat, are not included in this covenant. \" .1n another hadith, it is said that Allah has ordained five times salaat and whosoever is mindful of his salaat, by doing wudhu properly and by praying at fixed hours with sincerity and devotion, is assured by Allah of his entry into Paradise; and whosoever does not guard his salaat, there is no such guarantee for him; he. may—or may not be forgiven. salaat has indeed a tremendous value. Jt affords us an op- portunity to receive Allah's guarantee for Paradise. When an honourable person of some financial standing or having executive power gives us a guarantee or stands surety for meeting any of our requirements of this world, we feel quite satisfied and happy and we consider it our duty to remain obliged and devoted to him. Here Allah,the Abso- lute Sovereign of both the worlds, is giving the guarantee and is standing surety for the real success after death in return for five times daily salaat, which does not involve much effort on our part. If even then we do not avail of the opportunity, we shall have none to blame, but ourselves for the dreadful doom that awaits us. Hadith—X",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0240000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000011",
+          "sequenceIndex": 2,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith.—X",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0240000-0000-4000-8000-000000000004",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000011",
+          "sequenceIndex": 3,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "عَنْ ابْنِ سَلْمَانَ رَضِيَ اللَّهُ عَنْهُ أَنَّ رَجُلًا مِنْ أَصْحَابِ النَّبِيِّ ﷺ حَدَّثَهُ قَالَ لَمَّا فَتَحْنَا خَيْبَرَ أَخْرَجُوا غَنَائِمَهُمْ مِنَ الْمَتَاعِ وَالسَّبْيِ فَجَعَلَ النَّاسُ يَتَبَايَعُونَ غَنَائِمَهُمْ فَجَاءَ رَجُلٌ فَقَالَ يَا رَسُولَ اللَّهِ لَقَدْ رَبِحْتُ رِبْحًا مَا رَبِحَ الْيَوْمَ مِثْلَهُ أَحَدٌ مِنْ أَهْلِ هَذَا الْوَادِي فَقَالَ وَيْحَكَ وَمَا رَبِحْتَ قَالَ مَا زِلْتُ أَبِيعُ وَأَبْتَاعُ حَتَّى رَبِحْتُ ثَلَاثَمِائَةِ أُوقِيَّةٍ فَقَالَ رَسُولُ اللَّهِ ﷺ أَنَا أُنَبِّئُكَ بِخَيْرِ رَجُلٍ رَبِحَ قَالَ مَا هُوَ يَا رَسُولَ اللَّهِ قَالَ رَكْعَتَيْنِ بَعْدَ الصَّلَاةِ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 24
+    },
+    {
+      "pageId": "c0250000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "25",
+      "printedPageNumber": 25,
+      "pdfPageNumber": 408,
+      "sequenceIndex": 15,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000011",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—X",
+          "sourceIdentifier": "X",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0250000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000011",
+          "sequenceIndex": 0,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "أخرجه أبو داود وسكت عنه المنذري",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0250000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000011",
+          "sequenceIndex": 1,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Ibn Salmaan says that he heard one of the companions of the Holy Prophet (Sallallaho alaihe wasallam) narrating, \"When we had won the battle of Khaibar, we began to buy and sell among ourselves the booty that had fallen to our lot. One of us went to Holy Prophet (Sallallaho alaihe wasallam) and said, 'O, Apostle of Allah, no one else has earned so much profit as I have obtained in today's trade.' 'How much did you earn?' asked the Prophet (Sallallaho alaihe wasallam). He replied, 'I kept on selling and buying till I earned a net profit of three hundred 'Ooqiyyah' of silver.' The Prophet (Sallallaho alaihe wasallam) said, \"Shall I inform you of something better than that?\" He exclaimed, 'Do tell me, O, Prophet of Allah!' The Prophet (Sallallaho alaihe wasallam) remarked 'Two rakaats nafl after (fardh) salaat.\" Three hundred Ooqiyyahs of silver come to about three thousand rupees. According to the Prophet (Sallallaho alaihe wasallam), the perishable gain of this world stands no comparison with the everlasting gain of the Hereafter. Our life will be pleasant and worth living if we develop our 'Imaan' to an extent where two rakaats of salaat, in our sight, are more valuable than all the riches of this world. salaat is really a great treasure and that is why the Prophet (Sallallaho alaihe wasallam) has called it 'the comfort of his eyes' and had been enjoining its observance right up to his last breath. Umme Salamah (Radhiyallaho anha) narrates that the last words of the Prophet (Sallallaho alaihe wasallam), which he could hardly utter, were about guarding the salaat and kindness towards the slaves. There is a similar hadith narrated by Hadhrat Ali (Radhiyallaho anho) as well. The Prophet (Sallallaho alaihe wasallam) once deputed in Jihaad a Jamaat towards Najd. They returned victorious very soon with a handsome booty. When the Prophet (Sallallaho alaihe wasallam) saw the people envying them and wondering at their quick and lucrative return, he said to them, \"Shall I inform you of a group of people who earn much more in a much shorter time? They are those who",
+          "rawOcrText": "Part I (a)—lmportance of Salaat 25 Ibn Salmaan says that he heard one of the companions of the Holy Prophet (Sallallaho alaihe wasallam) nar- rating, \"When we had won the battle of Khaibar, we began to buy and sell among ourselves the booty that had fallen to our lot. One of us went to Holy Prophet (Sallallaho alaihe wasallam) and said, 'O, Apoétle of Allah, no one else has earned so much profit as I have obtained in today's •frade.' 'How much did you earn? . asked the •Prophet (Sallallaho alaihe wasallam). He re- plied, 'I kept on selling and buying till I earned a net profit of •three hundred 'Ooqiyyah' of silver.' 'the Prophet (Sallallaho alaihe wasallam) said, \"Shall I inform you of something better than that?\" He ex- claimed, 'Do tell me, O, Prophet of Allah!' The Prophet (Sallallaho alaihe wasallam) remarked 'Two rakaats nafl after (fardh) salaat.\" Three hundred Ooqiyyahs of silver come to about three thousand rupees. According to the Prophet (Sallallaho alaihe wasallam), the perishable gain of' this world stands no comparison with the everlasting gain of the Hereafter. Our life will be pleasant and worth living if we develop our 'Imaan' to an extent where two rakaats of salaat, in our sight, are more valuable than all the riches of this world. salaat is really a great treasure and that is why the Prophet (Sallallaho alaihe wasallam) has called it 'the comfort of his eyes' and had been enjoining its observance right up to his last breath. Umme Salamah (Radhiyallaho anha) nar- rates that the last words of the Prophet (Sallallaho alaihe wasallam), which he could hardly utter, were about guard- ing the salaat and kindness towards the slaves. There .is a similar hadith narrated by Hadhrat Ali (Radhiyallaho anho) as well. The Prophet (Sallallaho alaihe wasallam) once deputed in Jihaad a Jamaat towards Najd. They returned victorious very soon with a handsome booty. When the Prophet (Sal- lallaho alaihe wasall'am) saw the people envying them and wondering at their quick and lucrative return, he said to them, \"Shall I inform you of a group of people who earn much more in a much shorter time? They are those who",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 25
+    },
+    {
+      "pageId": "c0260000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "26",
+      "printedPageNumber": 26,
+      "pdfPageNumber": 409,
+      "sequenceIndex": 16,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": false,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000011",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—X",
+          "sourceIdentifier": "X",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0260000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000011",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "perform their Fajr with Jamaat and keep sitting after prayer till a little while after sunrise and then offer two rakaats of salaat.\" According to Shaqeeq Balkhi, a very famous Shaikh, five things could be acquired through five channels; an increase in provisions through 'Chaasht' a light in the grave through Tahajjud, a very satisfactory answer to Munkar and Nakeer through the recitation of the Qur'an; an easy crossing of Siraat through fasting and alms, and room under the shade of Allah's Throne on the Day of Judgement through seclusion (i.e. Zikr). There are so many sayings of the Holy Prophet (Sallallaho alaihe wasallam) enjoining salaat and explaining its virtues that it is very difficult to cover all of them in this small book. A few quotations are, however, reproduced below as a benediction: 1. \"Salaat was the first and the foremost thing ordained by Allah, and it shall be the first and the foremost thing to be reckoned for on the Day of Judgement.\" 2. \"Fear Allah in the matter of salaat! Fear Allah in the matter of salaat! Fear Allah in the matter of salaat!. 3. \"Salaat intervenes between man and Shirk.\" 4. \"Salaat is the mark of Islam. A person who says his salaat at the fixed hours with sincerity and devotion, observing all its regulations including the 5. 6. 7. 8. 9. 10. 11. Mustahabbaat, is surely a Mo'min.\" \"Of all things that have been ordained by Allah, Imaan and salaat are the most valued. If there were any other thing better than salaat, then Allah would have ordained it for His Angels, some of whom are always in ruku and others in sajdah.\" \"Salaat is the pillar of Islam. \" \"Salaat abases the Devil.\" \"Salaat is the light of a Mo'min.\" \" Salaat is the best Jihaad. \" \"Allah keeps relenting towards a peison so long as he is engaged in salaat.\" \"When a.calamity befalls us from the heaven,",
+          "rawOcrText": "26 Virtues of Salaat perform their Fajr with Jamaat and keep sitting after prayer till a little while after sunrise and then offer two rakaats of salaat.\" According to Shaqeeq Balkhi, a very famous Shaikh, five things could be acquired through five chan- nels; an increase in provisions through 'Chaasht' a light in the grave through Tahajjud, a very satisfactory answer to Munkar and Nakeer through the recitation of the Qur'an; an easy crossing of Siraat through fasting and alms, and room under the shade of Allah's Throne on the Day of Judgement through seclusion (i.e. Zikr). There are so many sayings of the Holy Prophet (Sallal- laho alåihe wasallam) enjoining salaat and explaining its virtues that it is very difficult to cover all of them im this small book. A few quotations are, however, reproduced below as a benediction: 1. \"Salaat was the first and the foremost thing or- dained by Allah, and it shall be the first .and the foremost thing to be reckoned for on the Day of Judgement.\" 2. \"Fear Allah in the matter of salaat! Fear Allah in the matter of salaat! Fear Allah in the matter of salaat!. 3. \"Salaat intervenes between man and Shirk.\" 4. \"Salaat .is the mark of Islam. A person WhQ •says his salaat at the fixed hours with sincerity and de- votion, observing all its regulations including the 5. 6. 7. 8. 9. 10. 11. Mustahabbaat, is surely a Mo'min.\" \"Of all things that have been ordained by Allah, Imaan and salaat are the most valued. If there were any other thing better than salaat, then Allah would have ordained it for His Angels, some of whom are always in ruku and others in sajdah.\" \"Salaat is the pillar of Islam. \" \"Salaat abases the Devil.\" \"Salaat is the light of a Mo'min.\" \" Salaat is the best Jihaad. \" \"Allah keeps relenting towards a peison so long as he is engaged in salaat.\" \"When a .calamity befalls us from the heaven,",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 26
+    },
+    {
+      "pageId": "c0270000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "27",
+      "printedPageNumber": 27,
+      "pdfPageNumber": 410,
+      "sequenceIndex": 17,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": false,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000011",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—X",
+          "sourceIdentifier": "X",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0270000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000011",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "people frequenting the musjid are spared and saved.\" 12. \"If some major sins of a Muslim land him in Hell, the fire would not burn those parts of his body which have touched the while he was in sajdah during his salaat.\" 13. \"Fire has been forbidden to touch those parts of the body which touch the ground while performing the sajdah.\" 14. \"Of all the practices, salaat made at fixed hours is most loved by Allah.\" 15. \"Allah likes most the posture of a person when he is in sajdah, pressing his forehead on the ground 16. 17. 18. 19. 20. 21. 22. in humility.\" \"A person in sajdah is nearest unto Allah. \" \"Salaat is a key to Paradise.\" \"When a person stands in salaat the gates of Paradise are let open and all the veils between him and Allah are lifted (provided that he spoils not his salaat by coughing etc). \" \"A person in salaat (so to say) knocks at the door of the Sovereign Lord, and the door is always opened for him who knocks.\" \"The position of salaat in Islam is as the position of the head in a body.\" \"Salaat is the light of the heart. Let those who wish enlighten their hearts (through salaat)\". \"'If a person wishes to have his sins forgiven by Allah, he should perform the wudhu properly, offer with devotion two or four rak'aats of fardh or nafl and then pray to Allah. Allah will forgive him.\" 23. \"Any strip of earth, on which Allah is remembered in salaat, takes pride over the rest of the Earth.\" 24. \"Allah accepts the prayer of a person who prays to Him after performing two rakaats of salaat. Allah him what he prays for, sometimes immediately and sometimes (in his own interest) later. \"",
+          "rawOcrText": "Part I (a)—lmportance of Salaat people frequenting the musjid are spared and saved.\" 12. \"If some major sins of a Muslim land him in Hell, the fire would not burn those parts of his body which have touched the while he was in sajdah during his salaat.\" 13. \"Fire has been forbidden to touch those parts of the body which touch the ground while perform- ing the sajdah.\" 14. \"Of all the practices, salaat made at fixed hours is most loved by Allah.\" 15. \"Allah likes most the posture of a person when he is in sajdah, pressing his forehead on the ground 16. 17. 18. 19. 20. 21. 22. in humility.\" \"A person in sajdah is nearest unto Allah. \" \"Salaat is a key to Paradise.\" \"When a person stands in salaat the gates of Par- adise are let open and all the veils between him and Allah are lifted (provided that he spoils not his salaat by coughing etc). \" \"A person in salaat (so to say). knocks .at thé door of the sovereiB1 Lord, and the door is always opened for him who knocks.\" \"The position of salaat in Islam is as the position of the head in a body.\" \"Salaat is the light of the heart. Let those who wish enlighten their hearts (through salaat)\". \"'If a person wishes to have his sins forgiven by Allah, he should perform the wudhu properly, offer with devotion two or four rak'aats of fardh or nafl and then pray to Allah. Allah will forgive him.\" 23. \"Any strip of earth, on which Allah is remem- bered in salaat, takes pride over the rest of the Earth.\" 24. \"Allah accepts the prayer of a person who prays to Him after performing two rakaats of salaat. Allah him what he prays for, someümes immedi- ately and sometimes (in his own interest) later. \"",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 27
+    },
+    {
+      "pageId": "c0280000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "28",
+      "printedPageNumber": 28,
+      "pdfPageNumber": 411,
+      "sequenceIndex": 18,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": false,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000011",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—X",
+          "sourceIdentifier": "X",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0280000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000011",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "25. \"A person who performs two rakaats of salaat in seclusion, where nobody except Allah and His Angeks see him, receives a writ of deliverance from the fire of hell.\" 26. \"Grant of one prayer (wish) becomes due to a person from Allah after each fardh salaat performed by him.\" 27. \"Fire of Hell is forbidden and the Paradise becomes due to a person who performs his wudhu properly and says his salaat conscientiously, according to its regulations. \" 28. 29. 30. 31. 32. \"The Devil remains scared of a Muslim so long as he is particular about his salaat, but no sooner does he neglect it than the Devii gets a hold.upon him and aspires for success in seducing him. i' \"Salaat at its early hours is the most excellent practice.\" \" Salaat is the offering of the pious.\" \"Salaat at its early hours is a practice most liked by Allah. \" \"At. dawn, some people go to the musjid and some to the market. Those going to the musjid are the flag-bearers of Imaan and those leaving for the market are the flag-bearers of the Devil. \" 333 \"The four rakaats before Zuhr have the same reward as the four rakaats of Tahajjud. \" 34. \"The four rakaats before Zuhr are counted equal (in reward) to the four rakaats of Tahajjud.\" 35. \"Mercy of Allah turns towards a person standing in salaat.\" 36. \"Salaat at the dead of night is most valued, but there are very few who do it. \" \"Jibra-eel (Alayhis salaam) came to me and said, 37. O, Muhammad (Sallallaho alaihe wasallam)! however long thou livest thou shalt die one day, and whoever, thou may love thou shalt depart from him one day. Surely, thou shalt receive the recompense of whatever (good or evil) thou dost. No",
+          "rawOcrText": "28 Virtues of Salaat 25. \"A person who performs two rakaats of salaat in seclusion, where nobody except Allah and His Angeks see him, receives a writ of deliverance from the fire of hell.\" 26. • \"Grant of one prayer (wish) becomes due to a person from Allah after each fardh salaat per- formed by him.\" 27. \"Fire of Hell is forbidden and the Paradise be- comes due to a person who performs his wudhu properly and says his salaat conscientiously, according to its regulations. \" 28. 29. 30. 31. 32. \"The Devil remains scared of a Muslim so long as he is particular about his salaat, but no sooner does he neglect it than the Devii gets a hold .upon him and aspires for success in seducing him. i' \"Salaat at its early hours is the most excellent practice.\" \" Salaat is the offering of the pious.\" \"Salaat at its early hours is a practice most liked by Allah. \" \"At. dawn, some people go to the musjid and some to the market. Those going to the musjid are the flag-bearers of Imaan and those leaving for the market are the flag-bearers of the Devil. \" 333 \"The four rakaats before Zuhr have the same reward as the four rakaats of Tahajjud. \" 34. \"The four rakaats before Zuhr are counted equal (in reward) to the four rakaats of Tahajjud.\" 35. \"Mercy of Allah turns towards a person standing in salaat.\" 36. \"Salaat at the dead of night is most valued, but there are very few who do it. \" \"Jibra-eel (Alayhis salaam) came to me and said, 37. O, Muhammad (Sallallaho alaihe wasallam)! how- ever long thou livest thou shalt die one day, and whoever, thou may love thou shalt depart from him one day. Surely, thou shalt receive the recom- pense of whatever (good or evil) thou dost. No",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 28
+    },
+    {
+      "pageId": "c0290000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "29",
+      "printedPageNumber": 29,
+      "pdfPageNumber": 412,
+      "sequenceIndex": 19,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": false,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000011",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—X",
+          "sourceIdentifier": "X",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0290000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000011",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Part I (a)—Importance of Salcat 29 doubt the dignity of a Mo'min is in Tahajjud and his honour is in contentment and restraint. \" 38. \"Two rakaats in the late hours of the night are mop valuable than all the riches of this world. But for fear of hardship to my followers, I would have made these obligatory.\" 39. \"Keep offering Tahajjud, for it is the path of the righteous and the means of approach to Allah. Tahajjud keeps one away from sins, causes forgiveness of sins and improve$he health of the body. \" 40. \"Allah says, 'O, son of Aadam! Do not be. weak in offering four rakaats in the early part of the day, for I shall suffice thee in thy jobs in the rest of it. \" Books of hadith are full of discourses on the, enjoining its observance on all Muslims. The forty short hadiths given above can be memorised and thus the reward of. knowing ahaadith in that number can be earned. In fact, salaat is feally a big boon, but this is realised only by those who have enjoyed its taste. That is why the Prophet (Sallallaho alaihe wasallam) used to call it the comfort of his eyes and used to spend the major part of the night standing before Allah. For the Very same reason, our dear Prophet (Sallallaho alaihe wasallam) even on his death-bed charged us and enjoined on us to be particular about salaat. It has been reported in many ahaadith that the Prophet (Sallallaho alaihe wasallam) would often say, \"Fear Allah concerning salaat.\" Abdullah bin Mas'ood, (Radhiyallaho anho) narrates that he heard the Prophet (Sallallaho alaihe wasallam) saying, \"Of all the practices, salaat is the dearest to me.\" One of the Sahabah narrates, \"One night I happened to go to the musjid. I found the Prophet (Sallallaho alaihe wasallam) in salaat. I felt an ardent desire to join him. I made my intention and stood behind him; he was reciting 'Baqarah' at that time. I thought that he would finish the qiraat and go for ruku at the end of the hundredth verse, but he did not do so. Then I thought he would perhaps go to ruku after finishing two hundred verses, but he did not stop even there. I was sure then that he would finish qiyaam with the end of the soorah. When the soorah ended he hymned, 'Allahumma Lakalhamd' (Allah! Thine is all Glory) a number.of times and then started 'Aal Imraan'. On",
+          "rawOcrText": "Part I (a)—lmportance of Salcat 29 doubt the dignity of a Mo'min is in Tahajjud and his honour is in contentment and restraint. \" 38. \"Two rakaats in the late hours of the night are mop valuable than all the riches of this world. But for fear of hardship to my followers, I would have made these obligatory.\" 39. \"Keep offering Tahajjud, for it is the path of the righteous and the means of approach to Allah. Ta- • hajjud keeps one away from sins, causes forgive- ness of sins and improve$he health of the body. \" 40. \"Allah says, 'O, son of Aadam! Do not be. weak in offering four rakaats in the early part of the day, for I shall suffice thee in thy jobs in the rest of it. \" Books of hadith are full of discourses on the virtues of salaat, enjoining its observance on all Muslims. The forty short hadiths given above can be memorised and thus the reward of. knowing ahaadith in that number can be earned. In fact, salaat is feally a big boon, but this is realised only by those who have enjoyed its taste. That is why the Prophet (Sallallaho alaihe wasallam) used to cåll it the comfort of his eyes and used to spend the major part of the night standing before Allah. For the Very same reason, our dear Prophet • (Sallallaho alaihe wasallam) evep on his death-bed charged us and enjoined on us to be particular about salaat. It hasbeen reported in many ahaadith that the Prophet (Sallallaho alaihe wasallam) would often say, \"Fear Allah concerning salaat.\" Abdullah bin Mas'ood, (Radhiyallaho anho) narrates that he heard the Prophet (Sallallaho alaihe wasallam) saying, \"Of all the, practices, salaat is the dearest to me.\" One of the Sahabah narrates, \"One night I happened to go to the musjid. I found the Prophet (Sallallaho alaihe wa- sallam) in salaat. I felt an ardent desire to join him.- I made •my intention and stood behind him; he.was reciting 'Baqa- rah' at that time. I thought thathe would finish the qiraat and go for ruku at the end of the hundredth verse, but he did not do so. Then I thought he would perhaps go to ruku after finishing two hundred verses, but he did not stop even there. I was sure then that he would •finish qiyaam with the end of the •soorah. When the soorah ended he hymned, 'Allahumma Lakalhamd' (Allah! Thine is all Glory) a number.of times and then started 'Aal Imraan'. On",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 29
+    },
+    {
+      "pageId": "c0300000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "30",
+      "printedPageNumber": 30,
+      "pdfPageNumber": 413,
+      "sequenceIndex": 20,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": false,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000011",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—X",
+          "sourceIdentifier": "X",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0300000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000011",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "finishing that soorah he again hymned 'Allahumma Lakalhamd' three times and started 'al-Maa'idah'. He went into ruku only after finishing that soorah. In ruku and sajdah he recited tasbeeh and some other prayers, which I could not catch. In the second, rakaat he started 'al-An'aam' after 'Fatihah'. I could not continue with him any longer and broke away helplessly.\" What the Prophet (Sallallaho alaihe wasallam) recited in one rakaat comes to about one sixth of the whole Qur'an. Besides, the Prophet (Sallallaho alaihe wasallam) must be reciting at ease with proper Tajweed; we can well imagine how long the rakaat would have been. It was on this account that his feet would often get swollen. But no amount of strain and inconvenience in salaat is in the way of one whose heart is imbued with its sweetness. Abu Ishaaq Subaihi is a famous muhaddith. He died a centenarian. He would often exclaim in his old age, \"Alas! This infirmity and old age have deprived me of the delight of long salaat. I am now only able to recite 'Baqarah' and 'Aal-Imraan' in my salaat of two rakaats.\" These two soorahs comprise about one eighth of the whole Qur'an. Muhammad bin Sammaak, the famous Soofi, writes, \"My neighbour at Koofah had a son. The boy fasted during the day and kept praying and hymning during the night. This constant strain emaciated him so much that his body was reduced to a skeleton. His father requested me to admonish him. Once I was sitting at my door when the boy passed by. He greeted me with 'Assalaamu alaikum' and sat down. I had hardly said anything when he interrupted saying, 'Dear Uncle! Maybe you intend to admonish me to reduce my pursuits. Listen to my story first. I had a few friends in the locality. We decided among ourselves to vie with one another in worship and adoration of Allah. They all applied themselves so hard that they were soon sent for by Allah. They embraced death delightedly and peacefully. Now I am the only one left behind. What will they think of me when they know of my lagging behind? Dear Uncle! My friends really strived very hard and achieved their goal,' He then began to relate.the pursuits and accomplishments of his departed friends, which astonished all the listeners. After this he left me. I heard a few days later that the boy too had died (May Allah bless him).\" Even in these days there are persons who remain engaged in salaat for the major portion of the night and",
+          "rawOcrText": "30 Virtues of Salaat finishing that soorah he again hymned 'Allahumma Lakal- hamd' three times and started 'al-Maa'idah'. He went into ruku only after finishing that soorah. In ruku and sajdah he recited tasbeeh and some other prayers, which I could not catch. In •the second, rakaat he started 'al-An'aam' after 'Fatihah'. I could not continue with him any longer and broke away helplessly.\" What the Prophet (Sallallaho alaihe wasallam) recited in one rakaat comes to about one sixth of the whole Qur'an. Besides, the Prophet (Sallallaho alaihe wasallam) must be reciting at ease with proper Taj- weed; we can well imagine how long the rakaat would have been. It was on this account that his feet would oftene get swollen. But no amount of strain and inconvenience in salaat is in the way of one whose heart is imbued with its sweetness. Abu Ishaaq Subaihi is a famous muhaddith. He died a centenarian. He would often exclaim in his old age, \"Alas! This infirmity and old age have deprived me of the delight of long salaat. I am now only able to recite 'Baqarah' and 'Aal-lmraan' in my salaat of two rakaats.\" These two soo- rahs comprise about one eighth of the whole Qur'an. Muhammad bin Sammaak, the famous Soofi, writes, \"My neighbour at Koofah had a son. The boy fasted during the day and kept praying and hymning during the night. This constant strain emaciated him so much that his body was reduced to a skeleton. His father requested me to ad- monish him. Once I was sitting at my door when the boy passed by. He greeted me with 'Assalaamu alaikum' and sat down. I had hardly said anything when he interrupted saying, 'Dear Uncle! Maybe you intend to admonish me to reduce my pursuits. Listen to my story first. I had a few friends in the locality. We decided among ourselves to vie with one another in worship and adoration of Allah. They all applied themselves so hard that they were soon sent for by Allah. They embraced death delightedly and peacefully. Now I am the only one left behind. What will they think of me when they know of my lagging behind? Dear Uncle! My friends really strived very hard and achieved their goal,' He then began to relate.the pursuits and accomplishments of his departed friends, which astoni&hed all the listeners. After this he left me. I heard a few days later that the boy too had died (May Allah bless him).\" Even in these days there are persons who remain en- gaged in salaat for the major portion of the night and",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 30
+    },
+    {
+      "pageId": "c0310000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "31",
+      "printedPageNumber": 31,
+      "pdfPageNumber": 414,
+      "sequenceIndex": 21,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": false,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000011",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—X",
+          "sourceIdentifier": "X",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0310000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000011",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Part I (d)—Importance of Salaat 31 devote the whole day to Tableegh, Ta'leem and other services in the path of Allah: Maulana Abdul Waahid Lahori. (peace be upon him) was a famous saint who lived about two centuries ago. He sighed and wept when he learnt that there was no salaat in Paradise—being the plate for recompense and not of labour. He remarked, \"How shall we enjoy the Paradise without salaat!\" Such people are really the salt of this Earth. May Allah give us their strength of Imaan and love for His worship! Aameen. Before I finish this chapter, let me reproduce the following lovely Hadith from Munabbihaat by Ibn Hajar, \"Once when the Prophet (Sallallaho alaihe wasallam) was sitting among his companions, he remarked, \"Three things of this world are very dear to me: Perfume, Women and salaat—the comfort of my eyes.\" \"Quite true\" rejoined Abu Bakr (Radhiyallaho anho), \"And I cherish three things: a look at thy face, spending of my wealth on thee and that my daughter is thy wife, O Prophet of Allah!\" \"Quite true\", said Hadhrat Umar (Radhiyallaho anho), \"And the three I love most are; enforcing that which is right, forbidding evil and wearing old clothes.\" \"Quite true\", said Hadhrat Uthman (Radhiyallaho anho), \"And the three I love most are: feeding the hungry, clothing the naked and reciting the Qur'an.\" \"Quite true\", said Hadhrat Ali (Radhiyallaho anho). \"And I love the three things most: serving a guest, fasting on a very hot day and smiting the enemy with my sword.\" At this, Jibra-eel (Alayhis salaam) appeared on the scene and said to the Prophet (Sallallaho alaihe wasallam), \"Allah has sent me to tell you what I would love if I be one of the mortals.\" \"Yes, do tell us, Jibra-eel\", said the Prophet. Jibra-eel then replied, \"If I had been like you, I would have loved three things: guiding the people gone astray, loving those who worship in poverty and helping the poor family men. And as for Allah, He loves three characteristics of His slaves: striving in His Path, crying at the time of repentance, and steadfastness in want and hunger.\" Hafiz Ibn Qayyim writes: 'Salaat ensures daily bread, promotes health, drives out diseases, strengthens the heart, brings light and beauty on the face, pleases the soul, refreshes the body, cures indolence, relieves the mind, feeds the soul, illumines the guarantees Allah's favour. It grants protection against Allah's Doom. It keeps the Devil",
+          "rawOcrText": "Part I (d)—lmportance of Salaat 31 devote the whole day to Tableegh, Ta'leem and other ser- vices in the pa•th of Allah: Maulana Abdul Waahid Lahori. (peace be upon him) was a famous saint who lived about two centuries ago. He sighed and wept when he learnt that there was no salaat in Paradise—being the plate for recom- pense and not of labour. He remarked, \"How shall we enjoy the Paradise without salaat!\" Such people are really the salt of this Earth. May Allah give us their strength of Imaan and love for His worship! Aameen. Before I finish this chapter, let me reprodute the fol- lowing lovely Hadith from Munabbihaat by Ibn Hajar, \"Once when the Prophet (Sallallaho alaihe wasallam) was sitting among his companions, he renurked, \"Three things of this world are very dear to me: Perfume, Women and sa- laat—the comfort of my eyes.\" \"Quite •true\" rejoined Abu Bakr (Radhiyallaho anho), \"And I cherish three things: a look at thy face, spending of my wealth on thee and that my daughter is thy wife, O Prophet of Allah!\" \"Quite true\", said Hadhrat Umar (Radhiyallaho anho), \"And the three I love most are; enforcing that which is right, forbidding evil and wearing old clothes.\" \"Quite true\", said Hadhrat Uthman (Radhiyallaho anho), \"And the three I love most are: feeding the hungry,.clothing Che naked and reciting the Qur'an.\" \"Quite true\", said Hadhrat Ali (Radhiyallaho anho). \"And I love the three things most: serving a guest, fasting on a very hot day and smiting the enemy with my sword.\" At this, Jibra•eel (Alayhis salaam) appeared on the scene and said to the Prophet (Sallallaho alaihe wasallam), \"Allah has sent me to tell yqu what I would love if I be one of the mortals.\" \"Yes, do tell us, Jibra-eel\", said the Prophet. Jibra-eel then replied, \"If I had been like you, I would have loved three things: guiding the people gone astray, loving those who worship in poverty and helping the poor family men. And as for Allah, He loves three characteristics of His slaves: striving in His Path, crying at the • time of repentance, and steadfastness in want and hunger.\" Hafiz Ibn Qayyim writes: 'Salaat ensures daily bread, promotes health, drives out diseases, strengthens the heart, brings light and beauty on the face, pleases the soul, re- freshes the body, cures indolence, relieves the mind, feeds the soul, illumines the guarantees Allah's favoyr. It grants protection against Allah's Doom. It keeps the Devil",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 31
+    },
+    {
+      "pageId": "c0320000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "32",
+      "printedPageNumber": 32,
+      "pdfPageNumber": 415,
+      "sequenceIndex": 22,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": false,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000011",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—X",
+          "sourceIdentifier": "X",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0320000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000011",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "away and brings us nearer to Allah. In short, salaat is a guarantee for all that is and a protection against all that is undesirable for body and soul, equally in this world and in the Hereafter.\"",
+          "rawOcrText": "32 Virtues of Salaat away and brings us nearer to Allah. In short, salaat is a guarantee for all that is and a protection against all ahat is undesirable for both and soul, equally in this world and in the Hereafter.\"",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 32
+    },
+    {
+      "pageId": "c0330000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "33",
+      "printedPageNumber": 33,
+      "pdfPageNumber": 416,
+      "sequenceIndex": 23,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000002",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER.—II",
+          "sourceIdentifier": "II",
+          "title": "WARNING AND REPROACH FOR NEGLECTING SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6300000-0000-4000-8000-000000000001",
+          "parentId": "a6100000-0000-4000-8000-000000000002",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—I",
+          "sourceIdentifier": "I",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0330000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6100000-0000-4000-8000-000000000002",
+          "sequenceIndex": 0,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "CHAPTER.—II",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0330000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6100000-0000-4000-8000-000000000002",
+          "sequenceIndex": 1,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "WARNING AND REPROACH FOR NEGLECTING SALAAT",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0330000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6100000-0000-4000-8000-000000000002",
+          "sequenceIndex": 2,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "The books on hadith mention very severe punishment for those who neglect salaat. From many traditions on the subject, only a few are reproduced in this chapter. Although a single warning from the most truthful Prophet (Sallallaho alaihe wasallam) was enough, yet we find that, out of love and mercy for his followers, he has cautioned them again and again and in various manners lest they should neglect salaat and suffer the consequences. In spite of all this, alas! we are unmindful of salaat, and still we have the audacity to consider ourselves devotees of the Prophet (Sallallaho alaihe wasallam) and champions of Islam.",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0330000-0000-4000-8000-000000000004",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000001",
+          "sequenceIndex": 3,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith.—I",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0330000-0000-4000-8000-000000000005",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000001",
+          "sequenceIndex": 4,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "عَنْ جَابِرِ بْنِ عَبْدِ اللَّهِ رَضِيَ اللَّهُ عَنْهُ قَالَ قَالَ رَسُولُ اللَّهِ ﷺ بَيْنَ الرَّجُلِ وَبَيْنَ الْكُفْرِ تَرْكُ الصَّلَاةِ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0330000-0000-4000-8000-000000000006",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000001",
+          "sequenceIndex": 5,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "رواه أحمد ومسلم وقال بين الرجل وبين الشرك والكفر ترك الصلاة رواه أبو داود والنسائي ولفظه ليس بين العبد وبين الكفر إلا ترك الصلاة والترمذي ولفظه قال بين الكفر والإيمان ترك الصلاة وابن ماجه ولفظه قال بين العبد وبين الكفر ترك الصلاة كذا في الترغيب للمنذري وقال السيوطي في الدر حديث جابر وغيره",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0330000-0000-4000-8000-000000000007",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000001",
+          "sequenceIndex": 6,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadhrat Jaabir bin Abdullah (Radhiyallaho anho) narrates that he heard the Prophet of Allah (Sallallaho alaihe wasallam) saying: 1. \"To discard salaat is to be linked with Kufr.\" 2. \"To discard salaat is to be linked with Kufr and Shirk.\" 3. \"Discarding of salaat is the only partition between Imaan and Kufr. \" There are a number of ahaadith on the subject. On one occasion, the Holy Prophet (Sallallaho alaihe wasallam) is reported to have said: \"Hurry up with your salaat when it",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 33
+    },
+    {
+      "pageId": "c0340000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "34",
+      "printedPageNumber": 34,
+      "pdfPageNumber": 417,
+      "sequenceIndex": 24,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000002",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER.—II",
+          "sourceIdentifier": "II",
+          "title": "WARNING AND REPROACH FOR NEGLECTING SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6300000-0000-4000-8000-000000000002",
+          "parentId": "a6100000-0000-4000-8000-000000000002",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—II",
+          "sourceIdentifier": "II",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0340000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000002",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "is cloudy (lest you should err and miss the correct time), for to discard salaat is to become a kaafir.\" What a stern warning against even missing the correct time of salaat, as (according to this quotation) to miss the correct time of salaat is to discard it. Although, according to the interpretation of the Ulama, the verdict of kufr is given against a person only when he rejects (and not simply neglects) salaat, yet the words of the Prophet (Sallallaho alaihe wasallam) occurring in these ahaadith should be very weighty for those who have any regard for him. It may, however, be noted that some of the very important companions of the Prophet (Sallallaho alaihe wasallam) like Umar, Abdullah bin Mas'ood, Abdullah bin Abbas (Radhiyallaho anhum), etc. and eminent jurists like Ahmad bin Hanbal, Ishaaq bin Raahwayh, Ibn Mubaarak, (Rahmatullah alaihim), etc. are definitely of the opinion that verdict of kufr can be given against the person who intentionally discards his salaat. May Allah save us!",
+          "rawOcrText": "34 Virtues of Salaat is cloudy (lest you should err and miss the correct time), for to discard salaat is to become a kaafir.\" What a *ern warning against even missing the correct time of salaat, as (according to this quotation) to miss the correct time of salaat is to discard it. Although, according to the interpreta- tion of the Ulama, the verdict of kufr is given against a person only when he rejects (and not simply neglects) salaat, yet •the words of the Prophet (Sallallaho alaihe wa- sallam) occurring in these ahaadith should be very weighty for those who. have any regard for him. It may, however, be noted that some of the very important companions of the Prophet (Sallallaho alaihe wasallam) like Umar, Abdullah bin Mas'ood, Abdullah bin Abbas (Radhiyallaho anhum), etc. and eminent jurists like Ahmad bin Hanbal, Ishaaq bin Raahwayh, Ibn Mubaarak, (Rahmatullah alaihim), etc. are definitely of the opinion that verdict of kufr can be given against the person who intentionally discards his salaat. May Allah save us! Hadith—II J\" Jij Hadhrat Ubaadah bin Saamit (Radhiyallaho anho) nar- rates. 'My dear friend the Prophet (Sallallaho alaihe wasallam) while enjoining upon me seven good prac- tices said, \"Do not ascribe anything as partner to Allah, though you may be cut into pieces or burnt alive or crucified; do not forego salaat intentionally, lest you should get out of the fold of Islam; do not perpetrate disobedience of Allah, lest you deserve His wrath; and do not take to drinking, for that is the mother of all In anothå hadith, Hadhrat Abu Darda (Radhiyallaho anho) says, \"My dear Prophet (Sallallaho alaihe wasallam) warned me saying, 'Do not ascribe anything as partner unto",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0340000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000002",
+          "sequenceIndex": 1,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith.—II",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0340000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000002",
+          "sequenceIndex": 2,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "عَنْ عُبَادَةَ بْنِ الصَّامِتِ رَضِيَ اللَّهُ عَنْهُ قَالَ أَوْصَانِي خَلِيلِي رَسُولُ اللَّهِ ﷺ بِسَبْعِ خِصَالٍ فَقَالَ لَا تُشْرِكُوا بِاللَّهِ شَيْئًا وَإِنْ قُطِّعْتُمْ أَوْ حُرِّقْتُمْ وَلَا تَتْرُكُوا الصَّلَاةَ مُتَعَمِّدِينَ فَمَنْ تَرَكَهَا مُتَعَمِّدًا فَقَدْ خَرَجَ مِنَ الْمِلَّةِ وَلَا تَرْكَبُوا الْمَعْصِيَةَ فَإِنَّهَا سَخَطُ اللَّهِ وَلَا تَشْرَبُوا الْخَمْرَ فَإِنَّهَا رَأْسُ الْخَطَايَا",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0340000-0000-4000-8000-000000000004",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000002",
+          "sequenceIndex": 3,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "رواه الطبراني ومحمد بن نصر في كتاب الصلاة بإسنادين لا بأس بهما كذا في الترغيب هكذا ذكره السيوطي في الدر المنثور وعزاه إليهما وفي المشكاة برواية ابن ماجه عن ابن أبي الدرداء نحوه",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0340000-0000-4000-8000-000000000005",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000002",
+          "sequenceIndex": 4,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadhrat Ubaadah bin Saamit (Radhiyallaho anho) narrates: 'My dear friend the Prophet (Sallallaho alaihe wasallam) while enjoining upon me seven good practices said, \"Do not ascribe anything as partner to Allah, though you may be cut into pieces or burnt alive or crucified; do not forego salaat intentionally, lest you should get out of the fold of Islam; do not perpetrate disobedience of Allah, lest you deserve His wrath; and do not take to drinking, for that is the mother of all In another hadith, Hadhrat Abu Darda (Radhiyallaho anho) says, \"My dear Prophet (Sallallaho alaihe wasallam) warned me saying, 'Do not ascribe anything as partner unto",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 34
+    },
+    {
+      "pageId": "c0350000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "35",
+      "printedPageNumber": 35,
+      "pdfPageNumber": 418,
+      "sequenceIndex": 25,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000002",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER.—II",
+          "sourceIdentifier": "II",
+          "title": "WARNING AND REPROACH FOR NEGLECTING SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6300000-0000-4000-8000-000000000003",
+          "parentId": "a6100000-0000-4000-8000-000000000002",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith-III",
+          "sourceIdentifier": "III",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0350000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000003",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Allah, though you may cut into pieces or burnt alive or crucified; do not discard salaat intentionally, as Allah is free from any obligation to a person who knowingly neglects salaat; and do not take wine, for that is the key to all vices.\"",
+          "rawOcrText": "Part I on Discard of Salaat 35 Allah, though you may cut into pieces or burnt alive or crucified; do not discard salaat intentionally, as Allah is free from any obligation to a person who knowingly neg- lects salaat; and do not take wine, for that is the key to all viæs.\" Hadith-m Jij g Jj; J:aji Jj & e; t'*$ 3i ji 8.i g:ij by Hadhrat Mu'aaz bin Jabal (Radhiyallaho anho) nar- rates: \"The Prophet (Sallallaho alaihe wasallam) en- joined upon me ten things, viz, 'Do not ascribe anything is partner unto Allah, though you may be slain or burnt alive; do not disobey your parents, though you may have to part with your wife or your entire wealth; do not neglect fardh salaat, intention- ally, for Allah is free from •obligation to a person who neglects fardh salaat intentionally; do not take wine, for it is an evil habit; that is the root of every vice; do not commit disobedience of Allah, for that brings the wrath of Allah. Do not turn your back to the enemy in battle, though all your comrades may have •fallen. Do nbt fly from the locality where an epidemic has broken out. Do spend on your family members according to your capacity; let your rod be hanging on them, as a warning. and to chastise against neglect of their duties towards Allah.\" According to this hadith, we should not spare the rod in checking the children from becoming reckless in• doing anything they like. Sometimes it is necessary to use the rod. It is a pity that out of love we do not use the rod in the beginning and, when the children get spoilt,. we cry and",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0350000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000003",
+          "sequenceIndex": 1,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith-III",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0350000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000003",
+          "sequenceIndex": 2,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "عَنْ مُعَاذِ بْنِ جَبَلٍ رَضِيَ اللَّهُ عَنْهُ قَالَ أَوْصَانِي رَسُولُ اللَّهِ ﷺ بِعَشْرِ كَلِمَاتٍ قَالَ لَا تُشْرِكْ بِاللَّهِ شَيْئًا وَإِنْ قُتِلْتَ أَوْ حُرِّقْتَ وَلَا تَعُقَّنَّ وَالِدَيْكَ وَإِنْ أَمَرَاكَ أَنْ تَخْرُجَ مِنْ أَهْلِكَ وَمَالِكَ وَلَا تَتْرُكَنَّ صَلَاةً مَكْتُوبَةً مُتَعَمِّدًا فَإِنَّ مَنْ تَرَكَ صَلَاةً مَكْتُوبَةً مُتَعَمِّدًا فَقَدْ بَرِئَتْ مِنْهُ ذِمَّةُ اللَّهِ وَلَا تَشْرَبَنَّ خَمْرًا فَإِنَّهُ رَأْسُ كُلِّ فَاحِشَةٍ وَإِيَّاكَ وَالْمَعْصِيَةَ فَإِنَّ بِالْمَعْصِيَةِ حَلَّ سَخَطُ اللَّهِ وَإِيَّاكَ وَالْفِرَارَ مِنَ الزَّحْفِ وَإِنْ هَلَكَ النَّاسُ وَإِنْ أَصَابَ النَّاسَ مَوْتٌ وَأَنْتَ فِيهِمْ فَاثْبُتْ وَأَنْفِقْ عَلَى أَهْلِكَ مِنْ طَوْلِكَ وَلَا تَرْفَعْ عَنْهُمْ عَصَاكَ أَدَبًا وَأَخِفْهُمْ فِي اللَّهِ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0350000-0000-4000-8000-000000000004",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000003",
+          "sequenceIndex": 3,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "رواه أحمد والطبراني في الكبير وغيرهم",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0350000-0000-4000-8000-000000000005",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000003",
+          "sequenceIndex": 4,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadhrat Mu'aaz bin Jabal (Radhiyallaho anho) narrates: \"The Prophet (Sallallaho alaihe wasallam) enjoined upon me ten things, viz, 'Do not ascribe anything as partner unto Allah, though you may be slain or burnt alive; do not disobey your parents, though you may have to part with your wife or your entire wealth; do not neglect fardh salaat, intentionally, for Allah is free from obligation to a person who neglects fardh salaat intentionally; do not take wine, for it is an evil habit; that is the root of every vice; do not commit disobedience of Allah, for that brings the wrath of Allah. Do not turn your back to the enemy in battle, though all your comrades may have fallen. Do not fly from the locality where an epidemic has broken out. Do spend on your family members according to your capacity; let your rod be hanging on them, as a warning. and to chastise against neglect of their duties towards Allah.\" According to this hadith, we should not spare the rod in checking the children from becoming reckless in doing anything they like. Sometimes it is necessary to use the rod. It is a pity that out of love we do not use the rod in the beginning and, when the children get spoilt, we cry and",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 35
+    },
+    {
+      "pageId": "c0360000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "36",
+      "printedPageNumber": 36,
+      "pdfPageNumber": 419,
+      "sequenceIndex": 26,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000002",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER.—II",
+          "sourceIdentifier": "II",
+          "title": "WARNING AND REPROACH FOR NEGLECTING SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6300000-0000-4000-8000-000000000004",
+          "parentId": "a6100000-0000-4000-8000-000000000002",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith-IV",
+          "sourceIdentifier": "IV",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0360000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000004",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "complain about them. To spare the rod and to spoil the child is no kindness at all. Who would like to save a child from a surgical operation under advice from a doctor for the simple reason that it would cause pain to him? The Prophet (Sallallaho alaihe wasallam) is reported to have said very often: \"Enjoin salaat on your child when he is seven years old, and beat him if he neglects it after he reaches ten.\" Hadhrat Abdullah bin Mas'ood (Radhiyallaho anho) says, \"Guard the salaat of your children and inculcate good habits in them'). Luqmaan the wise used to say, \"The. use of the.rod on a child is as. indispensable as is water for the fields.\" The Prophet (Sallallaho alaihe wasallam) is reported to have said, \"A person while admonishing his children earns more reward from Allah than when he is spending about seven pounds of grain in His path.\" In another hadith the Prophet (Sallallaho alaihe wasallam) has Said, \"May Allah bless a person who keeps a lash hanging in his house for the admonition of his house-folk.\" On another occasion he said, \"No father can bestow anything better on his children than to teach them good manners. \"",
+          "rawOcrText": "36 Virtues of Salaat complain about them. To spare the rod and to spoil the child is no kindness at ill. Who would like to save a child from .d surgical operation under advice from a doctor for the simple reason that it would• cause pain to him? The Prophet (Sallallaho alaihe wasallam) is reported to have said very often: \"Enjoin salaat on your child when he is seven years old, and beat him if he neglects it after he reaches ten.\" Hadhrat Abdullah bin Mas'ood (Radhiyallaho anho) says, \"Guard the salaat of your children and incul• cate good habits in them'). Luqmaan the wise used to say, \"The. use of the .rod on a child is as. indispensable as is water for the fields.\" The Prophet (Sallallaho alaihe wasal- lain) is reported to have said, \"A person while admonish: ing his children earns more reward from•Allah than when he is spending about seven pounds of grain in His path.\" In• another hadith the Prophet (Sallallaho alaihe wasallam) has Said, \"May Allah bless a person who keeps a lash hang- ing in his house for the admbnition of his house-folk.\" On another occasion he said, \"No father can bestow anything better on his children than to teach them good manners. \" Hadith-IV Lat Jul, us Li Hadhrat Naufil bin Mu'aawiyah (Radhiyallaho anho) narrates that he heard the Prophet (Sallallaho alaihe wasallam) saying, \"A person who has missed one salaat is like one who has lost all his family and wealth.\" Salaat is missed usually when either •a person is in the company of his family members or is in pursuit of money. According to this hadith, the ultimate loss sustained in missing a salaat is in no way.less than the loss of the whole family and property. In other Words, if we miss a salaat we should be as much grieved as when we lose all of our folk and entire belongings. If we are cautioned by some reliable person about the presence of gangsters on a certain road, where people are robbed and killed during the night, we need a lion's heart to the caution and travel on that road even during the day-time. Strange enough to note that",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0360000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000004",
+          "sequenceIndex": 1,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith-IV",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0360000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000004",
+          "sequenceIndex": 2,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "عَنْ نَوْفَلِ بْنِ مُعَاوِيَةَ رَضِيَ اللَّهُ عَنْهُ أَنَّ النَّبِيَّ ﷺ قَالَ مَنْ فَاتَتْهُ صَلَاةٌ فَكَأَنَّمَا وُتِرَ أَهْلُهُ وَمَالُهُ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0360000-0000-4000-8000-000000000004",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000004",
+          "sequenceIndex": 3,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "رواه ابن حبان في صحيحه كذا في الترغيب زاد السيوطي في الدر والنسائي أيضا قلت ورواه أحمد في مسنده",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0360000-0000-4000-8000-000000000005",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000004",
+          "sequenceIndex": 4,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadhrat Naufil bin Mu'aawiyah (Radhiyallaho anho) narrates that he heard the Prophet (Sallallaho alaihe wasallam) saying, \"A person who has missed one salaat is like one who has lost all his family and wealth.\" Salaat is missed usually when either a person is in the company of his family members or is in pursuit of money. According to this hadith, the ultimate loss sustained in missing a salaat is in no way less than the loss of the whole family and property. In other Words, if we miss a salaat we should be as much grieved as when we lose all of our folk and entire belongings. If we are cautioned by some reliable person about the presence of gangsters on a certain road, where people are robbed and killed during the night, we need a lion's heart to the caution and travel on that road even during the day-time. Strange enough to note that",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 36
+    },
+    {
+      "pageId": "c0370000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "37",
+      "printedPageNumber": 37,
+      "pdfPageNumber": 420,
+      "sequenceIndex": 27,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000002",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER.—II",
+          "sourceIdentifier": "II",
+          "title": "WARNING AND REPROACH FOR NEGLECTING SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6300000-0000-4000-8000-000000000005",
+          "parentId": "a6100000-0000-4000-8000-000000000002",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith V",
+          "sourceIdentifier": "V",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6300000-0000-4000-8000-000000000006",
+          "parentId": "a6100000-0000-4000-8000-000000000002",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith VI",
+          "sourceIdentifier": "VI",
+          "title": null,
+          "sequenceIndex": 3,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0370000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000005",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "we have been cautioned again and again by the Prophet (Sallallaho alaihe wasallam) and we do believe that he was really the true Messenger of Allah, yet we heed not the caution and go on missing salaat one after the other.",
+          "rawOcrText": "Part I on Discard of Salaat 37 we have been cautioned again and again by the Prophet (Sallalaho alaihe wasallam) and we do believe that he was really the true Messenger of •Allah, yet we heed not the caution and go on missing salaat one after the other. Hadith V Ibn Abbas (Radhiyallaho anho) narrates that he heard the Prophet (Sallallaho alaihe wasallam) saying, \"A person who combines two salaats without any strong excuse reaches one of the doors of kabaa'ir (major sins).\" Hadhrat Ali (Radhiyallaho anho) reports that the Prophet (Sallallaho alaihe wasallam) once said, \"Do not delay in -three things: salaat when its time has set in, burial when the bier is ready and marriage of a solitary woman when her match is found.\" Many personS who consider themselves as practical Muslims perform a -number of their salaats in combination on returning home, on .the very feeble excuses of travel, &ade or occupation. To put salaat off till after its set time without C strong excuse (illness, etc) is a major sin. Although it is not so disastrous as neg- lecting salaat, yet it is quite serious. Hadith VI Abdullah bin Amr (Radhiyallaho anho) narrates that once the Prophet (Sallallaho alaihe wasallam) while talking about salaat said: \"For its votary, salaat shall on the Day of Judgement, be a light for him, an argument in his favour, and a means of his deliverance. Whereas there will be no light, no defence and no deliverance",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0370000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000005",
+          "sequenceIndex": 1,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith V",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0370000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000005",
+          "sequenceIndex": 2,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "عَنِ ابْنِ عَبَّاسٍ رَضِيَ اللَّهُ عَنْهُ قَالَ قَالَ رَسُولُ اللَّهِ ﷺ مَنْ جَمَعَ بَيْنَ الصَّلَاتَيْنِ مِنْ غَيْرِ عُذْرٍ فَقَدْ أَتَى بَابًا مِنْ أَبْوَابِ الْكَبَائِرِ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0370000-0000-4000-8000-000000000004",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000005",
+          "sequenceIndex": 3,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "رواه الحاكم",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0370000-0000-4000-8000-000000000005",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000005",
+          "sequenceIndex": 4,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Ibn Abbas (Radhiyallaho anho) narrates that he heard the Prophet (Sallallaho alaihe wasallam) saying, \"A person who combines two salaats without any strong excuse reaches one of the doors of kabaa'ir (major sins).\" Hadhrat Ali (Radhiyallaho anho) reports that the Prophet (Sallallaho alaihe wasallam) once said, \"Do not delay in three things: salaat when its time has set in, burial when the bier is ready and marriage of a solitary woman when her match is found.\" Many persons who consider themselves as practical Muslims perform a number of their salaats in combination on returning home, on the very feeble excuses of travel, trade or occupation. To put salaat off till after its set time without a strong excuse (illness, etc) is a major sin. Although it is not so disastrous as neglecting salaat, yet it is quite serious.",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0370000-0000-4000-8000-000000000006",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000006",
+          "sequenceIndex": 5,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith VI",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0370000-0000-4000-8000-000000000007",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000006",
+          "sequenceIndex": 6,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "عَنْ عَبْدِ اللَّهِ بْنِ عَمْرٍو رَضِيَ اللَّهُ عَنْهُ عَنِ النَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ أَنَّهُ ذَكَرَ الصَّلَاةَ يَوْمًا فَقَالَ مَنْ حَافَظَ عَلَيْهَا كَانَتْ لَهُ نُورًا وَبُرْهَانًا وَنَجَاةً يَوْمَ الْقِيَامَةِ وَمَنْ لَمْ يُحَافِظْ عَلَيْهَا لَمْ يَكُنْ لَهُ نُورٌ وَلَا بُرْهَانٌ وَلَا نَجَاةٌ وَكَانَ يَوْمَ الْقِيَامَةِ مَعَ فِرْعَوْنَ وَهَامَانَ وَقَارُونَ وَأُبَيِّ بْنِ خَلَفٍ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0370000-0000-4000-8000-000000000008",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000006",
+          "sequenceIndex": 7,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "أخرجه أحمد وابن حبان",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0370000-0000-4000-8000-000000000009",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000006",
+          "sequenceIndex": 8,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Abdullah bin Amr (Radhiyallaho anho) narrates that once the Prophet (Sallallaho alaihe wasallam) while talking about salaat said: \"For its votary, salaat shall on the Day of Judgement, be a light for him, an argument in his favour, and a means of his deliverance. Whereas there will be no light, no defence and no deliverance",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 37
+    },
+    {
+      "pageId": "c0380000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "38",
+      "printedPageNumber": 38,
+      "pdfPageNumber": 421,
+      "sequenceIndex": 28,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": false,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000002",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER.—II",
+          "sourceIdentifier": "II",
+          "title": "WARNING AND REPROACH FOR NEGLECTING SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6300000-0000-4000-8000-000000000006",
+          "parentId": "a6100000-0000-4000-8000-000000000002",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith VI",
+          "sourceIdentifier": "VI",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0380000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000006",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "from doom for him who does not guard his salaat, and he shall meet the fate of Pharoah, Haamaan and Ubbay bin' Khalaf. \" Everybody knows that Pharoah—the big disbeliever— had been so arrogant that he proclaimed himself 'Lord the Highest' and made his people worship him. Haamaan was his Chief Minister and accomplice. Ubbay bin Khalaf was the most active and severest enemy of Islam among the disbelievers of Mecaa. Before the Hijrah, he used to announce to the Prophet (Sallallaho alaihe wasallam) most insolently, \"I have reared a horse, which I feed very well; I will slay you one day riding on its back.\" Once the Prophet (Sallallaho alaihe wasallam) replied to him, 'Inshaa-allaah! you shall meet your end at my hands.\" In the battle of Uhud, he ran about in the field in search of the Prophet (Sallallaho alaihe wasallam) saying, \"If Muhammad (Sallallaho alaihe wasallam) is not slain today, then I stand no chance of surviving.\" He at last found the Prophet (Sallallaho alaihe wasallam) and advanced to attack him. The Companions decided to finish him before he reached the Prophet, but the Prophet (Sallallaho alaihe wasallam) stopped them. When he came near, the Prophet (Sallallaho alaihe wasallam) took a spear from one of the companions and struck him with it, causing a little scratch on his neck. He staggered and fell down from his horse and then fled towards his camp crying, \"By Allah, Muhammad (Sallallaho alaihe wasallam) has killed me!\" His people tried to console him and told him that it was only a bruise and there was nothing to worry about, but he would say, \"Muhammad (Sallallaho alaihe wasallam) had once announced to me in Mecca, that he would kill me. By Allah, had he only spat at me, I would be no more.\" It is said that he cried like a bull. Abu Sufyan, who was very active on that day, put him to shame for crying in that manner over a slight wound, but he said, \"Do you know who has inflicted this injury upon me? It was none other than Muhammad (Sallallaho alaihe wasallam). By Laat and Uzza! if my agony be distributed over all the people of Hijaaz, none of them would survive. Since the time he had declared that he would kill me, I was sure that I would meet my death at his hands. If he only spat at me after that declaration, I would be no more.\" So he died on his way back, at a day's journey from Mecca. Look! a disbeliever like Ubbay bin Khalaf is so sure about the truth of the Prophet's words that he does not",
+          "rawOcrText": "38 Virtues of Salaat from doom for him who does not guard his salaat, and he shall meet the fate of Pharoah, Haamaan and Ubbay bin' Khalaf. \" Everybody knows that Pharoah—the big disbeliever— had been so arrogant that he proclaimed himself 'Lord the Highest' and made- his people worship him. Haamaan was his Chief Minister and accomplice. Ubbay bin Khalaf was the most active and severest enemy of Islam among the dis- believers of Mecaa. Before the Hijrah, he used to announce to the Prophet (Sallallaho alaihe wasallam) most insolently, \"I have reared a horse, which I feed very well; I will slay you one day riding on its back.\" Once the Prophet (Sallal- laho alaihe wasallam) replied to him, 'Clnshaa-allaah! you shall meet your end at my hands.\" In the battle of Uhud, he ran about in the field in search of the Prophet (Sallallaho alaihe wasallam) saying, \"If Muhammad (Sallallaho alaihe wasallam) is not slain today, then I stand no chance of sur- viving.\" He at last found the Prophet (Sallallaho alaihe wa- sallam) and advanced to attack him. The Com anions decided to finish him before he reached the Proplet, but the Prophet (Sallallaho alaihe wasallam) stopped them. When he came near, the Prophet (Sallallaho alaihe wasal- lam) took a spear from one of the companions and struck him with it, causing a little scratch on his neck. He stag- gered and fell down from his horse and then fled towards his camp crying, \"By Allah, Muhammad (Sallallaho alaihe wasallam) has killed me!\" His people tried to console him and told him that it was only a bruise and there was noth- ing to worry about, but he would say, \"Muhammad (Sallal- laho alaihe wasallam) had once announced to me in Meccq,- that he would kill me. By Allah, had he only spat at me,• I would be no more.\" It is said that he cried like a bull. Abu Sufyan, who was very active on that day, put him to shame for crying in that manner over a slight wound, but he said, \"Do you know who has inflicted this injury upon me? It was none other than Muhammad (Sallallaho alaihe wasal- lam). By Laat and Uzza! if my agony be distributed over all the people of Hijaaz, none of them would survive. Since the time •he had declared that he would kill me, I was sure that I would meet my death at his hands. If he only spat at me after that declaration, I would be no more.\" So he died on his way back, at a day's journey from Mecca. Look! a disbeliever like Ubbay bin Khalaf is so sure about the outh of the Prophet's words that he does not",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 38
+    },
+    {
+      "pageId": "c0390000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "39",
+      "printedPageNumber": 39,
+      "pdfPageNumber": 422,
+      "sequenceIndex": 29,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000002",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER.—II",
+          "sourceIdentifier": "II",
+          "title": "WARNING AND REPROACH FOR NEGLECTING SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6300000-0000-4000-8000-000000000007",
+          "parentId": "a6100000-0000-4000-8000-000000000002",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith VII",
+          "sourceIdentifier": "VII",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0390000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000007",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "have the slightest doubt about his own death; but where do we stand? Although we believe in him as the greatest Prophet of Allah, consider his words to be most genuine and boast of our love for him, yet how far do we act upon his advice and how much do we fear the punishments about which he has warned us! It is for each one of us to ponder over and answer. Ibn Hajar, while quoting this hadith, has also mentioned Qaaroon with Pharaoh and others. He writes: \"Sharing the fate of these people on the Day of Judgement is due to the fact that it is often the pursuits specific to these guilty persons which cause neglect of salaat. If, therefore, a person neglects salaat due to a craving for wealth, he will meet the fate of Qaaroon; if due to love for power, then that of Pharaoh; if due to a yearning for attachment to a ruler, then that of Haamaan; and if due to occupation in trade then that of Ubbay Bin Khalaf.\" Meeting the same fate as theirs, explains fully the severest tortures in store for those who neglect salaat. Although the disbelievers shall have to suffer their doom forever, while the believers will be released after their period of punishment is over and will ultimately be allowed to enter Paradise, yet this period of punishment, who knows, may last for thousands of years.",
+          "rawOcrText": "Part I (b)—Warning on Discard of Salaat 39 have the slightest doubt about his own death; but where do we stand? Although we believe .in him as the greatest Prophet •of Allah, consider his words to be most genuine and boast of our love for him, yet how far do we act upon his advice and how much do we fear the punishments about which he has warned us! It is for each one of us to ponder over and answer. Ibn Hajar, while quoting this hadith, has also men- tioned Qaaroon with Pharaoh and others. He writes: \"Shar- ing the fate of these people on the Day of Judgement is due to the fact that it is often the pursuits specific to these guilty persons which cause neglect of salaat. If, therefore, a person neglects salaat due to a craving for wealth, he. will meet the fate of Qaaroon; if due to love for power, then that of Pharaoh; if due to a yearning for attachment to a ruler, then that of Haamaan; and if due to occupation in trade then that of Ubbay Bin Khalaf.\" Meeting the same fate as theirs, explains fully the severest tortures in store for those who neglect salaat. Although the disbelievers shall have to suffer their doom forever, while the believers will be re- leased after their period of punishment is over and will ul- timately be allowed to enter Paradise, yet this period of punishment, who knows, may last for thousands of years. Hadith VII d) Gij ,",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0390000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000007",
+          "sequenceIndex": 1,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith VII",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0390000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000007",
+          "sequenceIndex": 2,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "قَالَ بَعْضُهُمْ وَرَدَ فِي الْحَدِيثِ أَنَّ مَنْ حَافَظَ عَلَى الصَّلَاةِ أَكْرَمَهُ اللَّهُ بِخَمْسِ خِصَالٍ يَرْفَعُ عَنْهُ ضِيقَ الْعَيْشِ وَعَذَابَ الْقَبْرِ وَيُعْطِيهِ اللَّهُ كِتَابَهُ بِيَمِينِهِ وَيَمُرُّ عَلَى الصِّرَاطِ كَالْبَرْقِ وَيَدْخُلُ الْجَنَّةَ بِغَيْرِ حِسَابٍ وَمَنْ تَهَاوَنَ عَنِ الصَّلَاةِ عَاقَبَهُ اللَّهُ بِخَمْسَ عَشْرَةَ عُقُوبَةً خَمْسَةٌ فِي الدُّنْيَا وَثَلَاثٌ عِنْدَ الْمَوْتِ وَثَلَاثٌ فِي قَبْرِهِ وَثَلَاثٌ عِنْدَ خُرُوجِهِ مِنَ الْقَبْرِ أَمَّا اللَّوَاتِي فِي الدُّنْيَا فَالْأُولَى تُنْزَعُ الْبَرَكَةُ مِنْ عُمُرِهِ وَالثَّانِيَةُ تُمْحَى سِيمَا الصَّالِحِينَ مِنْ وَجْهِهِ وَالثَّالِثَةُ كُلُّ عَمَلٍ يَعْمَلُهُ لَا يُؤَاجِرُهُ اللَّهُ عَلَيْهِ وَالرَّابِعَةُ لَا يُرْفَعُ لَهُ دُعَاءٌ إِلَى السَّمَاءِ وَالْخَامِسَةُ لَيْسَ لَهُ حَظٌّ فِي دُعَاءِ الصَّالِحِينَ وَأَمَّا الَّتِي تُصِيبُهُ عِنْدَ الْمَوْتِ فَإِنَّهُ يَمُوتُ ذَلِيلًا وَالثَّانِيَةُ يَمُوتُ جَوْعَانَ وَالثَّالِثَةُ يَمُوتُ عَطْشَانَ وَلَوْ سُقِيَ بِحَارَ الدُّنْيَا مَا رُوِيَ مِنْ عَطَشِهِ وَأَمَّا الَّتِي تُصِيبُهُ فِي قَبْرِهِ فَالْأُولَى يُضَيَّقُ عَلَيْهِ الْقَبْرُ حَتَّى تَخْتَلِفَ أَضْلَاعُهُ وَالثَّانِيَةُ يُوقَدُ عَلَيْهِ الْقَبْرُ نَارًا فَيَتَقَلَّبُ عَلَى الْجَمْرِ لَيْلًا وَنَهَارًا",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 39
+    },
+    {
+      "pageId": "c0400000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "40",
+      "printedPageNumber": 40,
+      "pdfPageNumber": 423,
+      "sequenceIndex": 30,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true,
+        "provenanceNotes": "Canonical transcription checked against the rendered secondary scan; master PDF page mapping retained. Fine vocalisation is preserved where clearly legible; no unresolved Arabic word or letter remains. English OCR correction and Arabic/translation-pair classification pass compared against the rendered source scan; raw OCR retained unchanged."
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000002",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER.—II",
+          "sourceIdentifier": "II",
+          "title": "WARNING AND REPROACH FOR NEGLECTING SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": null,
+          "endPageId": null
+        },
+        {
+          "id": "a6300000-0000-4000-8000-000000000007",
+          "parentId": "a6100000-0000-4000-8000-000000000002",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith VII",
+          "sourceIdentifier": "VII",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": null,
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "d0400000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000007",
+          "sequenceIndex": 0,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "وَالثَّالِثَةُ يُسَلَّطُ عَلَيْهِ فِي قَبْرِهِ ثُعْبَانٌ اسْمُهُ الشُّجَاعُ الْأَقْرَعُ عَيْنَاهُ مِنْ نَارٍ وَأَظْفَارُهُ مِنْ حَدِيدٍ طُولُ كُلِّ ظُفْرٍ مَسِيرَةُ يَوْمٍ يُكَلِّمُ الْمَيِّتَ فَيَقُولُ أَنَا الشُّجَاعُ الْأَقْرَعُ وَصَوْتُهُ مِثْلُ الرَّعْدِ الْقَاصِفِ يَقُولُ أَمَرَنِي رَبِّي أَنْ أَضْرِبَكَ عَلَى تَضْيِيعِ صَلَاةِ الصُّبْحِ إِلَى بَعْدِ طُلُوعِ الشَّمْسِ وَأَضْرِبَكَ عَلَى تَضْيِيعِ صَلَاةِ الظُّهْرِ إِلَى الْعَصْرِ وَأَضْرِبَكَ عَلَى تَضْيِيعِ صَلَاةِ الْعَصْرِ إِلَى الْمَغْرِبِ وَأَضْرِبَكَ عَلَى تَضْيِيعِ صَلَاةِ الْمَغْرِبِ إِلَى الْعِشَاءِ وَأَضْرِبَكَ عَلَى تَضْيِيعِ صَلَاةِ الْعِشَاءِ إِلَى الْفَجْرِ فَكُلَّمَا ضَرَبَهُ ضَرْبَةً يَغُوصُ فِي الْأَرْضِ سَبْعِينَ ذِرَاعًا وَلَا يَزَالُ فِي الْقَبْرِ مُعَذَّبًا إِلَى أَنْ يُخْرِجَهُ مِنَ الْقَبْرِ فِي مَوْقِفِ الْقِيَامَةِ لِشِدَّةِ الْحِسَابِ وَسَخَطِ الرَّبِّ وَدُخُولِ النَّارِ وَفِي رِوَايَةٍ فَإِنَّهُ يَأْتِي يَوْمَ الْقِيَامَةِ وَعَلَى وَجْهِهِ ثَلَاثَةُ أَسْطُرٍ مَكْتُوبَاتٌ السَّطْرُ الْأَوَّلُ يَا مُضَيِّعَ حَقِّ اللَّهِ السَّطْرُ الثَّانِي يَا مَخْصُوصًا بِغَضَبِ اللَّهِ الثَّالِثُ كَمَا ضَيَّعْتَ فِي الدُّنْيَا حَقَّ اللَّهِ فَآيِسِ الْيَوْمَ أَنْتَ مِنْ رَحْمَةِ اللَّهِ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "d0400000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6300000-0000-4000-8000-000000000007",
+          "sequenceIndex": 1,
+          "blockType": "translation",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "It is said in a hadith that, Allah bestows five favours on a person who is mindful of his salaat, viz: His daily bread is made easy for him; he is saved from the punishments in the grave; he shall receive his record in his right hand on the Day of Judgement; he shall cross the Siraat with the speed of lightning and he shall enter Paradise without reckoning. As for him who neglects his salaat, he shall meet five types of punishments in this world, three at the time of death, three in the grave and three after resurrection. Those in this world are: he is not blessed in life; he is deprived of the light with which the faces of the righteous are endowed; he receives no rewards for his good practices; his prayers are not answered; and he has no share in the prayers of the pious. Those at the time of death are: he dies disgracefully; he dies hungry; he dies in thirst; which the water in the oceans of the world cannot quench. Those in the grave are: He is so squeezed there that the ribs of one side penetrate into the ribs of the other side; fire is burnt inside for him and he is rolled on cinders day and night; a serpent with fiery eyes and iron nails equal in length to a days journey is let loose on him and shouts with a thundering voice, 'My Lord has charged me with thrashing you till sunrise for neglecting Fajr, till Asr for neglecting Zuhur, till sunset for neglecting Asr, till Ishaa",
+          "rawOcrText": "40 Virtues of Salaat It is said in a hadith that, Allah bestows fivefavours on a person who is mindful of his salaat, viz: His daily bread is made easy for him; he is saved from the punishments in the grave; he shall receive his record in his right hand on the Day of Judgement; he shall cross the Siraat with the speed of lightning and he shall enter Paradise without reck- oning. As for him who neglects his salaat, he shall meet five types of punishments in this world, three at the time of death, three in the grave and three after resurrection. Those in this world are: he is not blessed in life; he is deprived of the light with which the faces of the righteous are endowed; he receives no rewards for his good practices; his prayers are not answered; and he has no share in the prayers of the pious. Those at the time of death are: he dies disgracefully; he dies hungry; he dies in thirst; which the water in the oceans of the world cannot quench. Those in the grave are: He is so squeezed there that the ribs of one side penetrate into the ribs of the other side; fire is burnt inside for him and he is rolled on cinders day and night; a serpent with fiery eyes and iron nails equal in •length to a days journey is let loose on him and shouts with a thundering voice, 'My Lord has charged me .with thrashing you till sunrise for neglecting Fajr, till Asr for neglecting Zuhur, till sunset for neglecting Asr, till Ishaa",
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ],
+      "pageNumber": 40
+    }
+  ],
+  "pageWriteMode": "insert"
+}

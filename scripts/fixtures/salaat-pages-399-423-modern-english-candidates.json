@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "datasetKind": "admin_translation_review_proposals",
+  "bookId": "3cbdc749-e9c9-44f3-8330-ecc1e3b38cc8",
+  "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+  "readerVisible": false,
+  "automaticModernization": false,
+  "scholarReviewRequired": true,
+  "candidates": [
+    {
+      "contentBlockId": "d0180000-0000-4000-8000-000000000003",
+      "pdfPage": 401,
+      "printedPage": "18",
+      "exactOriginalTranslation": "“Seek Allah's help with patience and salaat, and truly it is indeed hard except to the humble minded.” (II: 45).",
+      "proposedModernTranslation": "Seek Allah’s help through patience and salaat. It is truly difficult except for those who are humbly devoted. (II: 45).",
+      "reasonComment": "Qur’anic translation uses a dense construction (“truly it is indeed hard” and “humble minded”). Scholar review is required before any alternative wording could be considered.",
+      "normalizedReferenceMetadata": "2:45",
+      "reviewStatus": "draft"
+    },
+    {
+      "contentBlockId": "d0190000-0000-4000-8000-000000000001",
+      "pdfPage": 402,
+      "printedPage": "19",
+      "exactOriginalTranslation": "\"And enjoin salaat upon thy people and be thyself constant therein. We ask not of thee to provide sustenance. We provide it for thee. And the Hereafter is for the righteousness.” (XX: 132).\"",
+      "proposedModernTranslation": "And instruct your family to perform salaat, and remain steadfast in it. We do not ask you to provide sustenance; We provide it for you. And the Hereafter is for righteousness. (XX: 132).",
+      "reasonComment": "Qur’anic translation contains archaic pronouns “thy” and “thee”. Scholar review is required.",
+      "normalizedReferenceMetadata": "20:132",
+      "reviewStatus": "draft"
+    },
+    {
+      "contentBlockId": "d0190000-0000-4000-8000-000000000004",
+      "pdfPage": 402,
+      "printedPage": "19",
+      "exactOriginalTranslation": "\"There is no god save Allah—the Clement—the Bountiful. Glorified be Allah, the Lord of the tremendous throne. Praise be to Allah, the Lord of the worlds. I ask Thee all that leadeth to Thy Mercy and deserveth Thy forgiveness. I ask Thee abundance in all that is good and refuge from all that is evil. Leave me no sin but Thou pardonest it, and no distress but Thou removest it, and no need but Thou fulfillest it. O, most Merciful of those who show mercy!\"",
+      "proposedModernTranslation": "There is no god except Allah—the Clement—the Bountiful. Glorified is Allah, Lord of the tremendous throne. Praise belongs to Allah, Lord of the worlds. I ask You for everything that leads to Your mercy and deserves Your forgiveness. I ask You for an abundance of every good and protection from every evil. Leave no sin of mine unpardoned, no distress unremoved, and no need unfulfilled. O most Merciful of those who show mercy!",
+      "reasonComment": "Supplication translation contains repeated archaic pronouns and verb forms including “Thee”, “Thy”, “leadeth”, “deserveth”, “Thou”, “pardonest”, “removest”, and “fulfillest”. Scholar review is required.",
+      "normalizedReferenceMetadata": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "contentBlockId": "d0200000-0000-4000-8000-000000000003",
+      "pdfPage": 403,
+      "printedPage": "20",
+      "exactOriginalTranslation": "'Is it not He Who answereth the wronged one when he crieth unto Him, and removeth the evil . . .” (XXVII-62).",
+      "proposedModernTranslation": "Is He not the One Who answers the wronged person when he calls upon Him and removes the evil . . . (XXVII-62).",
+      "reasonComment": "Qur’anic translation contains archaic verb forms “answereth”, “crieth”, and “removeth”, and the construction “unto Him”. Scholar review is required.",
+      "normalizedReferenceMetadata": "27:62",
+      "reviewStatus": "draft"
+    },
+    {
+      "contentBlockId": "d0400000-0000-4000-8000-000000000002",
+      "pdfPage": 423,
+      "printedPage": "40",
+      "exactOriginalTranslation": "It is said in a hadith that, Allah bestows five favours on a person who is mindful of his salaat, viz: His daily bread is made easy for him; he is saved from the punishments in the grave; he shall receive his record in his right hand on the Day of Judgement; he shall cross the Siraat with the speed of lightning and he shall enter Paradise without reckoning. As for him who neglects his salaat, he shall meet five types of punishments in this world, three at the time of death, three in the grave and three after resurrection. Those in this world are: he is not blessed in life; he is deprived of the light with which the faces of the righteous are endowed; he receives no rewards for his good practices; his prayers are not answered; and he has no share in the prayers of the pious. Those at the time of death are: he dies disgracefully; he dies hungry; he dies in thirst; which the water in the oceans of the world cannot quench. Those in the grave are: He is so squeezed there that the ribs of one side penetrate into the ribs of the other side; fire is burnt inside for him and he is rolled on cinders day and night; a serpent with fiery eyes and iron nails equal in length to a days journey is let loose on him and shouts with a thundering voice, 'My Lord has charged me with thrashing you till sunrise for neglecting Fajr, till Asr for neglecting Zuhur, till sunset for neglecting Asr, till Ishaa",
+      "proposedModernTranslation": "It is said in a hadith that Allah bestows five favours on a person who is mindful of salaat: daily bread is made easy; the person is saved from punishment in the grave; receives the record in the right hand on the Day of Judgement; crosses the Siraat at the speed of lightning; and enters Paradise without reckoning. A person who neglects salaat faces five types of punishment in this world, three at death, three in the grave, and three after resurrection. In this world: life is not blessed; the light seen on the faces of the righteous is removed; good practices receive no reward; prayers are not answered; and there is no share in the prayers of the pious. At death: the person dies disgraced, hungry, and with a thirst that all the water in the world’s oceans cannot quench. In the grave: the person is squeezed until the ribs of one side penetrate the ribs of the other; a fire is lit and the person is rolled over its embers day and night; and a serpent with fiery eyes and iron nails, each as long as a day’s journey, is released and declares in a thunderous voice, “My Lord has commanded me to strike you until sunrise for neglecting Fajr, until Asr for neglecting Zuhur, until sunset for neglecting Asr, and until Ishaa…”",
+      "reasonComment": "Long Hadith translation uses repeated “shall” constructions and dense published syntax. This proposal is a review aid only and requires scholar review; the canonical text is unchanged.",
+      "normalizedReferenceMetadata": null,
+      "reviewStatus": "draft"
+    }
+  ]
+}

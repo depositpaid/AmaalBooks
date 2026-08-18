@@ -26,6 +26,8 @@ to send them to Supabase.
   schemaVersion: 1,
   datasetKind: "demo" | "production",
   bookId: UUID of an existing constituent book,
+  bookPartId?: UUID of the target constituent part,
+  pageWriteMode?: "existing" | "insert",
   edition: {
     id: UUID,
     editionLabel: string,
@@ -60,6 +62,8 @@ or generate printed chapter, section, Hadith, or page identifiers.
 ```text
 {
   pageId: UUID of an existing pages row,
+  bookPartId?: UUID of the target constituent part,
+  pageNumber?: integer compatibility locator,
   sourceShowsPrintedPageLabel: boolean,
   printedPageLabel: exact string visible in the scan, or null when none is shown,
   printedPageNumber: integer only when explicitly numeric, otherwise null,
@@ -78,6 +82,13 @@ or generate printed chapter, section, Hadith, or page identifiers.
   blocks: ContentBlockInput[]
 }
 ```
+
+`pageWriteMode: "insert"` is for fixed, pre-approved new page UUIDs. It requires
+`bookPartId` and `pageNumber` and calls `import_new_structured_page_v1`. That RPC
+fails on an existing page UUID, an existing `(book_id, book_part_id,
+page_number)`, or an existing source-document/PDF-page mapping. The compatibility
+page row and all structured nodes/blocks are committed in one transaction.
+Existing-page mode retains the original `import_structured_page_v1` behavior.
 
 `scanLanguages` declares what a human can see on the scan; it is not a
 substitute for transcription. Declaring `ar` requires at least one non-empty

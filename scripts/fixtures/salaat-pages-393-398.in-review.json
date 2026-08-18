@@ -1,0 +1,866 @@
+{
+  "schemaVersion": 1,
+  "datasetKind": "production",
+  "bookId": "25e9e7c2-ee8d-43e2-ae59-f93b6402922e",
+  "edition": {
+    "id": "a2000000-0000-4000-8000-000000000001",
+    "editionLabel": "Fazail-e-amaalComplete.pdf — Virtues of Salaat",
+    "publisher": "ALTAF & SONS",
+    "publicationLabel": null,
+    "isbn": null,
+    "languageCode": "en-ar",
+    "notes": "Six-page in-review transcription prepared only from the rendered authoritative scan. The book and page UUIDs are mapped to the supplied live identities; remaining preparation UUIDs must be reconciled before any approved import."
+  },
+  "sourceDocument": {
+    "id": "a3000000-0000-4000-8000-000000000001",
+    "originalFilename": "Fazail-e-amaalComplete.pdf",
+    "storagePath": null,
+    "sha256Checksum": null,
+    "pdfPageCount": 958,
+    "notes": "Authoritative local source PDF; source file was not modified."
+  },
+  "importBatch": {
+    "id": "a4000000-0000-4000-8000-000000000001",
+    "importedBy": "scan-transcription-preparation",
+    "notes": "Preparation only. Do not import until technical IDs and transcription have received human approval."
+  },
+  "pages": [
+    {
+      "pageId": "8dc420ec-c6b6-462e-943c-6ed8d40df762",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "10",
+      "printedPageNumber": 10,
+      "pdfPageNumber": 393,
+      "sequenceIndex": 0,
+      "verificationStatus": "in_review",
+      "scanLanguages": ["en"],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": false,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": "8dc420ec-c6b6-462e-943c-6ed8d40df762",
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "b0100000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6000000-0000-4000-8000-000000000001",
+          "sequenceIndex": 0,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "PART I",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "b0100000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6000000-0000-4000-8000-000000000001",
+          "sequenceIndex": 1,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "IMPORTANCE OF SALAAT",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "b0100000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6000000-0000-4000-8000-000000000001",
+          "sequenceIndex": 2,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "There are two Chapters in this part. The first one is on ‘Importance of salaat,’ and the second of ‘Warning and Reproach’ for those who neglect or discard salaat.",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        }
+      ]
+    },
+    {
+      "pageId": "49427b68-478b-44f2-b6ff-bbcdd98b2111",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "11",
+      "printedPageNumber": 11,
+      "pdfPageNumber": 394,
+      "sequenceIndex": 1,
+      "verificationStatus": "in_review",
+      "scanLanguages": ["en", "ar"],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": "8dc420ec-c6b6-462e-943c-6ed8d40df762",
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": "49427b68-478b-44f2-b6ff-bbcdd98b2111",
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000001",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—I",
+          "sourceIdentifier": "I",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": "49427b68-478b-44f2-b6ff-bbcdd98b2111",
+          "endPageId": "7fe43692-e5f8-4fa3-b50a-a709113bdda3"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "b0110000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6100000-0000-4000-8000-000000000001",
+          "sequenceIndex": 0,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "CHAPTER I",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "b0110000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6100000-0000-4000-8000-000000000001",
+          "sequenceIndex": 1,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "THE REWARDS OF SALAAT",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "b0110000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000001",
+          "sequenceIndex": 2,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith.—I",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "b0110000-0000-4000-8000-000000000004",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000001",
+          "sequenceIndex": 3,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "عَنِ ابْنِ عُمَرَ رَضِيَ اللهُ عَنْهُ قَالَ قَالَ رَسُولُ اللهِ ﷺ بُنِيَ الْإِسْلَامُ عَلَى خَمْسٍ شَهَادَةِ أَنْ لَا إِلٰهَ إِلَّا اللهُ وَأَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ وَإِقَامِ الصَّلَاةِ وَإِيتَاءِ الزَّكَاةِ وَالْحَجِّ وَصَوْمِ رَمَضَانَ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Arabic Hadith text compared word by word against the 600-DPI render of PDF page 394. All visible words and letters are resolved. Some fine vowel-mark shapes remain indistinguishable from scan noise; no lexical uncertainty remains."
+        },
+        {
+          "id": "b0110000-0000-4000-8000-000000000005",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000001",
+          "sequenceIndex": 4,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "(مُتَّفَقٌ عَلَيْهِ) وَقَالَ الْمُنْذِرِيُّ فِي التَّرْغِيبِ رَوَاهُ الْبُخَارِيُّ وَمُسْلِمٌ وَغَيْرُهُمَا عَنْ غَيْرِ وَاحِدٍ مِنَ الصَّحَابَةِ",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Small Arabic source/reference line independently compared against the 600-DPI render. All words and letters are resolved; fine vocalisation shapes that merge with the scan are not independently certifiable."
+        },
+        {
+          "id": "b0110000-0000-4000-8000-000000000006",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000001",
+          "sequenceIndex": 5,
+          "blockType": "translation",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadhrat Abdullah bin Umar (Radhiyallaho anho) narrates that he heard the Prophet (Sallallaho alaihe wasallam) saying: “Islam is founded on five pillars: bearing witness that there is no god but Allah, and Muhammad (Sallallaho alaihe wasallam) is His servant and apostle; establishment of salaat; paying of Zakaat; performance of Hajj; and fasting in Ramadhaan.”",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "b0110000-0000-4000-8000-000000000007",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000001",
+          "sequenceIndex": 6,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "The Prophet (Sallallaho alaihe wasallam) has compared Islam to a canopy resting on five supports. The Kalimah is the central support and the other four pillars of Islam are, so to say, the remaining four supports, one at each corner of the canopy. Without the central support, the canopy cannot possibly stand; and if any one of the corner supports is missing, a collapse will result in the defective corner. Now, let us judge for ourselves how far we have kept up the canopy of Islam. Is there really any pillar that is being held in its proper place? The five pillars of Islam mentioned in this Hadith signify the most essential duties of a Muslim. Although a Muslim cannot do without any one of them, yet salaat in Islam occupies a position next only to Imaan. Hadhrat Abdullah bin Mas’ood (Radhiyallaho anho) says: “Once, I inquired of the Holy Prophet (Sallallaho alaihe wasallam), which act (of man) was the dearest to Allah. The Prophet replied, ‘salaat’. I then inquired which act came next (in order of merit) and the Prophet replied.”",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Hadith.—I commentary continues on printed page 12."
+        }
+      ]
+    },
+    {
+      "pageId": "7fe43692-e5f8-4fa3-b50a-a709113bdda3",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "12",
+      "printedPageNumber": 12,
+      "pdfPageNumber": 395,
+      "sequenceIndex": 2,
+      "verificationStatus": "in_review",
+      "scanLanguages": ["en", "ar"],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": "8dc420ec-c6b6-462e-943c-6ed8d40df762",
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": "49427b68-478b-44f2-b6ff-bbcdd98b2111",
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000001",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—I",
+          "sourceIdentifier": "I",
+          "title": null,
+          "sequenceIndex": 2,
+          "startPageId": "49427b68-478b-44f2-b6ff-bbcdd98b2111",
+          "endPageId": "7fe43692-e5f8-4fa3-b50a-a709113bdda3"
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000002",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—II",
+          "sourceIdentifier": "II",
+          "title": null,
+          "sequenceIndex": 3,
+          "startPageId": "7fe43692-e5f8-4fa3-b50a-a709113bdda3",
+          "endPageId": "7fe43692-e5f8-4fa3-b50a-a709113bdda3"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "b0120000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000001",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "‘Kindness to parents’. I again asked what was next and he answered ‘Jihaad’.",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Continuation and conclusion of Hadith.—I commentary from printed page 11."
+        },
+        {
+          "id": "b0120000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000001",
+          "sequenceIndex": 1,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Mulla Ali Qari (Rahmatullah alaih) has quoted this Hadith in support of the belief that salaat is the most important religious duty after Imaan. This is further corroborated by a hadith, in which the Holy Prophet (Sallallaho alaihe wasallam) is reported to have said:",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "b0120000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000001",
+          "sequenceIndex": 2,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "الصلاة خير موضوع",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Base Unicode text matches the visibly unvocalised short quotation; no additional decorative vocalisation was inferred."
+        },
+        {
+          "id": "b0120000-0000-4000-8000-000000000004",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000001",
+          "sequenceIndex": 3,
+          "blockType": "translation",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "“Salaat is the best of all that has been ordained by Allah.”",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "b0120000-0000-4000-8000-000000000005",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000002",
+          "sequenceIndex": 4,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith.—II",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "b0120000-0000-4000-8000-000000000006",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000002",
+          "sequenceIndex": 5,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "عَنْ أَبِي ذَرٍّ رَضِيَ اللهُ عَنْهُ أَنَّ النَّبِيَّ ﷺ خَرَجَ فِي الشِّتَاءِ وَالْوَرَقُ يَتَهَافَتُ فَأَخَذَ بِغُصْنٍ مِنْ شَجَرَةٍ قَالَ فَجَعَلَ ذٰلِكَ الْوَرَقُ يَتَهَافَتُ قَالَ فَقَالَ يَا أَبَا ذَرٍّ قُلْتُ لَبَّيْكَ يَا رَسُولَ اللهِ ﷺ قَالَ إِنَّ الْعَبْدَ الْمُسْلِمَ لَيُصَلِّي الصَّلَاةَ يُرِيدُ بِهَا وَجْهَ اللهِ فَتَتَهَافَتُ عَنْهُ ذُنُوبُهُ كَمَا يَتَهَافَتُ هٰذَا الْوَرَقُ عَنْ هٰذِهِ الشَّجَرَةِ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Compared word by word against the 600-DPI render of PDF page 395; lexical correction made to فتتهافت. All words and letters are resolved. Fine vowel-mark shapes merged with scan noise remain non-lexically indistinguishable."
+        },
+        {
+          "id": "b0120000-0000-4000-8000-000000000007",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000002",
+          "sequenceIndex": 6,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "(رَوَاهُ أَحْمَدُ بِإِسْنَادٍ حَسَنٍ كَذَا فِي التَّرْغِيبِ)",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Small Arabic source/reference line independently compared against the 600-DPI render. All words and letters are resolved; fine vocalisation shapes that merge with the scan are not independently certifiable."
+        },
+        {
+          "id": "b0120000-0000-4000-8000-000000000008",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000002",
+          "sequenceIndex": 7,
+          "blockType": "translation",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadhrat Abu Zar (Radhiyallaho anho) narrates that once the Holy Prophet (Sallallaho alaihe wasallam) came out of his house. It was autumn and the leaves were falling off the trees. He caught hold of a branch of a tree and its leaves began to drop in large number. At this he remarked, ‘O, Abu Zar! (Radhiyallaho anho) when a Muslim offers his salaat to please Allah, his sins are shed away from him just as these leaves are falling off this tree.’",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "b0120000-0000-4000-8000-000000000009",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000002",
+          "sequenceIndex": 8,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "In autumn, usually, the leaves of the trees fall in large numbers, so much so that on some trees not a single leaf is left behind. The same is the effect of salaat performed with sincerity and devotion. All the sins of the person offering salaat are wiped off. It should, however, be remembered that according to the verdict of the theologians, it is only the saghaa’ir (minor sins) that are forgiven by the performance of salaat and other services. The kabaa’ir (major sins) are not pardoned without repentance. We should, therefore, in addition to saying salaat, be particular about doing taubah (repentance) and istighfaar (seeking forgiveness). Allah may, however, pardon, by His bountiful Grace, even the kabaa’ir of any person because of his salaat.",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Hadith.—II commentary continues on printed page 13."
+        }
+      ]
+    },
+    {
+      "pageId": "45e2f471-bead-45ec-bfd1-2ac1b6bc7b80",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "13",
+      "printedPageNumber": 13,
+      "pdfPageNumber": 396,
+      "sequenceIndex": 3,
+      "verificationStatus": "in_review",
+      "scanLanguages": ["en", "ar"],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": "8dc420ec-c6b6-462e-943c-6ed8d40df762",
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": "49427b68-478b-44f2-b6ff-bbcdd98b2111",
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000003",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—III",
+          "sourceIdentifier": "III",
+          "title": null,
+          "sequenceIndex": 4,
+          "startPageId": "45e2f471-bead-45ec-bfd1-2ac1b6bc7b80",
+          "endPageId": "40cbbcb7-6008-41d6-855a-b35c31ed6096"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "b0130000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000003",
+          "sequenceIndex": 0,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith.—III",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "b0130000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000003",
+          "sequenceIndex": 1,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "عَنْ أَبِي عُثْمَانَ رَضِيَ اللهُ عَنْهُ قَالَ كُنْتُ مَعَ سَلْمَانَ تَحْتَ شَجَرَةٍ فَأَخَذَ غُصْنًا مِنْهَا يَابِسًا فَهَزَّهُ حَتَّى تَحَاتَّ وَرَقُهُ ثُمَّ قَالَ يَا أَبَا عُثْمَانَ أَلَا تَسْأَلُنِي لِمَ أَفْعَلُ هٰذَا قُلْتُ وَلِمَ تَفْعَلُهُ قَالَ هٰكَذَا فَعَلَ بِي رَسُولُ اللهِ ﷺ وَأَنَا مَعَهُ تَحْتَ الشَّجَرَةِ فَأَخَذَ غُصْنًا يَابِسًا فَهَزَّهُ حَتَّى تَحَاتَّ وَرَقُهُ ثُمَّ قَالَ يَا سَلْمَانُ أَلَا تَسْأَلُنِي لِمَ أَفْعَلُ هٰذَا قُلْتُ وَلِمَ تَفْعَلُهُ قَالَ إِنَّ الْمُسْلِمَ إِذَا تَوَضَّأَ فَأَحْسَنَ الْوُضُوءَ ثُمَّ صَلَّى الصَّلَوَاتِ الْخَمْسَ تَحَاتَّتْ خَطَايَاهُ كَمَا تَحَاتَّ هٰذَا الْوَرَقُ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Hadith Arabic, distinct from the Qur’anic quotation later on this page. Compared word by word against the 600-DPI render of PDF page 396; restored حتى تحات ورقه in the first clause and aligned تحت الشجرة and the second فأخذ phrase to the scan. All words and letters are resolved. Some fine vowel-mark shapes remain indistinguishable from scan noise."
+        },
+        {
+          "id": "b0130000-0000-4000-8000-000000000004",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000003",
+          "sequenceIndex": 2,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "(رَوَاهُ أَحْمَدُ وَالنَّسَائِيُّ وَالطَّبَرَانِيُّ وَرُوَاةُ أَحْمَدَ مُحْتَجٌّ بِهِمْ فِي الصَّحِيحِ إِلَّا عَلِيَّ بْنَ زَيْدٍ كَذَا فِي التَّرْغِيبِ)",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Small Arabic source/reference line independently compared against the 600-DPI render. All words and letters are resolved; fine vocalisation shapes that merge with the scan are not independently certifiable."
+        },
+        {
+          "id": "b0130000-0000-4000-8000-000000000005",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000003",
+          "sequenceIndex": 3,
+          "blockType": "translation",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadhrat Abu Uthman (Radhiyallaho anho) says: “I was once sitting under a tree with Hadhrat Salmaan (Radhiyallaho anho). He caught hold of a dry branch of the tree and shook it till all its leaves fell off. He then said to me, ‘O, Abu Uthman! (Radhiyallaho anho) Will you not ask me why I am doing this?’ ‘Do tell me,’ I entreated. He said, ‘The Apostle of Allah had done exactly like this before me, while I was with him under a tree. He caught a dry branch of it and shook it, till all its leaves fell off’. At this he said: ‘O, Salmaan! (Radhiyallaho anho) will you not ask me why I am doing this?’ I replied: ‘Do tell me why you are doing this?’ He remarked: ‘Verily, when a Muslim takes wudhu properly and then observes his salaat five times a day, his sins fall off just as these leaves have fallen off’. He then recited the following verse of the Holy Qur’an:",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "b0130000-0000-4000-8000-000000000006",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000003",
+          "sequenceIndex": 4,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "أَقِمِ الصَّلَاةَ طَرَفَيِ النَّهَارِ وَزُلَفًا مِنَ اللَّيْلِ إِنَّ الْحَسَنَاتِ يُذْهِبْنَ السَّيِّئَاتِ ذٰلِكَ ذِكْرَىٰ لِلذَّاكِرِينَ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Qur’anic Arabic verse, visually distinct from the Hadith Arabic above. Every word and letter was compared against the 600-DPI render; fine vocalisation/calligraphic shapes that cannot be separated from scan noise are not claimed as independently verified."
+        },
+        {
+          "id": "b0130000-0000-4000-8000-000000000007",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000003",
+          "sequenceIndex": 5,
+          "blockType": "translation",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "“Establish salaat at the two ends of the day and at the approaches of the night. Verily, good deeds annul ill deeds. This is a reminder for the mindful. (XI: 114)”",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "English Qur’anic translation."
+        },
+        {
+          "id": "b0130000-0000-4000-8000-000000000008",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000003",
+          "sequenceIndex": 6,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "The behaviour of Hadhrat Salmaan (Radhiyallaho anho) in the above hadith displays the profound love which the Sahabah had for the Prophet (Sallallaho alaihe",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Sentence continues on printed page 14."
+        }
+      ]
+    },
+    {
+      "pageId": "1f03c4b7-6cc8-44ab-af97-ca836c4cd552",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "14",
+      "printedPageNumber": 14,
+      "pdfPageNumber": 397,
+      "sequenceIndex": 4,
+      "verificationStatus": "in_review",
+      "scanLanguages": ["en", "ar"],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": "8dc420ec-c6b6-462e-943c-6ed8d40df762",
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": "49427b68-478b-44f2-b6ff-bbcdd98b2111",
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000003",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—III",
+          "sourceIdentifier": "III",
+          "title": null,
+          "sequenceIndex": 4,
+          "startPageId": "45e2f471-bead-45ec-bfd1-2ac1b6bc7b80",
+          "endPageId": "40cbbcb7-6008-41d6-855a-b35c31ed6096"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "b0140000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000003",
+          "sequenceIndex": 0,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "wasallam). They would often cherish the sweet memories of the time when the Prophet (Sallallaho alaihe wasallam) was living among them. They would, while quoting him, enact exactly what they had seen him doing at a particular moment. It is really very difficult to cover all the traditions of the Holy Prophet (Sallallaho alaihe wasallam), which deal with the importance of salaat and which declare forgiveness for those who guard it. As had already been said before, the theologians restrict this declaration of forgiveness to saghaa’ir (minor sins) only; but in the text of the hadith there is no such restriction. My learned father gave me two reasons for this. Firstly, it does not really become a Muslim to commit any of the kabaa’ir (major sins). If perchance any such sins are committed by him, he cannot rest in peace (due to inherent fear of Allah in him) until he washes them with his tears of repentance in crying before Allah. Secondly, the person who performs his salaat with sincerity and thoroughness is very likely to do istighfaar quite a number of times daily. Look for instance at the closing prayer of salaat itself, viz:",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Continuing English commentary for Hadith.—III."
+        },
+        {
+          "id": "b0140000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000003",
+          "sequenceIndex": 1,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "اللَّهُمَّ إِنِّي ظَلَمْتُ نَفْسِي ظُلْمًا كَثِيرًا وَلَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ فَاغْفِرْ لِي مَغْفِرَةً مِنْ عِنْدِكَ وَارْحَمْنِي إِنَّكَ أَنْتَ الْغَفُورُ الرَّحِيمُ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Arabic supplication/quotation compared word by word against the 600-DPI render of PDF page 397. All words and letters are resolved. Some fine vowel-mark shapes remain indistinguishable from scan noise and are not claimed as independently verified."
+        },
+        {
+          "id": "b0140000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000003",
+          "sequenceIndex": 2,
+          "blockType": "translation",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "“O, My Lord! I have wronged my soul a great wrong, and none forgiveth sins save Thou alone. Then forgive me and have mercy on me. Verily, Thou art the Forgiving, the Merciful.”",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "b0140000-0000-4000-8000-000000000004",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000003",
+          "sequenceIndex": 3,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "In the above hadith, mention is made of wudhu to be done properly. We should, therefore, be sure of the regulations about wudhu and try to observe all of these. For example, take the case of miswaak. It is sunnat of wudhu, but is very often neglected. It is said in a hadith that the salaat offered after doing miswaak is seventy times superior to the salaat without miswaak. In another hadith, use of miswaak has been enjoined very strongly and the following benefits are attributed to it:— “It cleanses and sweetens the mouth and checks its bad smell.” “It is a cause of Allah’s pleasure and a blow to the Devil.”",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Following English commentary; Hadith.—III continues beyond this page."
+        }
+      ]
+    },
+    {
+      "pageId": "40cbbcb7-6008-41d6-855a-b35c31ed6096",
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "15",
+      "printedPageNumber": 15,
+      "pdfPageNumber": 398,
+      "sequenceIndex": 5,
+      "verificationStatus": "in_review",
+      "scanLanguages": ["en", "ar"],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true
+      },
+      "structuralNodes": [
+        {
+          "id": "a6000000-0000-4000-8000-000000000001",
+          "parentId": null,
+          "nodeType": "section",
+          "sourceLabel": "PART I",
+          "sourceIdentifier": "I",
+          "title": "IMPORTANCE OF SALAAT",
+          "sequenceIndex": 0,
+          "startPageId": "8dc420ec-c6b6-462e-943c-6ed8d40df762",
+          "endPageId": null
+        },
+        {
+          "id": "a6100000-0000-4000-8000-000000000001",
+          "parentId": "a6000000-0000-4000-8000-000000000001",
+          "nodeType": "chapter",
+          "sourceLabel": "CHAPTER I",
+          "sourceIdentifier": "I",
+          "title": "THE REWARDS OF SALAAT",
+          "sequenceIndex": 1,
+          "startPageId": "49427b68-478b-44f2-b6ff-bbcdd98b2111",
+          "endPageId": null
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000003",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—III",
+          "sourceIdentifier": "III",
+          "title": null,
+          "sequenceIndex": 4,
+          "startPageId": "45e2f471-bead-45ec-bfd1-2ac1b6bc7b80",
+          "endPageId": "40cbbcb7-6008-41d6-855a-b35c31ed6096"
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000004",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—IV(a)",
+          "sourceIdentifier": "IV(a)",
+          "title": null,
+          "sequenceIndex": 5,
+          "startPageId": "40cbbcb7-6008-41d6-855a-b35c31ed6096",
+          "endPageId": "40cbbcb7-6008-41d6-855a-b35c31ed6096"
+        },
+        {
+          "id": "a6200000-0000-4000-8000-000000000005",
+          "parentId": "a6100000-0000-4000-8000-000000000001",
+          "nodeType": "hadith",
+          "sourceLabel": "Hadith.—IV(b)",
+          "sourceIdentifier": "IV(b)",
+          "title": null,
+          "sequenceIndex": 6,
+          "startPageId": "40cbbcb7-6008-41d6-855a-b35c31ed6096",
+          "endPageId": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "b0150000-0000-4000-8000-000000000001",
+          "structuralNodeId": "a6000000-0000-4000-8000-000000000001",
+          "sequenceIndex": 0,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Part I (a)—Importance of Salaat",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "b0150000-0000-4000-8000-000000000002",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000003",
+          "sequenceIndex": 1,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "“Allah and his angels love the person doing miswaak.” “It strengthens the gums and improves eye-sight.” “It is a purge against bile and phlegm.” To crown all, “It is a sunnah i.e. the practice of our beloved Prophet (Sallallaho alaihe wasallam).” As many as seventy virtues of the miswaak have been enumerated by the theologians. It is said that a person in the habit of miswaak dies with the Kalimah on his lips. The rewards of taking wudhu properly are very many. It is mentioned in ahaadith that the parts of body washed in wudhu shall glitter on the Day of Judgement and, by this (distinction), the Prophet (Sallallaho alaihe wasallam) will at once recognise his followers.",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Continuation and conclusion of Hadith.—III commentary from printed page 14."
+        },
+        {
+          "id": "b0150000-0000-4000-8000-000000000003",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000004",
+          "sequenceIndex": 2,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith.—IV(a)",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "b0150000-0000-4000-8000-000000000004",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000004",
+          "sequenceIndex": 3,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "عَنْ أَبِي هُرَيْرَةَ رَضِيَ اللهُ عَنْهُ قَالَ سَمِعْتُ رَسُولَ اللهِ ﷺ يَقُولُ أَرَأَيْتُمْ لَوْ أَنَّ نَهْرًا بِبَابِ أَحَدِكُمْ يَغْتَسِلُ فِيهِ كُلَّ يَوْمٍ خَمْسَ مَرَّاتٍ هَلْ يَبْقَى مِنْ دَرَنِهِ شَيْءٌ قَالُوا لَا يَبْقَى مِنْ دَرَنِهِ شَيْءٌ قَالَ فَكَذٰلِكَ مَثَلُ الصَّلَوَاتِ الْخَمْسِ يَمْحُو اللهُ بِهِنَّ الْخَطَايَا",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Hadith.—IV(a) Arabic compared word by word in two visual passes against the 600-DPI render of PDF page 398. All visible words and letters are resolved; fine vocalisation shapes indistinguishable from scan noise are not claimed as independently verified."
+        },
+        {
+          "id": "b0150000-0000-4000-8000-000000000005",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000004",
+          "sequenceIndex": 4,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "رَوَاهُ الْبُخَارِيُّ وَمُسْلِمٌ وَالتِّرْمِذِيُّ وَالنَّسَائِيُّ وَرَوَاهُ ابْنُ مَاجَهْ مِنْ حَدِيثِ عُثْمَانَ",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Small Arabic source/reference line independently compared against the 600-DPI scan. Every word and letter is represented; fine vowel marks merged with scan noise remain non-lexically indistinguishable."
+        },
+        {
+          "id": "b0150000-0000-4000-8000-000000000006",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000004",
+          "sequenceIndex": 5,
+          "blockType": "translation",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "“Hadhrat Abu Hurairah (Radhiyallaho anho) narrates that once the Prophet (Sallallaho alaihe wasallam) asked his companions, ‘Do you believe that dirt can remain on a person bathing five times a day in a brook running in front of his door?’ ‘No’, replied the companions, ‘No dirt can remain on his body’. The Prophet (Sallallaho alaihe wasallam) remarked: ‘So, exactly similar is the effect of salaat offered five times a day. With the Grace of Allah, it washes away all the sins’.”",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "b0150000-0000-4000-8000-000000000007",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000005",
+          "sequenceIndex": 6,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith.—IV(b)",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review"
+        },
+        {
+          "id": "b0150000-0000-4000-8000-000000000008",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000005",
+          "sequenceIndex": 7,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "عَنْ جَابِرٍ رَضِيَ اللهُ عَنْهُ قَالَ قَالَ رَسُولُ اللهِ ﷺ مَثَلُ الصَّلَوَاتِ الْخَمْسِ كَمَثَلِ نَهْرٍ جَارٍ غَمْرٍ عَلَى بَابِ أَحَدِكُمْ يَغْتَسِلُ مِنْهُ كُلَّ يَوْمٍ خَمْسَ مَرَّاتٍ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Hadith.—IV(b) Arabic compared word by word in two visual passes against the 600-DPI render of PDF page 398. All visible words and letters are resolved; fine vocalisation shapes indistinguishable from scan noise are not claimed as independently verified."
+        },
+        {
+          "id": "b0150000-0000-4000-8000-000000000009",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000005",
+          "sequenceIndex": 8,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "رَوَاهُ مُسْلِمٌ كَذَا فِي التَّرْغِيبِ",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Small Arabic source/reference line independently compared against the 600-DPI scan. Every word and letter is represented; fine vowel marks merged with scan noise remain non-lexically indistinguishable."
+        },
+        {
+          "id": "b0150000-0000-4000-8000-000000000010",
+          "structuralNodeId": "a6200000-0000-4000-8000-000000000005",
+          "sequenceIndex": 9,
+          "blockType": "translation",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "“Hadhrat Jaabir (Radhiyallaho anho) narrates that he heard the Prophet (Sallallaho alaihe wasallam) saying:",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Hadith.—IV(b) English translation continues on printed page 16."
+        }
+      ]
+    }
+  ]
+}

@@ -26,10 +26,11 @@ import {
 import { AppColors, AppFonts, AppSpacing, AppRadius } from '@/lib/theme';
 import { removeBookmark } from '@/lib/database';
 import { supabase } from '@/lib/supabase';
-import type { Bookmark as BookmarkType, Book } from '@/types';
+import type { Bookmark as BookmarkType, Book, Page } from '@/types';
 
 interface BookmarkWithBook extends BookmarkType {
   book: Book;
+  page: Pick<Page, 'id' | 'printed_page_label' | 'book_part_id'> | null;
 }
 
 type SortMode = 'recent' | 'book';
@@ -58,7 +59,7 @@ export default function BookmarksScreen() {
       setError(null);
       const { data, error: queryError } = await supabase
         .from('bookmarks')
-        .select('*, book:books(*)')
+        .select('*, book:books(*), page:pages(id, printed_page_label, book_part_id)')
         .order('created_at', { ascending: false });
       if (queryError) throw queryError;
       setBookmarks((data || []) as unknown as BookmarkWithBook[]);
@@ -92,8 +93,14 @@ export default function BookmarksScreen() {
     }
   };
 
-  const openBook = (bookId: string, pageNumber: number) => {
-    router.push({ pathname: `/reader/${bookId}`, params: { page: String(pageNumber) } });
+  const openBook = (bookId: string, pageNumber: number, pageId?: string | null) => {
+    router.push({
+      pathname: `/reader/${bookId}`,
+      params: {
+        page: String(pageNumber),
+        ...(pageId ? { pageId } : {}),
+      },
+    });
   };
 
   const formatDate = (iso: string) => {
@@ -185,7 +192,7 @@ export default function BookmarksScreen() {
       <TouchableOpacity
         style={styles.bookmarkMain}
         activeOpacity={0.75}
-        onPress={() => openBook(item.book_id, item.page_number)}
+        onPress={() => openBook(item.book_id, item.page_number, item.page_id)}
       >
         <View style={styles.iconColumn}>
           <View style={[styles.bookmarkIcon, { backgroundColor: item.book.color_accent || AppColors.primary }]}>
@@ -198,7 +205,7 @@ export default function BookmarksScreen() {
             {item.note || item.book.title}
           </Text>
           <Text style={styles.bookmarkMeta} numberOfLines={1}>
-            {item.book.title} · Page {item.page_number}
+            {item.book.title} · Page {item.page?.printed_page_label || item.page_number}
           </Text>
           <Text style={styles.bookmarkDate}>
             {formatTime(item.created_at)} · {formatDate(item.created_at)}

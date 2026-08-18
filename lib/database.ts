@@ -91,6 +91,7 @@ export async function fetchPagesForBookPart(
       .eq('book_id', bookId)
       .eq('book_part_id', bookPartId)
       .order('sequence_index', { ascending: true, nullsFirst: false })
+      .order('pdf_page_number', { ascending: true, nullsFirst: false })
       .order('page_number', { ascending: true })
       .order('id', { ascending: true })
       .range(from, to)
@@ -98,15 +99,53 @@ export async function fetchPagesForBookPart(
 }
 
 export async function fetchPages(bookId: string): Promise<Page[]> {
-  return fetchAllRows<Page>((from, to) =>
-    supabase
-      .from('pages')
-      .select('*')
-      .eq('book_id', bookId)
-      .order('page_number', { ascending: true })
-      .order('id', { ascending: true })
-      .range(from, to)
+  const [pages, parts] = await Promise.all([
+    fetchAllRows<Page>((from, to) =>
+      supabase
+        .from('pages')
+        .select('*')
+        .eq('book_id', bookId)
+        // Stable server ordering is required for safe pagination. Reader order
+        // is applied after every row has been fetched.
+        .order('id', { ascending: true })
+        .range(from, to)
+    ),
+    fetchBookParts(bookId),
+  ]);
+
+  const partSequence = new Map(parts.map((part) => [part.id, part.sequence_index]));
+  return pages.sort((first, second) => comparePagesForReading(first, second, partSequence));
+}
+
+function compareNullableNumbers(first: number | null | undefined, second: number | null | undefined) {
+  if (first == null && second == null) return 0;
+  if (first == null) return 1;
+  if (second == null) return -1;
+  return first - second;
+}
+
+function comparePagesForReading(
+  first: Page,
+  second: Page,
+  partSequence: ReadonlyMap<string, number> = new Map()
+): number {
+  // PDF position is authoritative for structured pages. Legacy rows have no
+  // source metadata, so their compatibility page_number remains the fallback.
+  const sourceOrder =
+    (first.pdf_page_number ?? first.page_number) -
+    (second.pdf_page_number ?? second.page_number);
+  if (sourceOrder !== 0) return sourceOrder;
+
+  const partOrder = compareNullableNumbers(
+    first.book_part_id ? partSequence.get(first.book_part_id) : null,
+    second.book_part_id ? partSequence.get(second.book_part_id) : null
   );
+  if (partOrder !== 0) return partOrder;
+
+  const sequenceOrder = compareNullableNumbers(first.sequence_index, second.sequence_index);
+  if (sequenceOrder !== 0) return sequenceOrder;
+  if (first.page_number !== second.page_number) return first.page_number - second.page_number;
+  return first.id.localeCompare(second.id);
 }
 
 function toReaderVerificationStatus(
@@ -332,14 +371,47 @@ export async function deletePage(pageId: string): Promise<void> {
   if (error) throw error;
 }
 
-export async function addPage(bookId: string, pageNumber: number, content: string, chapterTitle: string | null = null): Promise<Page> {
+export async function addPage(
+  bookId: string,
+  pageNumber: number,
+  content: string,
+  chapterTitle: string | null = null,
+  bookPartId: string | null = null
+): Promise<Page> {
   const { data, error } = await supabase
     .from('pages')
-    .insert({ book_id: bookId, page_number: pageNumber, content, chapter_title: chapterTitle })
+    .insert({
+      book_id: bookId,
+      book_part_id: bookPartId,
+      page_number: pageNumber,
+      content,
+      chapter_title: chapterTitle,
+    })
     .select()
     .single();
   if (error) throw error;
   return data;
+}
+
+export async function fetchNextPageNumber(
+  bookId: string,
+  bookPartId: string | null = null
+): Promise<number> {
+  let query = supabase
+    .from('pages')
+    .select('page_number')
+    .eq('book_id', bookId);
+
+  query = bookPartId
+    ? query.eq('book_part_id', bookPartId)
+    : query.is('book_part_id', null);
+
+  const { data, error } = await query
+    .order('page_number', { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  if (error) throw error;
+  return data ? data.page_number + 1 : 1;
 }
 
 export async function fetchBookmarks(bookId?: string): Promise<Bookmark[]> {
@@ -355,11 +427,17 @@ export async function fetchBookmarks(bookId?: string): Promise<Bookmark[]> {
 export async function addBookmark(
   bookId: string,
   pageNumber: number,
-  note?: string
+  note?: string,
+  pageId?: string | null
 ): Promise<Bookmark> {
   const { data, error } = await supabase
     .from('bookmarks')
-    .insert({ book_id: bookId, page_number: pageNumber, note: note || null })
+    .insert({
+      book_id: bookId,
+      page_number: pageNumber,
+      page_id: pageId ?? null,
+      note: note || null,
+    })
     .select()
     .single();
   if (error) throw error;
@@ -386,12 +464,14 @@ export async function fetchReadingProgress(
 export async function saveReadingProgress(
   bookId: string,
   currentPage: number,
-  scrollOffset: number = 0
+  scrollOffset: number = 0,
+  pageId?: string | null
 ): Promise<void> {
   const { error } = await supabase.from('reading_progress').upsert(
     {
       book_id: bookId,
       current_page: currentPage,
+      page_id: pageId ?? null,
       scroll_offset: scrollOffset,
       updated_at: new Date().toISOString(),
     },
@@ -410,11 +490,11 @@ export async function searchInBook(
       .select('*')
       .eq('book_id', bookId)
       .ilike('content', `%${query}%`)
-      .order('page_number', { ascending: true })
       .order('id', { ascending: true })
       .range(from, to)
   );
 
+  data.sort((first, second) => comparePagesForReading(first, second));
   return data.map((page) => {
     const lowerContent = page.content.toLowerCase();
     const lowerQuery = query.toLowerCase();
@@ -439,10 +519,17 @@ export async function searchInAllBooks(
       .select('*, book:books(*)')
       .ilike('content', `%${query}%`)
       .order('book_id', { ascending: true })
-      .order('page_number', { ascending: true })
       .order('id', { ascending: true })
       .range(from, to) as unknown as PromiseLike<PaginatedResponse<SearchRow>>
   );
+
+  data.sort((first, second) => {
+    const bookOrder =
+      first.book.sort_order - second.book.sort_order ||
+      first.book.title.localeCompare(second.book.title) ||
+      first.book.id.localeCompare(second.book.id);
+    return bookOrder || comparePagesForReading(first, second);
+  });
 
   return data.map((row) => {
     const page = row as unknown as Page;

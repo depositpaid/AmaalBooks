@@ -50,9 +50,15 @@ const SCROLL_SPEEDS = [
 ];
 
 export default function ReaderScreen() {
-  const { id, page: pageParam, highlight: highlightParam } = useLocalSearchParams<{
+  const {
+    id,
+    page: pageParam,
+    pageId: pageIdParam,
+    highlight: highlightParam,
+  } = useLocalSearchParams<{
     id: string;
     page?: string;
+    pageId?: string;
     highlight?: string;
   }>();
   const router = useRouter();
@@ -155,14 +161,25 @@ export default function ReaderScreen() {
 
       // Determine starting page
       let startIndex = 0;
-      if (pageParam) {
+      let requestedIndex = -1;
+      if (pageIdParam) {
+        requestedIndex = pagesData.findIndex((page) => page.id === pageIdParam);
+      }
+      if (requestedIndex < 0 && pageParam) {
         const requestedPage = parseInt(pageParam, 10);
-        const idx = pagesData.findIndex((p) => p.legacyPageNumber === requestedPage);
-        if (idx >= 0) startIndex = idx;
-      } else {
+        requestedIndex = pagesData.findIndex((p) => p.legacyPageNumber === requestedPage);
+      }
+      if (requestedIndex >= 0) {
+        startIndex = requestedIndex;
+      } else if (!pageIdParam && !pageParam) {
         const progress = await fetchReadingProgress(id);
         if (progress) {
-          const idx = pagesData.findIndex((p) => p.legacyPageNumber === progress.current_page);
+          const pageIdIndex = progress.page_id
+            ? pagesData.findIndex((page) => page.id === progress.page_id)
+            : -1;
+          const idx = pageIdIndex >= 0
+            ? pageIdIndex
+            : pagesData.findIndex((p) => p.legacyPageNumber === progress.current_page);
           if (idx >= 0) startIndex = idx;
         }
       }
@@ -199,12 +216,33 @@ export default function ReaderScreen() {
 
   const checkBookmark = async (idx: number, pagesData: ReaderPage[]) => {
     if (!id || !pagesData[idx]) return;
-    const { data } = await supabase
-      .from('bookmarks')
-      .select('*')
-      .eq('book_id', id)
-      .eq('page_number', pagesData[idx].legacyPageNumber)
-      .maybeSingle();
+    const page = pagesData[idx];
+    let data: { id: string } | null = null;
+
+    if (page.isStructured) {
+      const result = await supabase
+        .from('bookmarks')
+        .select('id')
+        .eq('book_id', id)
+        .eq('page_id', page.id)
+        .limit(1)
+        .maybeSingle();
+      data = result.data;
+    }
+
+    // Backward-compatible lookup for legacy pages and old structured
+    // bookmarks created before stable page anchors were populated.
+    if (!data) {
+      const result = await supabase
+        .from('bookmarks')
+        .select('id')
+        .eq('book_id', id)
+        .is('page_id', null)
+        .eq('page_number', page.legacyPageNumber)
+        .limit(1)
+        .maybeSingle();
+      data = result.data;
+    }
     if (data) {
       setIsBookmarked(true);
       setBookmarkId(data.id);
@@ -219,9 +257,12 @@ export default function ReaderScreen() {
     if (!id || !currentPage || loading) return;
     if (progressSaveTimer.current) clearTimeout(progressSaveTimer.current);
     progressSaveTimer.current = setTimeout(() => {
-      saveReadingProgress(id, currentPage.legacyPageNumber, scrollPositionRef.current).catch(
-        console.error
-      );
+      saveReadingProgress(
+        id,
+        currentPage.legacyPageNumber,
+        scrollPositionRef.current,
+        currentPage.isStructured ? currentPage.id : null
+      ).catch(console.error);
     }, 1000);
     return () => {
       if (progressSaveTimer.current) clearTimeout(progressSaveTimer.current);
@@ -362,6 +403,7 @@ export default function ReaderScreen() {
         .insert({
           book_id: id,
           page_number: currentPage.legacyPageNumber,
+          page_id: currentPage.isStructured ? currentPage.id : null,
           note: null,
         })
         .select()

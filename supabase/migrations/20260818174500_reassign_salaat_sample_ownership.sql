@@ -8,18 +8,17 @@ inside the canonical Faza'il-e-A'maal publication.
 Only these columns are updated:
 - pages.book_id
 - pages.book_part_id
-- pages.page_number
 - content_blocks.book_id
 - structural_nodes.book_id
 
 For structured Faza'il-e-A'maal pages:
-- page_number is an internal, publication-wide unique compatibility locator;
+- page_number is a legacy/internal compatibility locator scoped to its part;
 - printed_page_label is the source-faithful reader-facing page label; and
 - pdf_page_number is the physical location in the authoritative source PDF.
 
-Printed numbering restarts within constituent works, so it must not be used as
-the publication-wide uniqueness key. These Salaat rows retain printed labels
-10-15 while their internal page_number values become source-PDF locators 393-398.
+Printed numbering restarts within constituent works. These Salaat rows retain
+page_number, printed_page_label, and printed_page_number values 10-15 while
+book_part_id disambiguates them from pages 10-15 in other constituent works.
 
 No row is inserted, recreated, or deleted. Temporary snapshots and hashes prove
 that UUIDs, canonical text, OCR, metadata, ordering, hierarchy, provenance, and
@@ -71,8 +70,7 @@ BEGIN
     page_id uuid PRIMARY KEY,
     printed_page_label text NOT NULL,
     pdf_page_number integer NOT NULL,
-    original_page_number integer NOT NULL,
-    target_page_number integer NOT NULL,
+    page_number integer NOT NULL,
     expected_block_count integer NOT NULL
   ) ON COMMIT DROP;
 
@@ -81,17 +79,16 @@ BEGIN
       page_id,
       printed_page_label,
       pdf_page_number,
-      original_page_number,
-      target_page_number,
+      page_number,
       expected_block_count
     )
   VALUES
-    ('8dc420ec-c6b6-462e-943c-6ed8d40df762', '10', 393, 10, 393, 3),
-    ('49427b68-478b-44f2-b6ff-bbcdd98b2111', '11', 394, 11, 394, 7),
-    ('7fe43692-e5f8-4fa3-b50a-a709113bdda3', '12', 395, 12, 395, 9),
-    ('45e2f471-bead-45ec-bfd1-2ac1b6bc7b80', '13', 396, 13, 396, 7),
-    ('1f03c4b7-6cc8-44ab-af97-ca836c4cd552', '14', 397, 14, 397, 4),
-    ('40cbbcb7-6008-41d6-855a-b35c31ed6096', '15', 398, 15, 398, 10);
+    ('8dc420ec-c6b6-462e-943c-6ed8d40df762', '10', 393, 10, 3),
+    ('49427b68-478b-44f2-b6ff-bbcdd98b2111', '11', 394, 11, 7),
+    ('7fe43692-e5f8-4fa3-b50a-a709113bdda3', '12', 395, 12, 9),
+    ('45e2f471-bead-45ec-bfd1-2ac1b6bc7b80', '13', 396, 13, 7),
+    ('1f03c4b7-6cc8-44ab-af97-ca836c4cd552', '14', 397, 14, 4),
+    ('40cbbcb7-6008-41d6-855a-b35c31ed6096', '15', 398, 15, 10);
 
   -- Lock and validate all six exact page rows before taking snapshots.
   PERFORM 1
@@ -114,7 +111,7 @@ BEGIN
     JOIN pages p ON p.id = e.page_id
     WHERE p.book_id IS DISTINCT FROM v_temporary_book_id
       OR p.book_part_id IS NOT NULL
-      OR p.page_number IS DISTINCT FROM e.original_page_number
+      OR p.page_number IS DISTINCT FROM e.page_number
       OR p.printed_page_label IS DISTINCT FROM e.printed_page_label
       OR p.printed_page_number IS DISTINCT FROM e.printed_page_label::integer
       OR p.pdf_page_number IS DISTINCT FROM e.pdf_page_number
@@ -124,33 +121,37 @@ BEGIN
       'One or more Salaat pages has unexpected ownership, source metadata, or verification status';
   END IF;
 
-  -- The old printed-derived values 10-15 legitimately collide with another
-  -- constituent. Only the new internal locators 393-398 must be unused.
+  -- Existing legacy/unassigned Faza'il-e-A'maal pages 10-15 and 393-398 are
+  -- unrelated and must remain untouched. Only the same structured part scope
+  -- can conflict with these six page_number values.
   IF EXISTS (
     SELECT 1
     FROM pages destination
     JOIN expected_salaat_pages e
-      ON destination.page_number = e.target_page_number
+      ON destination.page_number = e.page_number
     WHERE destination.book_id = v_canonical_book_id
+      AND destination.book_part_id = v_salaat_part_id
+      AND destination.id <> e.page_id
   ) THEN
     RAISE EXCEPTION
-      'Canonical Faza''il-e-A''maal already uses one of the internal page_number locators 393-398';
+      'Permanent Virtues of SALAAT already has a conflicting structured page_number';
   END IF;
 
-  -- sequence_index has separate publication-wide uniqueness and remains
-  -- unchanged, so any collision still requires an explicit future decision.
+  -- sequence_index is ordered within a structured constituent part. Legacy
+  -- pages and other parts may legitimately use the same values.
   IF EXISTS (
     SELECT 1
     FROM pages destination
     JOIN pages moving
       ON moving.id IN (SELECT page_id FROM expected_salaat_pages)
      AND destination.book_id = v_canonical_book_id
+     AND destination.book_part_id = v_salaat_part_id
      AND destination.id <> moving.id
      AND destination.sequence_index IS NOT NULL
      AND destination.sequence_index = moving.sequence_index
   ) THEN
     RAISE EXCEPTION
-      'Canonical Faza''il-e-A''maal already has a conflicting structured page sequence index';
+      'Permanent Virtues of SALAAT already has a conflicting structured page sequence index';
   END IF;
 
   -- Exact block counts are source-page preconditions, not inferred totals.
@@ -263,7 +264,7 @@ BEGIN
       'Canonical Faza''il-e-A''maal already has a conflicting structural-node sequence';
   END IF;
 
-  -- Hash every field except the three explicitly permitted page changes.
+  -- Hash every field except the two explicitly permitted page ownership changes.
   -- JSONB text has deterministic key ordering, so these snapshots preserve
   -- IDs, printed/PDF metadata, exact Unicode text, OCR, ordering, provenance,
   -- timestamps, verification state, source relationships, and hierarchy.
@@ -272,7 +273,7 @@ BEGIN
   AS
   SELECT
     p.id,
-    md5((to_jsonb(p) - 'book_id' - 'book_part_id' - 'page_number')::text) AS preserved_hash
+    md5((to_jsonb(p) - 'book_id' - 'book_part_id')::text) AS preserved_hash
   FROM pages p
   WHERE p.id IN (SELECT page_id FROM expected_salaat_pages);
 
@@ -293,8 +294,7 @@ BEGIN
   UPDATE pages p
   SET
     book_id = v_canonical_book_id,
-    book_part_id = v_salaat_part_id,
-    page_number = e.target_page_number
+    book_part_id = v_salaat_part_id
   FROM expected_salaat_pages e
   WHERE p.id = e.page_id;
 
@@ -327,9 +327,9 @@ BEGIN
     JOIN expected_salaat_pages e ON e.page_id = p.id
     WHERE p.book_id IS DISTINCT FROM v_canonical_book_id
       OR p.book_part_id IS DISTINCT FROM v_salaat_part_id
-      OR p.page_number IS DISTINCT FROM e.target_page_number
+      OR p.page_number IS DISTINCT FROM e.page_number
       OR p.printed_page_label IS DISTINCT FROM e.printed_page_label
-      OR p.printed_page_number IS DISTINCT FROM e.original_page_number
+      OR p.printed_page_number IS DISTINCT FROM e.page_number
       OR p.pdf_page_number IS DISTINCT FROM e.pdf_page_number
   ) THEN
     RAISE EXCEPTION 'Postcondition failed for Salaat page ownership';
@@ -362,7 +362,7 @@ BEGIN
     WHERE before_row.id IS NULL
       OR p.id IS NULL
       OR before_row.preserved_hash IS DISTINCT FROM
-         md5((to_jsonb(p) - 'book_id' - 'book_part_id' - 'page_number')::text)
+         md5((to_jsonb(p) - 'book_id' - 'book_part_id')::text)
   ) THEN
     RAISE EXCEPTION 'A protected page UUID or non-ownership field changed';
   END IF;

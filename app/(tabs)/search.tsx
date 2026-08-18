@@ -119,7 +119,11 @@ export default function SearchScreen() {
   const openResult = (item: SearchResultItem) => {
     router.push({
       pathname: `/reader/${item.book.id}`,
-      params: { page: String(item.page.page_number), highlight: query },
+      params: {
+        page: String(item.page.page_number),
+        pageId: item.page.id,
+        highlight: query,
+      },
     });
   };
 
@@ -162,7 +166,9 @@ export default function SearchScreen() {
           <Text style={styles.resultBookTitle} numberOfLines={1}>
             {item.book.title}
           </Text>
-          <Text style={styles.resultPage}>Page {item.page.page_number}</Text>
+          <Text style={styles.resultPage}>
+            Page {item.page.printed_page_label || item.page.page_number}
+          </Text>
           {highlightMatch(item.snippet, query)}
         </View>
       </View>

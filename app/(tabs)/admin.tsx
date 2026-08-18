@@ -43,6 +43,7 @@ import {
   updatePage,
   deletePage,
   addPage,
+  fetchNextPageNumber,
 } from '@/lib/database';
 import type { Book, Page } from '@/types';
 
@@ -61,6 +62,23 @@ const FONT_PRESETS = ['Arial', 'Georgia', 'Times New Roman', 'Courier New', 'Ver
 
 const EDITOR_THEME: ReadingTheme = 'sepia';
 const EDITOR_COLORS: ThemeColors = READING_THEMES[EDITOR_THEME];
+
+const sortAdminPages = (first: Page, second: Page) => {
+  const sourceOrder =
+    (first.pdf_page_number ?? first.page_number) -
+    (second.pdf_page_number ?? second.page_number);
+  if (sourceOrder !== 0) return sourceOrder;
+  if (
+    first.book_part_id &&
+    first.book_part_id === second.book_part_id &&
+    first.sequence_index != null &&
+    second.sequence_index != null &&
+    first.sequence_index !== second.sequence_index
+  ) {
+    return first.sequence_index - second.sequence_index;
+  }
+  return first.page_number - second.page_number || first.id.localeCompare(second.id);
+};
 
 export default function AdminScreen() {
   const [authed, setAuthed] = useState(false);
@@ -241,13 +259,26 @@ function AdminContent({ onLogout }: { onLogout: () => void }) {
     try {
       const newPageNum = parseInt(state.pageNumber, 10);
       const validPageNum = !isNaN(newPageNum) && newPageNum > 0 ? newPageNum : originalPage.page_number;
+      const hasScopedConflict = pages.some(
+        (page) =>
+          page.id !== pageId &&
+          (page.book_part_id ?? null) === (originalPage.book_part_id ?? null) &&
+          page.page_number === validPageNum
+      );
+      if (hasScopedConflict) {
+        throw new Error(
+          originalPage.book_part_id
+            ? 'That page number is already used in this book part.'
+            : 'That legacy page number is already used in this book.'
+        );
+      }
       await updatePage(pageId, state.content, state.chapter.trim() || null, validPageNum);
       setPages((prev) =>
         prev.map((p) =>
           p.id === pageId
             ? { ...p, content: state.content, chapter_title: state.chapter.trim() || null, page_number: validPageNum }
             : p
-        ).sort((a, b) => a.page_number - b.page_number)
+        ).sort(sortAdminPages)
       );
       setEditingState((prev) => ({
         ...prev,
@@ -278,12 +309,15 @@ function AdminContent({ onLogout }: { onLogout: () => void }) {
 
   const handleAddPage = async () => {
     if (!selectedBook) return;
-    const nextNum = pages.length > 0 ? Math.max(...pages.map((p) => p.page_number)) + 1 : 1;
     setSaving(true);
     setError(null);
     try {
-      const created = await addPage(selectedBook.id, nextNum, '', null);
-      setPages((prev) => [...prev, created].sort((a, b) => a.page_number - b.page_number));
+      // This existing editor creates legacy/unassigned pages only. Number
+      // allocation is therefore scoped to book_part_id IS NULL rather than
+      // across the publication or any structured constituent part.
+      const nextNum = await fetchNextPageNumber(selectedBook.id, null);
+      const created = await addPage(selectedBook.id, nextNum, '', null, null);
+      setPages((prev) => [...prev, created].sort(sortAdminPages));
       setEditingState((prev) => ({
         ...prev,
         [created.id]: { content: '', chapter: '', pageNumber: String(created.page_number), dirty: false },

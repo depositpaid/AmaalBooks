@@ -191,6 +191,17 @@ export async function fetchReaderPages(bookId: string): Promise<ReaderPage[]> {
   ]);
 
   const nodeById = new Map(structuralNodes.map((node) => [node.id, node]));
+  const anchoredNodesByPageId = new Map<string, StructuralNode[]>();
+  for (const node of structuralNodes) {
+    for (const pageId of [node.start_page_id, node.end_page_id]) {
+      if (!pageId) continue;
+      const anchoredNodes = anchoredNodesByPageId.get(pageId) || [];
+      if (!anchoredNodes.some((anchoredNode) => anchoredNode.id === node.id)) {
+        anchoredNodes.push(node);
+        anchoredNodesByPageId.set(pageId, anchoredNodes);
+      }
+    }
+  }
   const blocksByPageId = new Map<string, ContentBlock[]>();
   for (const block of contentBlocks) {
     const pageBlocks = blocksByPageId.get(block.page_id) || [];
@@ -201,10 +212,22 @@ export async function fetchReaderPages(bookId: string): Promise<ReaderPage[]> {
   return pages.map((page) => {
     const pageBlocks = blocksByPageId.get(page.id) || [];
     const associatedNodes = new Map<string, StructuralNode>();
+
+    // Include authoritative page anchors even when the node is not repeated on
+    // every block (for example a chapter that starts on this page).
+    for (const node of anchoredNodesByPageId.get(page.id) || []) {
+      associatedNodes.set(node.id, node);
+    }
+
     for (const block of pageBlocks) {
       if (!block.structural_node_id) continue;
-      const node = nodeById.get(block.structural_node_id);
-      if (node) associatedNodes.set(node.id, node);
+      let node = nodeById.get(block.structural_node_id);
+      const visited = new Set<string>();
+      while (node && !visited.has(node.id)) {
+        visited.add(node.id);
+        associatedNodes.set(node.id, node);
+        node = node.parent_id ? nodeById.get(node.parent_id) : undefined;
+      }
     }
 
     return {

@@ -34,10 +34,10 @@ import {
 import { useKeepAwake, activateKeepAwakeAsync, deactivateKeepAwake } from 'expo-keep-awake';
 import { AppColors, AppFonts, AppSpacing, AppRadius } from '@/lib/theme';
 import { READING_THEMES, type ReadingTheme, type ThemeColors } from '@/types';
-import { fetchBook, fetchPages, fetchReadingProgress, saveReadingProgress } from '@/lib/database';
+import { fetchBook, fetchReaderPages, fetchReadingProgress, saveReadingProgress } from '@/lib/database';
 import { supabase } from '@/lib/supabase';
 import { tts, type TTSState } from '@/lib/tts';
-import type { Book, Page, Bookmark as BookmarkType } from '@/types';
+import type { Book, ReaderBlock, ReaderPage } from '@/types';
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 
@@ -83,8 +83,9 @@ export default function ReaderScreen() {
   }, []);
 
   const [book, setBook] = useState<Book | null>(null);
-  const [pages, setPages] = useState<Page[]>([]);
+  const [pages, setPages] = useState<ReaderPage[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [contextEntryIndex, setContextEntryIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [controlsVisible, setControlsVisible] = useState(true);
@@ -126,7 +127,7 @@ export default function ReaderScreen() {
   useFocusEffect(
     useCallback(() => {
       if (id) {
-        fetchPages(id).then((freshPages) => {
+        fetchReaderPages(id).then((freshPages) => {
           setPages(freshPages);
         });
       }
@@ -140,7 +141,7 @@ export default function ReaderScreen() {
     try {
       const [bookData, pagesData] = await Promise.all([
         fetchBook(id),
-        fetchPages(id),
+        fetchReaderPages(id),
       ]);
 
       if (!bookData) {
@@ -156,16 +157,17 @@ export default function ReaderScreen() {
       let startIndex = 0;
       if (pageParam) {
         const requestedPage = parseInt(pageParam, 10);
-        const idx = pagesData.findIndex((p) => p.page_number === requestedPage);
+        const idx = pagesData.findIndex((p) => p.legacyPageNumber === requestedPage);
         if (idx >= 0) startIndex = idx;
       } else {
         const progress = await fetchReadingProgress(id);
         if (progress) {
-          const idx = pagesData.findIndex((p) => p.page_number === progress.current_page);
+          const idx = pagesData.findIndex((p) => p.legacyPageNumber === progress.current_page);
           if (idx >= 0) startIndex = idx;
         }
       }
       setCurrentIndex(startIndex);
+      setContextEntryIndex(startIndex);
 
       // Ensure the starting page is rendered
       setRenderEnd(Math.min(pagesData.length, startIndex + 15));
@@ -195,13 +197,13 @@ export default function ReaderScreen() {
     }
   };
 
-  const checkBookmark = async (idx: number, pagesData: Page[]) => {
+  const checkBookmark = async (idx: number, pagesData: ReaderPage[]) => {
     if (!id || !pagesData[idx]) return;
     const { data } = await supabase
       .from('bookmarks')
       .select('*')
       .eq('book_id', id)
-      .eq('page_number', pagesData[idx].page_number)
+      .eq('page_number', pagesData[idx].legacyPageNumber)
       .maybeSingle();
     if (data) {
       setIsBookmarked(true);
@@ -217,7 +219,7 @@ export default function ReaderScreen() {
     if (!id || !currentPage || loading) return;
     if (progressSaveTimer.current) clearTimeout(progressSaveTimer.current);
     progressSaveTimer.current = setTimeout(() => {
-      saveReadingProgress(id, currentPage.page_number, scrollPositionRef.current).catch(
+      saveReadingProgress(id, currentPage.legacyPageNumber, scrollPositionRef.current).catch(
         console.error
       );
     }, 1000);
@@ -327,6 +329,7 @@ export default function ReaderScreen() {
       setAutoScrollActive(false);
       tts.stop();
       setHighlightQuery(null);
+      setContextEntryIndex(index);
 
       // Wait for render, then scroll
       setTimeout(() => {
@@ -358,7 +361,7 @@ export default function ReaderScreen() {
         .from('bookmarks')
         .insert({
           book_id: id,
-          page_number: currentPage.page_number,
+          page_number: currentPage.legacyPageNumber,
           note: null,
         })
         .select()
@@ -390,9 +393,10 @@ export default function ReaderScreen() {
   const speakFromPage = (pageIdx: number, sentenceIdx: number) => {
     if (!pages[pageIdx]) return;
     tts.setRate(ttsRate);
+    const speechText = getPageTtsText(pages[pageIdx]);
+    if (!speechText) return;
     setTtsPageIdx(pageIdx);
-    const cleaned = cleanBookText(pages[pageIdx].content);
-    tts.speak(cleaned, () => {
+    tts.speak(speechText, () => {
       // When audio finishes the current page, advance to next page and continue
       if (pageIdx < pages.length - 1) {
         const nextIdx = pageIdx + 1;
@@ -442,6 +446,20 @@ export default function ReaderScreen() {
     const currentIdx = SCROLL_SPEEDS.findIndex((s) => s.value === autoScrollSpeed);
     const nextIdx = (currentIdx + 1) % SCROLL_SPEEDS.length;
     setAutoScrollSpeed(SCROLL_SPEEDS[nextIdx].value);
+  };
+
+  const getPageTtsText = (page: ReaderPage): string => {
+    if (page.isStructured) {
+      // Canonical structured text is already plain Unicode. Do not run OCR
+      // cleanup or pass presentation markup to speech synthesis.
+      return page.blocks
+        .filter((block) => block.ttsEligible)
+        .map((block) => block.text)
+        .join('\n\n');
+    }
+
+    // Preserve the existing legacy TTS behavior until its separate redesign.
+    return cleanBookText(page.blocks[0]?.text || '');
   };
 
   const handleScroll = (event: any) => {
@@ -595,13 +613,228 @@ export default function ReaderScreen() {
     );
   };
 
+  const renderExactHighlightedText = (text: string, keyPrefix: string) => {
+    if (!highlightQuery) return text;
+
+    const lowerText = text.toLocaleLowerCase();
+    const lowerQuery = highlightQuery.toLocaleLowerCase();
+    if (!lowerQuery) return text;
+
+    const parts: React.ReactNode[] = [];
+    let cursor = 0;
+    while (cursor < text.length) {
+      const matchIndex = lowerText.indexOf(lowerQuery, cursor);
+      if (matchIndex < 0) break;
+      if (matchIndex > cursor) {
+        parts.push(text.substring(cursor, matchIndex));
+      }
+      parts.push(
+        <Text key={`${keyPrefix}-match-${matchIndex}`} style={highlightedTextStyle(theme)}>
+          {text.substring(matchIndex, matchIndex + highlightQuery.length)}
+        </Text>
+      );
+      cursor = matchIndex + highlightQuery.length;
+    }
+    if (cursor < text.length) parts.push(text.substring(cursor));
+    return parts.length > 0 ? parts : text;
+  };
+
+  const getBlockDirection = (block: ReaderBlock): 'ltr' | 'rtl' => {
+    if (block.direction === 'rtl' || block.type === 'arabic') return 'rtl';
+    if (block.direction === 'ltr') return 'ltr';
+    return block.language?.toLocaleLowerCase().startsWith('ar') ? 'rtl' : 'ltr';
+  };
+
+  const getStoredStructuralContextParts = (
+    page: ReaderPage,
+    block: ReaderBlock
+  ): string[] => {
+    const values = [
+      block.structuralLabel,
+      block.structuralIdentifier,
+      page.structuralNodes.find((node) => node.id === block.structuralNodeId)?.title ?? null,
+    ];
+    return values.filter(
+      (value, index): value is string =>
+        Boolean(value) && values.findIndex((candidate) => candidate === value) === index
+    );
+  };
+
+  const renderStructuredPage = (page: ReaderPage, pageIdx: number) => {
+    const previousPageBlocks = pageIdx > 0 ? pages[pageIdx - 1].blocks : [];
+    let previousStructuralNodeId: string | null =
+      previousPageBlocks.length > 0
+        ? previousPageBlocks[previousPageBlocks.length - 1].structuralNodeId
+        : null;
+    let hasEncounteredStructuralGroup = false;
+
+    return page.blocks.map((block, blockIdx) => {
+      const direction = getBlockDirection(block);
+      const isArabic = direction === 'rtl';
+      const isTranslation = block.type === 'translation';
+      const isHeading = block.type === 'heading';
+      const isNote = block.type === 'note';
+      const hasGreenStructure =
+        block.structuralType === 'hadith' || block.structuralType === 'section';
+      const showStructuralHeader =
+        hasGreenStructure &&
+        Boolean(block.structuralNodeId) &&
+        block.structuralNodeId !== previousStructuralNodeId;
+      const storedContextParts = getStoredStructuralContextParts(page, block);
+      const showContinuationHeader =
+        hasGreenStructure &&
+        Boolean(block.structuralNodeId) &&
+        block.structuralNodeId === previousStructuralNodeId &&
+        pageIdx === contextEntryIndex &&
+        !hasEncounteredStructuralGroup &&
+        storedContextParts.length > 0;
+      const structuralHeaderParts = showStructuralHeader
+        ? [block.structuralType, ...storedContextParts].filter(
+            (value, index, all): value is string =>
+              Boolean(value) && all.findIndex((candidate) => candidate === value) === index
+          )
+        : showContinuationHeader
+          ? storedContextParts
+          : [];
+
+      previousStructuralNodeId = block.structuralNodeId;
+      if (hasGreenStructure) hasEncounteredStructuralGroup = true;
+
+      return (
+        <View
+          key={block.id}
+          style={[
+            styles.structuredBlock,
+            isTranslation && { backgroundColor: theme.surface },
+            isNote && { backgroundColor: theme.surface },
+            hasGreenStructure && {
+              borderLeftColor: theme.accent,
+              borderLeftWidth: 2,
+              paddingLeft: AppSpacing.md,
+            },
+          ]}
+        >
+          {structuralHeaderParts.length > 0 && (
+            <View style={styles.structuralHeader}>
+              <View style={[styles.structuralMarker, { backgroundColor: theme.accent }]} />
+              <Text
+                style={[
+                  styles.structuralHeaderText,
+                  {
+                    color: theme.accent,
+                    textShadowColor: theme.accent,
+                  },
+                ]}
+              >
+                {showContinuationHeader ? 'Continued — ' : ''}
+                {structuralHeaderParts.join(' · ')}
+              </Text>
+            </View>
+          )}
+          <Text
+            style={[
+              pageTextStyle(theme, isArabic ? fontSize + 3 : fontSize, lineHeight),
+              {
+                textAlign: isArabic ? 'right' : 'left',
+                writingDirection: direction,
+                fontFamily: isArabic
+                  ? Platform.select({
+                      ios: 'Geeza Pro',
+                      android: 'sans-serif',
+                      web: 'Tahoma, Arial, sans-serif',
+                      default: undefined,
+                    })
+                  : AppFonts.serif,
+              },
+              Platform.OS === 'web' ? ({ direction } as any) : null,
+              isTranslation && styles.translationBlockText,
+              isHeading && [styles.structuredHeading, { color: theme.text }],
+              isNote && [styles.noteBlockText, { color: theme.secondaryText }],
+            ]}
+          >
+            {renderExactHighlightedText(block.text, `p${pageIdx}-b${blockIdx}`)}
+          </Text>
+        </View>
+      );
+    });
+  };
+
   // Build a book-style index by parsing the contents pages (first ~10 pages)
   const tocSections = useMemo(() => {
-    type TocEntry = { title: string; pageNumber: number };
-    type TocSection = { title: string; firstPageNumber: number; entries: TocEntry[] };
+    type TocEntry = { title: string; pageId: string; pageLabel: string };
+    type TocSection = { title: string; firstPageId: string; pageLabel: string; entries: TocEntry[] };
 
     const sections: TocSection[] = [];
-    const sourceText = cleanBookText(pages.slice(0, 10).map((page) => page.content).join('\n'));
+    const hasStructuredPages = pages.some((page) => page.isStructured);
+
+    if (hasStructuredPages) {
+      // Structured books use only authoritative stored chapter/section nodes.
+      // If none exist, return no TOC rather than interpreting canonical text.
+      const nodePage = new Map<string, ReaderPage>();
+      const nodeById = new Map<string, ReaderPage['structuralNodes'][number]>();
+      for (const page of pages) {
+        for (const node of page.structuralNodes) {
+          if (!nodePage.has(node.id)) nodePage.set(node.id, page);
+          nodeById.set(node.id, node);
+        }
+      }
+
+      const exactNodeTitle = (node: ReaderPage['structuralNodes'][number]) => {
+        const values = [node.label, node.identifier, node.title].filter(
+          (value, index, all): value is string =>
+            Boolean(value) && all.findIndex((candidate) => candidate === value) === index
+        );
+        return values.join(' · ');
+      };
+
+      const chapters = [...nodeById.values()]
+        .filter((node) => node.type === 'chapter')
+        .sort(
+          (first, second) =>
+            first.sequenceIndex - second.sequenceIndex || first.id.localeCompare(second.id)
+        );
+
+      for (const chapter of chapters) {
+        const chapterPage = nodePage.get(chapter.id);
+        const title = exactNodeTitle(chapter);
+        if (!chapterPage || !title) continue;
+
+        const entries = [...nodeById.values()]
+          .filter((node) => node.type === 'section' && node.parentId === chapter.id)
+          .sort(
+            (first, second) =>
+              first.sequenceIndex - second.sequenceIndex || first.id.localeCompare(second.id)
+          )
+          .flatMap((node) => {
+            const entryPage = nodePage.get(node.id);
+            const entryTitle = exactNodeTitle(node);
+            return entryPage && entryTitle
+              ? [{
+                  title: entryTitle,
+                  pageId: entryPage.id,
+                  pageLabel:
+                    entryPage.printedPageLabel || String(entryPage.legacyPageNumber),
+                }]
+              : [];
+          });
+
+        sections.push({
+          title,
+          firstPageId: chapterPage.id,
+          pageLabel: chapterPage.printedPageLabel || String(chapterPage.legacyPageNumber),
+          entries,
+        });
+      }
+
+      return sections;
+    }
+
+    const sourceText = cleanBookText(
+      pages
+        .slice(0, 10)
+        .map((page) => page.blocks[0]?.text || '')
+        .join('\n')
+    );
     const contentsStart = sourceText.toUpperCase().indexOf('CONTENTS');
     const rawLines = (contentsStart >= 0 ? sourceText.slice(contentsStart + 8) : sourceText)
       .split('\n')
@@ -668,7 +901,8 @@ export default function ReaderScreen() {
         const heading = (rest || '').trim();
         activeSection = {
           title: heading || `Chapter ${sections.length + 1}`,
-          firstPageNumber: pages[0]?.page_number || 1,
+          firstPageId: pages[0]?.id || '',
+          pageLabel: String(pages[0]?.legacyPageNumber || 1),
           entries: [],
         };
         sections.push(activeSection);
@@ -682,25 +916,48 @@ export default function ReaderScreen() {
 
       // Check if this looks like a chapter heading (all caps, no page needed)
       if (/^[A-Z][A-Z\s,'\-]{10,}$/.test(title) && !activeSection) {
-        activeSection = { title, firstPageNumber: pages[0]?.page_number || 1, entries: [] };
+        activeSection = {
+          title,
+          firstPageId: pages[0]?.id || '',
+          pageLabel: String(pages[0]?.legacyPageNumber || 1),
+          entries: [],
+        };
         sections.push(activeSection);
         continue;
       }
 
       if (!activeSection) {
-        activeSection = { title: book?.title || 'Contents', firstPageNumber: pages[0].page_number, entries: [] };
+        activeSection = {
+          title: book?.title || 'Contents',
+          firstPageId: pages[0].id,
+          pageLabel: String(pages[0].legacyPageNumber),
+          entries: [],
+        };
         sections.push(activeSection);
       }
 
       // Clean the title further - remove trailing punctuation
       const cleanTitle = title.replace(/[,.;:]+$/g, '').trim();
-      if (!activeSection.entries.some((e) => e.title === cleanTitle && e.pageNumber === pageNum)) {
-        activeSection.entries.push({ title: cleanTitle, pageNumber: pageNum });
+      const entryPage = pages.find((page) => page.legacyPageNumber === pageNum);
+      if (
+        entryPage &&
+        !activeSection.entries.some((entry) => entry.title === cleanTitle && entry.pageId === entryPage.id)
+      ) {
+        activeSection.entries.push({
+          title: cleanTitle,
+          pageId: entryPage.id,
+          pageLabel: String(pageNum),
+        });
       }
     }
 
     if (sections.length === 0 && pages.length > 0) {
-      sections.push({ title: book?.title || 'Contents', firstPageNumber: pages[0].page_number, entries: [] });
+      sections.push({
+        title: book?.title || 'Contents',
+        firstPageId: pages[0].id,
+        pageLabel: String(pages[0].legacyPageNumber),
+        entries: [],
+      });
     }
     return sections;
   }, [pages, book?.title]);
@@ -754,17 +1011,21 @@ export default function ReaderScreen() {
               }}
               style={[styles.pageBorder, { borderColor: theme.accent, marginBottom: AppSpacing.xl }]}
             >
-              {page.chapter_title && (
+              {!page.isStructured && page.legacyChapterTitle && (
                 <Text style={[styles.chapterTitle, { color: theme.accent }]}>
-                  {page.chapter_title}
+                  {page.legacyChapterTitle}
                 </Text>
               )}
               <View style={styles.pageNumberRow}>
                 <Text style={[styles.pageNumberText, { color: theme.secondaryText }]}>
-                  {page.page_number}
+                  {page.isStructured && page.printedPageLabel
+                    ? page.printedPageLabel
+                    : page.legacyPageNumber}
                 </Text>
               </View>
-              {renderPageText(page.content, `p${idx}`, idx)}
+              {page.isStructured
+                ? renderStructuredPage(page, idx)
+                : renderPageText(page.blocks[0]?.text || '', `p${idx}`, idx)}
             </View>
           ))}
           {renderEnd < pages.length && (
@@ -798,7 +1059,11 @@ export default function ReaderScreen() {
               {book.title}
             </Text>
             <Text style={[styles.topBarSubtitle, { color: theme.secondaryText }]}>
-              Page {currentPage.page_number} of {book.total_pages}
+              Page{' '}
+              {currentPage.isStructured && currentPage.printedPageLabel
+                ? currentPage.printedPageLabel
+                : currentPage.legacyPageNumber}
+              {!currentPage.isStructured ? ` of ${book.total_pages}` : ''}
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => setShowToc(true)} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
@@ -1104,13 +1369,13 @@ export default function ReaderScreen() {
               <ScrollView style={styles.tocList} showsVerticalScrollIndicator={false}>
                 {tocSections.map((section, sIdx) => {
                   const sectionIdx = pages.findIndex(
-                    (p) => p.page_number === section.firstPageNumber
+                    (page) => page.id === section.firstPageId
                   );
                   const isCurrentSection =
                     currentIndex >= sectionIdx &&
                     currentIndex < (sIdx + 1 < tocSections.length
                       ? pages.findIndex(
-                          (p) => p.page_number === tocSections[sIdx + 1].firstPageNumber
+                          (page) => page.id === tocSections[sIdx + 1].firstPageId
                         )
                       : pages.length);
 
@@ -1138,13 +1403,13 @@ export default function ReaderScreen() {
                           {section.title}
                         </Text>
                         <Text style={[styles.tocSectionPage, { color: theme.secondaryText }]}>
-                          {section.firstPageNumber}
+                          {section.pageLabel}
                         </Text>
                       </TouchableOpacity>
 
                       {section.entries.map((entry, eIdx) => {
                         const entryIdxInPages = pages.findIndex(
-                          (p) => p.page_number === entry.pageNumber
+                          (page) => page.id === entry.pageId
                         );
                         const isCurrent = currentIndex === entryIdxInPages;
 
@@ -1175,7 +1440,7 @@ export default function ReaderScreen() {
                               {entry.title}
                             </Text>
                             <Text style={[styles.tocSubPage, { color: theme.secondaryText }]}>
-                              {entry.pageNumber}
+                              {entry.pageLabel}
                             </Text>
                           </TouchableOpacity>
                         );
@@ -1289,6 +1554,51 @@ const styles = StyleSheet.create({
     fontSize: 22,
     marginBottom: AppSpacing.lg,
     textAlign: 'center',
+  },
+  structuredBlock: {
+    marginBottom: AppSpacing.lg,
+    borderRadius: AppRadius.sm,
+  },
+  structuralHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: AppSpacing.sm,
+    marginBottom: AppSpacing.sm,
+  },
+  structuralMarker: {
+    width: 5,
+    height: 18,
+    borderRadius: 3,
+    shadowColor: '#39FF14',
+    shadowOpacity: 0.8,
+    shadowRadius: 5,
+    elevation: 2,
+  },
+  structuralHeaderText: {
+    flex: 1,
+    fontFamily: AppFonts.sansMedium,
+    fontSize: 13,
+    lineHeight: 18,
+    textShadowRadius: 4,
+  },
+  translationBlockText: {
+    fontStyle: 'italic',
+    paddingHorizontal: AppSpacing.md,
+    paddingVertical: AppSpacing.sm,
+  },
+  structuredHeading: {
+    fontFamily: AppFonts.serifBold,
+    fontSize: 22,
+    lineHeight: 29,
+    marginTop: AppSpacing.sm,
+    marginBottom: AppSpacing.sm,
+  },
+  noteBlockText: {
+    fontFamily: AppFonts.sans,
+    fontSize: 15,
+    lineHeight: 22,
+    paddingHorizontal: AppSpacing.md,
+    paddingVertical: AppSpacing.sm,
   },
   pageBottomSpacer: {
     height: 60,

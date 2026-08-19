@@ -1,0 +1,1 @@
+UPDATE import_batches SET status = 'imported', completed_at = now() WHERE id = 'a4000000-0000-4000-8000-000000000002';

@@ -214,30 +214,44 @@ function toLegacyReaderBlock(page: Page): ReaderBlock {
 }
 
 /**
- * Fetches a complete book for reading without changing the legacy reader.
+ * Fetches a complete publication or one authoritative book part for reading.
  *
  * A page is structured only when at least one stored content_blocks row points
  * to it. Structured rows and source identifiers are returned exactly as stored.
  * Pages without blocks fall back to one untouched legacy block, which keeps
  * partially migrated books complete during a gradual, page-by-page migration.
+ * When bookPartId is supplied, both pages and blocks are restricted to that
+ * permanent part identity; compatibility page numbers are never used as scope.
  */
-export async function fetchReaderPages(bookId: string): Promise<ReaderPage[]> {
-  const contentBlocks = await fetchAllRows<ContentBlock>((from, to) =>
-    supabase
-      .from('content_blocks')
-      .select('*')
-      .eq('book_id', bookId)
-      .order('page_id', { ascending: true })
-      .order('sequence_index', { ascending: true })
-      .order('id', { ascending: true })
-      .range(from, to)
-  );
+export async function fetchReaderPages(
+  bookId: string,
+  bookPartId?: string
+): Promise<ReaderPage[]> {
+  const pages = bookPartId
+    ? await fetchPagesForBookPart(bookId, bookPartId)
+    : await fetchPages(bookId);
+  const pageIds = pages.map((page) => page.id);
+
+  // A part-scoped reader must never pull blocks from legacy publication rows
+  // that happen to share the same compatibility page number.
+  const contentBlocks = pageIds.length === 0
+    ? []
+    : await fetchAllRows<ContentBlock>((from, to) =>
+        supabase
+          .from('content_blocks')
+          .select('*')
+          .eq('book_id', bookId)
+          .in('page_id', pageIds)
+          .order('page_id', { ascending: true })
+          .order('sequence_index', { ascending: true })
+          .order('id', { ascending: true })
+          .range(from, to)
+      );
 
   // No structured rows means a pure legacy read. Avoid querying structural
   // metadata that cannot be referenced in this mode.
   if (contentBlocks.length === 0) {
-    const legacyPages = await fetchPages(bookId);
-    return legacyPages.map((page) => ({
+    return pages.map((page) => ({
       id: page.id,
       bookId: page.book_id,
       legacyPageNumber: page.page_number,
@@ -256,18 +270,15 @@ export async function fetchReaderPages(bookId: string): Promise<ReaderPage[]> {
     }));
   }
 
-  const [pages, structuralNodes] = await Promise.all([
-    fetchPages(bookId),
-    fetchAllRows<StructuralNode>((from, to) =>
-      supabase
-        .from('structural_nodes')
-        .select('*')
-        .eq('book_id', bookId)
-        .order('sequence_index', { ascending: true })
-        .order('id', { ascending: true })
-        .range(from, to)
-    ),
-  ]);
+  const structuralNodes = await fetchAllRows<StructuralNode>((from, to) =>
+    supabase
+      .from('structural_nodes')
+      .select('*')
+      .eq('book_id', bookId)
+      .order('sequence_index', { ascending: true })
+      .order('id', { ascending: true })
+      .range(from, to)
+  );
 
   const nodeById = new Map(structuralNodes.map((node) => [node.id, node]));
   const anchoredNodesByPageId = new Map<string, StructuralNode[]>();

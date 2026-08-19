@@ -122,6 +122,7 @@ export default function SearchScreen() {
       params: {
         page: String(item.page.page_number),
         pageId: item.page.id,
+        ...(item.page.book_part_id ? { bookPartId: item.page.book_part_id } : {}),
         highlight: query,
       },
     });

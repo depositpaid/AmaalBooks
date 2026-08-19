@@ -20,6 +20,8 @@ import type { Book, ReadingProgress } from '@/types';
 const screenWidth = Dimensions.get('window').width;
 const numColumns = screenWidth > 600 ? 3 : 2;
 const cardWidth = (screenWidth - AppSpacing.lg * (numColumns + 1)) / numColumns;
+const FAZAIL_AMAAL_BOOK_ID = '3cbdc749-e9c9-44f3-8330-ecc1e3b38cc8';
+const VIRTUES_OF_SALAAT_PART_ID = '59d7f112-fb58-4726-9c35-11485c6155e7';
 
 export default function LibraryScreen() {
   const router = useRouter();
@@ -64,7 +66,13 @@ export default function LibraryScreen() {
   };
 
   const openBook = (bookId: string) => {
-    router.push(`/reader/${bookId}`);
+    router.push({
+      pathname: `/reader/${bookId}`,
+      params:
+        bookId === FAZAIL_AMAAL_BOOK_ID
+          ? { bookPartId: VIRTUES_OF_SALAAT_PART_ID }
+          : {},
+    });
   };
 
   const renderBook = ({ item }: { item: Book }) => {

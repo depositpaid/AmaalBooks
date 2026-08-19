@@ -54,11 +54,13 @@ export default function ReaderScreen() {
     id,
     page: pageParam,
     pageId: pageIdParam,
+    bookPartId,
     highlight: highlightParam,
   } = useLocalSearchParams<{
     id: string;
     page?: string;
     pageId?: string;
+    bookPartId?: string;
     highlight?: string;
   }>();
   const router = useRouter();
@@ -128,16 +130,16 @@ export default function ReaderScreen() {
   // Load book data on mount and refetch when returning from other tabs (e.g. admin edits)
   useEffect(() => {
     loadBookData();
-  }, [id]);
+  }, [id, bookPartId]);
 
   useFocusEffect(
     useCallback(() => {
       if (id) {
-        fetchReaderPages(id).then((freshPages) => {
+        fetchReaderPages(id, bookPartId).then((freshPages) => {
           setPages(freshPages);
         });
       }
-    }, [id])
+    }, [id, bookPartId])
   );
 
   const loadBookData = async () => {
@@ -147,7 +149,7 @@ export default function ReaderScreen() {
     try {
       const [bookData, pagesData] = await Promise.all([
         fetchBook(id),
-        fetchReaderPages(id),
+        fetchReaderPages(id, bookPartId),
       ]);
 
       if (!bookData) {

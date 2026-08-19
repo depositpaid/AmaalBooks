@@ -93,12 +93,18 @@ export default function BookmarksScreen() {
     }
   };
 
-  const openBook = (bookId: string, pageNumber: number, pageId?: string | null) => {
+  const openBook = (
+    bookId: string,
+    pageNumber: number,
+    pageId?: string | null,
+    bookPartId?: string | null
+  ) => {
     router.push({
       pathname: `/reader/${bookId}`,
       params: {
         page: String(pageNumber),
         ...(pageId ? { pageId } : {}),
+        ...(bookPartId ? { bookPartId } : {}),
       },
     });
   };
@@ -192,7 +198,9 @@ export default function BookmarksScreen() {
       <TouchableOpacity
         style={styles.bookmarkMain}
         activeOpacity={0.75}
-        onPress={() => openBook(item.book_id, item.page_number, item.page_id)}
+        onPress={() =>
+          openBook(item.book_id, item.page_number, item.page_id, item.page?.book_part_id)
+        }
       >
         <View style={styles.iconColumn}>
           <View style={[styles.bookmarkIcon, { backgroundColor: item.book.color_accent || AppColors.primary }]}>

@@ -93,7 +93,6 @@ export default function ReaderScreen() {
   const [book, setBook] = useState<Book | null>(null);
   const [pages, setPages] = useState<ReaderPage[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [contextEntryIndex, setContextEntryIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [controlsVisible, setControlsVisible] = useState(true);
@@ -186,7 +185,6 @@ export default function ReaderScreen() {
         }
       }
       setCurrentIndex(startIndex);
-      setContextEntryIndex(startIndex);
 
       // Ensure the starting page is rendered
       setRenderEnd(Math.min(pagesData.length, startIndex + 15));
@@ -372,7 +370,6 @@ export default function ReaderScreen() {
       setAutoScrollActive(false);
       tts.stop();
       setHighlightQuery(null);
-      setContextEntryIndex(index);
 
       // Wait for render, then scroll
       setTimeout(() => {
@@ -689,60 +686,13 @@ export default function ReaderScreen() {
     return block.language?.toLocaleLowerCase().startsWith('ar') ? 'rtl' : 'ltr';
   };
 
-  const getStoredStructuralContextParts = (
-    page: ReaderPage,
-    block: ReaderBlock
-  ): string[] => {
-    const values = [
-      block.structuralLabel,
-      block.structuralIdentifier,
-      page.structuralNodes.find((node) => node.id === block.structuralNodeId)?.title ?? null,
-    ];
-    return values.filter(
-      (value, index): value is string =>
-        Boolean(value) && values.findIndex((candidate) => candidate === value) === index
-    );
-  };
-
   const renderStructuredPage = (page: ReaderPage, pageIdx: number) => {
-    const previousPageBlocks = pageIdx > 0 ? pages[pageIdx - 1].blocks : [];
-    let previousStructuralNodeId: string | null =
-      previousPageBlocks.length > 0
-        ? previousPageBlocks[previousPageBlocks.length - 1].structuralNodeId
-        : null;
-    let hasEncounteredStructuralGroup = false;
-
     return page.blocks.map((block, blockIdx) => {
       const direction = getBlockDirection(block);
       const isArabic = direction === 'rtl';
       const isTranslation = block.type === 'translation';
       const isHeading = block.type === 'heading';
       const isNote = block.type === 'note';
-      const hasGreenStructure =
-        block.structuralType === 'hadith' || block.structuralType === 'section';
-      const showStructuralHeader =
-        hasGreenStructure &&
-        Boolean(block.structuralNodeId) &&
-        block.structuralNodeId !== previousStructuralNodeId;
-      const storedContextParts = getStoredStructuralContextParts(page, block);
-      const showContinuationHeader =
-        hasGreenStructure &&
-        Boolean(block.structuralNodeId) &&
-        block.structuralNodeId === previousStructuralNodeId &&
-        pageIdx === contextEntryIndex &&
-        !hasEncounteredStructuralGroup &&
-        storedContextParts.length > 0;
-      const structuralHeaderParts = showStructuralHeader
-        ? [block.structuralType, ...storedContextParts].filter(
-            (value, index, all): value is string =>
-              Boolean(value) && all.findIndex((candidate) => candidate === value) === index
-          )
-        : showContinuationHeader
-          ? storedContextParts
-          : [];
-
-      previousStructuralNodeId = block.structuralNodeId;
-      if (hasGreenStructure) hasEncounteredStructuralGroup = true;
 
       return (
         <View
@@ -751,30 +701,8 @@ export default function ReaderScreen() {
             styles.structuredBlock,
             isTranslation && { backgroundColor: theme.surface },
             isNote && { backgroundColor: theme.surface },
-            hasGreenStructure && {
-              borderLeftColor: theme.accent,
-              borderLeftWidth: 2,
-              paddingLeft: AppSpacing.md,
-            },
           ]}
         >
-          {structuralHeaderParts.length > 0 && (
-            <View style={styles.structuralHeader}>
-              <View style={[styles.structuralMarker, { backgroundColor: theme.accent }]} />
-              <Text
-                style={[
-                  styles.structuralHeaderText,
-                  {
-                    color: theme.accent,
-                    textShadowColor: theme.accent,
-                  },
-                ]}
-              >
-                {showContinuationHeader ? 'Continued — ' : ''}
-                {structuralHeaderParts.join(' · ')}
-              </Text>
-            </View>
-          )}
           <Text
             style={[
               pageTextStyle(theme, isArabic ? fontSize + 3 : fontSize, lineHeight),
@@ -1602,28 +1530,6 @@ const styles = StyleSheet.create({
   structuredBlock: {
     marginBottom: AppSpacing.lg,
     borderRadius: AppRadius.sm,
-  },
-  structuralHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: AppSpacing.sm,
-    marginBottom: AppSpacing.sm,
-  },
-  structuralMarker: {
-    width: 5,
-    height: 18,
-    borderRadius: 3,
-    shadowColor: '#39FF14',
-    shadowOpacity: 0.8,
-    shadowRadius: 5,
-    elevation: 2,
-  },
-  structuralHeaderText: {
-    flex: 1,
-    fontFamily: AppFonts.sansMedium,
-    fontSize: 13,
-    lineHeight: 18,
-    textShadowRadius: 4,
   },
   translationBlockText: {
     fontStyle: 'italic',

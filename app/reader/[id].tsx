@@ -129,7 +129,7 @@ export default function ReaderScreen() {
   // Load book data on mount and refetch when returning from other tabs (e.g. admin edits)
   useEffect(() => {
     loadBookData();
-  }, [id, bookPartId]);
+  }, [id, bookPartId, pageIdParam, pageParam]);
 
   useFocusEffect(
     useCallback(() => {
@@ -686,6 +686,26 @@ export default function ReaderScreen() {
     return block.language?.toLocaleLowerCase().startsWith('ar') ? 'rtl' : 'ltr';
   };
 
+  const openStructuredNavigationTarget = (block: ReaderBlock) => {
+    const target = block.navigationTarget;
+    if (!target || target.bookPartId !== bookPartId) return;
+
+    const targetPage = pages.find(
+      (page) =>
+        page.isStructured &&
+        page.bookPartId === target.bookPartId &&
+        (target.pageId
+          ? page.id === target.pageId
+          : page.printedPageNumber === target.printedPageNumber)
+    );
+    if (!targetPage) return;
+
+    router.push({
+      pathname: '/reader/[id]',
+      params: { id, bookPartId: target.bookPartId, pageId: targetPage.id },
+    });
+  };
+
   const renderStructuredPage = (page: ReaderPage, pageIdx: number) => {
     return page.blocks.map((block, blockIdx) => {
       const direction = getBlockDirection(block);
@@ -694,7 +714,7 @@ export default function ReaderScreen() {
       const isHeading = block.type === 'heading';
       const isNote = block.type === 'note';
 
-      return (
+      const blockContent = (
         <View
           key={block.id}
           style={[
@@ -728,6 +748,25 @@ export default function ReaderScreen() {
           </Text>
         </View>
       );
+
+      return block.navigationTarget ? (
+        <TouchableOpacity
+          key={block.id}
+          accessibilityRole="link"
+          onPress={() => openStructuredNavigationTarget(block)}
+          disabled={!pages.some(
+            (targetPage) =>
+              targetPage.isStructured &&
+              targetPage.bookPartId === block.navigationTarget?.bookPartId &&
+              (block.navigationTarget?.pageId
+                ? targetPage.id === block.navigationTarget.pageId
+                : targetPage.printedPageNumber === block.navigationTarget?.printedPageNumber)
+          )}
+          activeOpacity={0.65}
+        >
+          {blockContent}
+        </TouchableOpacity>
+      ) : blockContent;
     });
   };
 
@@ -988,13 +1027,13 @@ export default function ReaderScreen() {
                   {page.legacyChapterTitle}
                 </Text>
               )}
-              <View style={styles.pageNumberRow}>
-                <Text style={[styles.pageNumberText, { color: theme.secondaryText }]}>
-                  {page.isStructured && page.printedPageLabel
-                    ? page.printedPageLabel
-                    : page.legacyPageNumber}
-                </Text>
-              </View>
+              {(!page.isStructured || page.printedPageLabel) && (
+                <View style={styles.pageNumberRow}>
+                  <Text style={[styles.pageNumberText, { color: theme.secondaryText }]}>
+                    {page.isStructured ? page.printedPageLabel : page.legacyPageNumber}
+                  </Text>
+                </View>
+              )}
               {page.isStructured
                 ? renderStructuredPage(page, idx)
                 : renderPageText(page.blocks[0]?.text || '', `p${idx}`, idx)}
@@ -1031,11 +1070,11 @@ export default function ReaderScreen() {
               {book.title}
             </Text>
             <Text style={[styles.topBarSubtitle, { color: theme.secondaryText }]}>
-              Page{' '}
-              {currentPage.isStructured && currentPage.printedPageLabel
+              {currentPage.isStructured
                 ? currentPage.printedPageLabel
-                : currentPage.legacyPageNumber}
-              {!currentPage.isStructured ? ` of ${book.total_pages}` : ''}
+                  ? `Page ${currentPage.printedPageLabel}`
+                  : 'Unnumbered front matter'
+                : `Page ${currentPage.legacyPageNumber} of ${book.total_pages}`}
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => setShowToc(true)} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>

@@ -210,6 +210,21 @@ function validatePage(page, pageIndex, errors) {
         errors.push(`${blockPath}.structuralNodeId must reference a node supplied with this atomic page`);
       }
     }
+    if (block.navigationTarget !== null && block.navigationTarget !== undefined) {
+      const targetPath = `${blockPath}.navigationTarget`;
+      if (requireObject(block.navigationTarget, targetPath, errors)) {
+        requireUuid(block.navigationTarget.bookPartId, `${targetPath}.bookPartId`, errors);
+        if (
+          !Number.isInteger(block.navigationTarget.printedPageNumber) ||
+          block.navigationTarget.printedPageNumber <= 0
+        ) {
+          errors.push(`${targetPath}.printedPageNumber must be a positive integer`);
+        }
+        if (block.navigationTarget.pageId !== null && block.navigationTarget.pageId !== undefined) {
+          requireUuid(block.navigationTarget.pageId, `${targetPath}.pageId`, errors);
+        }
+      }
+    }
 
     if (block.blockType === 'arabic') {
       hasArabicBlock = true;

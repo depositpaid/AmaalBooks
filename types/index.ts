@@ -186,9 +186,16 @@ export interface ContentBlock {
   verification_status: VerificationStatus;
   source_page_region: Record<string, unknown> | null;
   provenance_notes: string | null;
+  navigation_target: ReaderNavigationTarget | null;
   created_at: string;
   updated_at: string;
   verified_at: string | null;
+}
+
+export interface ReaderNavigationTarget {
+  bookPartId: string;
+  printedPageNumber: number;
+  pageId?: string | null;
 }
 
 export type ReaderVerificationStatus = VerificationStatus | 'legacy_unverified';
@@ -216,6 +223,7 @@ export interface ReaderBlock {
   structuralIdentifier: string | null;
   ttsEligible: boolean;
   verificationStatus: ReaderVerificationStatus;
+  navigationTarget: ReaderNavigationTarget | null;
 }
 
 /**

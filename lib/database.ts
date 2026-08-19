@@ -90,8 +90,8 @@ export async function fetchPagesForBookPart(
       .select('*')
       .eq('book_id', bookId)
       .eq('book_part_id', bookPartId)
-      .order('sequence_index', { ascending: true, nullsFirst: false })
       .order('pdf_page_number', { ascending: true, nullsFirst: false })
+      .order('sequence_index', { ascending: true, nullsFirst: false })
       .order('page_number', { ascending: true })
       .order('id', { ascending: true })
       .range(from, to)
@@ -191,6 +191,7 @@ function toStructuredReaderBlock(
     structuralIdentifier: structuralNode?.source_identifier ?? null,
     ttsEligible: block.tts_eligible,
     verificationStatus: block.verification_status,
+    navigationTarget: block.navigation_target,
   };
 }
 
@@ -210,6 +211,7 @@ function toLegacyReaderBlock(page: Page): ReaderBlock {
     structuralIdentifier: null,
     ttsEligible: true,
     verificationStatus: toReaderVerificationStatus(page.verification_status),
+    navigationTarget: null,
   };
 }
 

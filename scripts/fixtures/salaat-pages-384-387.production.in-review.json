@@ -1,0 +1,830 @@
+{
+  "schemaVersion": 1,
+  "datasetKind": "production",
+  "pageWriteMode": "insert",
+  "bookId": "3cbdc749-e9c9-44f3-8330-ecc1e3b38cc8",
+  "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+  "edition": {
+    "id": "a2000000-0000-4000-8000-000000000001",
+    "editionLabel": "Fazail-e-amaalComplete.pdf — Virtues of Salaat",
+    "publisher": "ALTAF & SONS",
+    "publicationLabel": null,
+    "isbn": null,
+    "languageCode": "en-ar",
+    "notes": "Production structured payload for authoritative unnumbered opening pages, master PDF 384–387."
+  },
+  "sourceDocument": {
+    "id": "a3000000-0000-4000-8000-000000000001",
+    "originalFilename": "Fazail-e-amaalComplete.pdf",
+    "storagePath": null,
+    "sha256Checksum": "2617AA897D3B23AA7BBC9DEAE7CE424771C291F3C46D6E88553BE62222500867",
+    "pdfPageCount": 958,
+    "notes": "Authoritative master provenance; source file was not modified."
+  },
+  "importBatch": {
+    "id": "a4000000-0000-4000-8000-000000000007",
+    "importedBy": "authoritative-source-review",
+    "notes": "Preparation only. Do not import until explicitly authorized."
+  },
+  "pages": [
+    {
+      "pageId": "e3840000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "pageNumber": 384,
+      "sourcePageKind": "constituent cover",
+      "sourceShowsPrintedPageLabel": false,
+      "printedPageLabel": null,
+      "printedPageNumber": null,
+      "pdfPageNumber": 384,
+      "sequenceIndex": 100,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true
+      },
+      "structuralNodes": [],
+      "blocks": [
+        {
+          "id": "f3840000-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 0,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "فضائل اعمال",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 384; constituent cover; no printed folio visible"
+        },
+        {
+          "id": "f3840100-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 1,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "FAZA’IL -E- A’MAAL",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 384; constituent cover; no printed folio visible"
+        },
+        {
+          "id": "f3840200-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 2,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Part 3",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 384; constituent cover; no printed folio visible"
+        },
+        {
+          "id": "f3840300-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 3,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "VIRTUES OF SALAAH",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 384; constituent cover; no printed folio visible"
+        }
+      ]
+    },
+    {
+      "pageId": "e3850000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "pageNumber": 385,
+      "sourcePageKind": "series title and constituent listing page",
+      "sourceShowsPrintedPageLabel": false,
+      "printedPageLabel": null,
+      "printedPageNumber": null,
+      "pdfPageNumber": 385,
+      "sequenceIndex": 101,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true
+      },
+      "structuralNodes": [],
+      "blocks": [
+        {
+          "id": "f3850000-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 0,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "فضائل اعمال",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 385; series title and constituent listing page; no printed folio visible"
+        },
+        {
+          "id": "f3850100-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 1,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "FAZA’IL - E - A’MAAL",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 385; series title and constituent listing page; no printed folio visible"
+        },
+        {
+          "id": "f3850200-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 2,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Shaikhul Hadith Maulana Muhammad Zakariyya Kaandlavi",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 385; series title and constituent listing page; no printed folio visible"
+        },
+        {
+          "id": "f3850300-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 3,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Part 1  Stories of Sahabah",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 385; series title and constituent listing page; no printed folio visible"
+        },
+        {
+          "id": "f3850400-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 4,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Part 2  Virtues of The Holy Qur’aan",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 385; series title and constituent listing page; no printed folio visible"
+        },
+        {
+          "id": "f3850500-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 5,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Part 3  Virtues of Salaat",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 385; series title and constituent listing page; no printed folio visible"
+        },
+        {
+          "id": "f3850600-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 6,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Part 4  Virtues of Zikr",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 385; series title and constituent listing page; no printed folio visible"
+        },
+        {
+          "id": "f3850700-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 7,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Part 5  Virtues of Tabligh",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 385; series title and constituent listing page; no printed folio visible"
+        },
+        {
+          "id": "f3850800-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 8,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Part 6  Virtues of Ramadhaan",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 385; series title and constituent listing page; no printed folio visible"
+        },
+        {
+          "id": "f3850900-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 9,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Part 7  Muslim Denegeration And Its Only Remedy",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 385; series title and constituent listing page; no printed folio visible"
+        },
+        {
+          "id": "f3851000-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 10,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Maulana Ihtishaamul Hasan Kaandhlawi",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 385; series title and constituent listing page; no printed folio visible"
+        },
+        {
+          "id": "f3851100-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 11,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Part 8  Six Fundementals",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 385; series title and constituent listing page; no printed folio visible"
+        },
+        {
+          "id": "f3851200-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 12,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Maulana Aasiq Ilahi",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 385; series title and constituent listing page; no printed folio visible"
+        },
+        {
+          "id": "f3851300-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 13,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Glossary",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 385; series title and constituent listing page; no printed folio visible"
+        }
+      ]
+    },
+    {
+      "pageId": "e3860000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "pageNumber": 386,
+      "sourcePageKind": "Salaat title and publication page",
+      "sourceShowsPrintedPageLabel": false,
+      "printedPageLabel": null,
+      "printedPageNumber": null,
+      "pdfPageNumber": 386,
+      "sequenceIndex": 102,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true
+      },
+      "structuralNodes": [],
+      "blocks": [
+        {
+          "id": "f3860000-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 0,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Virtues of\nSALAAT",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 386; Salaat title and publication page; no printed folio visible"
+        },
+        {
+          "id": "f3860100-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 1,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Revised translation of\nthe Urdu book Faza’il-e-Namaaz",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 386; Salaat title and publication page; no printed folio visible"
+        },
+        {
+          "id": "f3860200-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 2,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "فضائل نماز",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 386; Salaat title and publication page; no printed folio visible"
+        },
+        {
+          "id": "f3860300-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 3,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "by",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 386; Salaat title and publication page; no printed folio visible"
+        },
+        {
+          "id": "f3860400-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 4,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Shaikhul Hadith Maulana Muhammad Zakariyya Kaandhlawi",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 386; Salaat title and publication page; no printed folio visible"
+        },
+        {
+          "id": "f3860500-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 5,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "translated by",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 386; Salaat title and publication page; no printed folio visible"
+        },
+        {
+          "id": "f3860600-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 6,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Abdul Rashid Arshad",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 386; Salaat title and publication page; no printed folio visible"
+        },
+        {
+          "id": "f3860700-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 7,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "ALTAF & SONS",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 386; Salaat title and publication page; no printed folio visible"
+        },
+        {
+          "id": "f3860800-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 8,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "P.O. BOX No. 5882, KARACHI-74000-PAKISTAN",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 386; Salaat title and publication page; no printed folio visible"
+        },
+        {
+          "id": "f3860900-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 9,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Fax : (92) 21 - 2512774",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 386; Salaat title and publication page; no printed folio visible"
+        },
+        {
+          "id": "f3861000-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 10,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "E-mail : altaf123@hotmail.com",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 386; Salaat title and publication page; no printed folio visible"
+        }
+      ]
+    },
+    {
+      "pageId": "e3870000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "pageNumber": 387,
+      "sourcePageKind": "contents/front matter",
+      "sourceShowsPrintedPageLabel": false,
+      "printedPageLabel": null,
+      "printedPageNumber": null,
+      "pdfPageNumber": 387,
+      "sequenceIndex": 103,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true
+      },
+      "structuralNodes": [],
+      "blocks": [
+        {
+          "id": "f3870000-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 0,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "CONTENTS",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: PDF page 387; contents/front matter; no printed folio visible"
+        },
+        {
+          "id": "f3870100-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 1,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "FOREWORD 9",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 9
+          },
+          "provenanceNotes": "Authoritative master transcription: PDF page 387; contents/front matter; no printed folio visible"
+        },
+        {
+          "id": "f3870200-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 2,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "PART I.—IMPORTANCE OF SALAAT",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 11
+          },
+          "provenanceNotes": "Authoritative master transcription: PDF page 387; contents/front matter; no printed folio visible"
+        },
+        {
+          "id": "f3870300-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 3,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "CHAPTER I.—THE REWARDS OF SALAAT\nPage No.",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 11
+          },
+          "provenanceNotes": "Authoritative master transcription: PDF page 387; contents/front matter; no printed folio visible"
+        },
+        {
+          "id": "f3870400-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 4,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith I Salaat is a pillar of Islam 11",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 11
+          },
+          "provenanceNotes": "Authoritative master transcription: PDF page 387; contents/front matter; no printed folio visible"
+        },
+        {
+          "id": "f3870500-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 5,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith II Salaat wipes out the sins 12",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 12
+          },
+          "provenanceNotes": "Authoritative master transcription: PDF page 387; contents/front matter; no printed folio visible"
+        },
+        {
+          "id": "f3870600-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 6,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith III Salaat causes forgiveness of sins 13",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 13
+          },
+          "provenanceNotes": "Authoritative master transcription: PDF page 387; contents/front matter; no printed folio visible"
+        },
+        {
+          "id": "f3870700-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 7,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith IV Salaat washes away the sins 15-16",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 15
+          },
+          "provenanceNotes": "Authoritative master transcription: PDF page 387; contents/front matter; no printed folio visible"
+        },
+        {
+          "id": "f3870800-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 8,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith V Salaat helps in adversities 17",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 17
+          },
+          "provenanceNotes": "Authoritative master transcription: PDF page 387; contents/front matter; no printed folio visible"
+        },
+        {
+          "id": "f3870900-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 9,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith VI Salaat is expiation for the sins 21",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 21
+          },
+          "provenanceNotes": "Authoritative master transcription: PDF page 387; contents/front matter; no printed folio visible"
+        },
+        {
+          "id": "f3871000-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 10,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith VII Salaat causes early entry into Paradise 22",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 22
+          },
+          "provenanceNotes": "Authoritative master transcription: PDF page 387; contents/front matter; no printed folio visible"
+        },
+        {
+          "id": "f3871100-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 11,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith VIII Salaat is a redeemer 23",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 23
+          },
+          "provenanceNotes": "Authoritative master transcription: PDF page 387; contents/front matter; no printed folio visible"
+        },
+        {
+          "id": "f3871200-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 12,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith IX Allah’s covenant with persons particular about Salaat 24",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 24
+          },
+          "provenanceNotes": "Authoritative master transcription: PDF page 387; contents/front matter; no printed folio visible"
+        },
+        {
+          "id": "f3871300-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 13,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith X Value of two rak‘aats of Salaat 25",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 25
+          },
+          "provenanceNotes": "Authoritative master transcription: PDF page 387; contents/front matter; no printed folio visible"
+        },
+        {
+          "id": "f3871400-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 14,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Arbaoon — Forty short Hadiths on the virtues of Salaat 27",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 27
+          },
+          "provenanceNotes": "Authoritative master transcription: PDF page 387; contents/front matter; no printed folio visible"
+        },
+        {
+          "id": "f3871500-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 15,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "CHAPTER II.—WARNING AND REPROACH ON DISCARD OF SALAAT",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 33
+          },
+          "provenanceNotes": "Authoritative master transcription: PDF page 387; contents/front matter; no printed folio visible"
+        },
+        {
+          "id": "f3871600-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 16,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith I Salaat is a partition between Islam and Kufr 33",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 33
+          },
+          "provenanceNotes": "Authoritative master transcription: PDF page 387; contents/front matter; no printed folio visible"
+        },
+        {
+          "id": "f3871700-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 17,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith II Discarding Salaat is leaving Islam 34",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 34
+          },
+          "provenanceNotes": "Authoritative master transcription: PDF page 387; contents/front matter; no printed folio visible"
+        },
+        {
+          "id": "f3871800-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 18,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith III Allah has no obligation to person discarding Salaat 35",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 35
+          },
+          "provenanceNotes": "Authoritative master transcription: PDF page 387; contents/front matter; no printed folio visible"
+        }
+      ]
+    }
+  ]
+}

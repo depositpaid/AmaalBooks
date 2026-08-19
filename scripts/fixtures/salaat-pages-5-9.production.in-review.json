@@ -1,0 +1,1173 @@
+{
+  "schemaVersion": 1,
+  "datasetKind": "production",
+  "pageWriteMode": "insert",
+  "bookId": "3cbdc749-e9c9-44f3-8330-ecc1e3b38cc8",
+  "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+  "edition": {
+    "id": "a2000000-0000-4000-8000-000000000001",
+    "editionLabel": "Fazail-e-amaalComplete.pdf — Virtues of Salaat",
+    "publisher": "ALTAF & SONS",
+    "publicationLabel": null,
+    "isbn": null,
+    "languageCode": "en-ar",
+    "notes": "Production structured payload for authoritative front matter, printed pages 5–9."
+  },
+  "sourceDocument": {
+    "id": "a3000000-0000-4000-8000-000000000001",
+    "originalFilename": "Fazail-e-amaalComplete.pdf",
+    "storagePath": null,
+    "sha256Checksum": "2617AA897D3B23AA7BBC9DEAE7CE424771C291F3C46D6E88553BE62222500867",
+    "pdfPageCount": 958,
+    "notes": "Authoritative master provenance; source file was not modified."
+  },
+  "importBatch": {
+    "id": "a4000000-0000-4000-8000-000000000006",
+    "importedBy": "authoritative-source-review",
+    "notes": "Preparation only. Do not import until explicitly authorized."
+  },
+  "pages": [
+    {
+      "pageId": "e0050000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "pageNumber": 5,
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "5",
+      "printedPageNumber": 5,
+      "pdfPageNumber": 388,
+      "sequenceIndex": 95,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true
+      },
+      "structuralNodes": [],
+      "blocks": [
+        {
+          "id": "f0050000-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 0,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "CONTENTS",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: printed page 5"
+        },
+        {
+          "id": "f0050100-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 1,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "CHAPTER II.—WARNING AND REPROACH ON DISCARDING OF JAMAAT\nPage No.",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 64
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 5"
+        },
+        {
+          "id": "f0050200-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 2,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith I Salaat without Jamaat is not accepted 64",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 64
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 5"
+        },
+        {
+          "id": "f0050300-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 3,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith II To miss Jamaat does not become a Muslim 65",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 65
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 5"
+        },
+        {
+          "id": "f0050400-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 4,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith III The Prophet’s displeasure on discarding of Jamaat 66",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 66
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 5"
+        },
+        {
+          "id": "f0050500-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 5,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith IV Salaat without Jamaat an easy prey for Satan 66",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 66
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 5"
+        },
+        {
+          "id": "f0050600-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 6,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith V Ibn Abbas’s verdict on discarding of Jamaat 67",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 67
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 5"
+        },
+        {
+          "id": "f0050700-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 7,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith VI Person missing Jamaat shall be unable to prostrate on seeing Allah’s Glory 68",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 68
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 5"
+        },
+        {
+          "id": "f0050800-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 8,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "PART III.—IMPORTANCE OF SINCERITY AND DEVOTION IN SALAAT",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 70
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 5"
+        },
+        {
+          "id": "f0050900-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 9,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "CHAPTER I.—QUOTATIONS FROM THE HOLY QUR’AN\nPage No.",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 70
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 5"
+        },
+        {
+          "id": "f0051000-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 10,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Quotation I It is the Devotion that reaches Allah 70",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 70
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 5"
+        },
+        {
+          "id": "f0051100-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 11,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Quotation II Woe unto those who are heedless of Salaat 71",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 71
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 5"
+        },
+        {
+          "id": "f0051200-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 12,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Quotation III A Munafiq performs his Salaat languidly 71",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 71
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 5"
+        },
+        {
+          "id": "f0051300-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 13,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Quotation IV Awful Doom of those ruining their Salaat 71",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 71
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 5"
+        },
+        {
+          "id": "f0051400-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 14,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Quotation V Worship of an idler is not acceptable 72",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 72
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 5"
+        }
+      ]
+    },
+    {
+      "pageId": "e0060000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "pageNumber": 6,
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "6",
+      "printedPageNumber": 6,
+      "pdfPageNumber": 389,
+      "sequenceIndex": 96,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true
+      },
+      "structuralNodes": [],
+      "blocks": [
+        {
+          "id": "f0060000-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 0,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Virtues of Salaat\nPage No.",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: printed page 6"
+        },
+        {
+          "id": "f0060100-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 1,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Quotation VI Success on being humble in Salaat 72",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 72
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 6"
+        },
+        {
+          "id": "f0060200-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 2,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Quotation VII Salaat is not hard for the humble 73",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 73
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 6"
+        },
+        {
+          "id": "f0060300-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 3,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Quotation VIII Allah’s praise for those who establish Salaat 73",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 73
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 6"
+        },
+        {
+          "id": "f0060400-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 4,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Quotation IX Reward for those spending the night in Salaat 74",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 74
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 6"
+        },
+        {
+          "id": "f0060500-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 5,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Quotation X Reward for those who forsake their bed to cry unto Allah 74",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 74
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 6"
+        },
+        {
+          "id": "f0060600-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 6,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Quotation XI Allah’s praise for vigil 75",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 75
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 6"
+        },
+        {
+          "id": "f0060700-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 7,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Quotation XII Distinction of paying adoration at night 75",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 75
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 6"
+        },
+        {
+          "id": "f0060800-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 8,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Quotation XIII Reward for constancy in Salaat",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 72
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 6"
+        },
+        {
+          "id": "f0060900-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 9,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "CHAPTER II.—STORIES FROM THE LIVES OF THE PIOUS",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 78
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 6"
+        },
+        {
+          "id": "f0061000-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 10,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Story I Sheikh Abdul Wahid’s vision 78",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 78
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 6"
+        },
+        {
+          "id": "f0061100-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 11,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Story II Sheikh Mazhar Sa’adi’s vision 78",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 78
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 6"
+        },
+        {
+          "id": "f0061200-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 12,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Story III Abu Bakr Dharir’s story about a young slave 78",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 78
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 6"
+        },
+        {
+          "id": "f0061300-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 13,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Story IV A Sheikh’s dream 79",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 79
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 6"
+        },
+        {
+          "id": "f0061400-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 14,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Story V Sheikh ‘Ata’s story about a slave girl 79",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 79
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 6"
+        },
+        {
+          "id": "f0061500-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 15,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Story VI Sirri Saqati’s account of his slave 79",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 79
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 6"
+        },
+        {
+          "id": "f0061600-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 16,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Story VII Sirri Saqati’s story about a pious woman 80",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 80
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 6"
+        },
+        {
+          "id": "f0061700-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 17,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Story VIII Sheikh Abu ‘Abdullah jala’s story about a porter 80",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 80
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 6"
+        }
+      ]
+    },
+    {
+      "pageId": "e0070000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "pageNumber": 7,
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "7",
+      "printedPageNumber": 7,
+      "pdfPageNumber": 390,
+      "sequenceIndex": 97,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true
+      },
+      "structuralNodes": [],
+      "blocks": [
+        {
+          "id": "f0070000-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 0,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "CONTENTS\nPage No.",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        },
+        {
+          "id": "f0070100-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 1,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Story IX A surgical operation during Salaat 81",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 81
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        },
+        {
+          "id": "f0070200-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 2,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Story X Abu Amir’s story about a slave woman 81",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 81
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        },
+        {
+          "id": "f0070300-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 3,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Story XI Story of Umar bin Abdul Aziz 82",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 82
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        },
+        {
+          "id": "f0070400-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 4,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Story XII Muhammad bin Munkadir’s Salaat 83",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 83
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        },
+        {
+          "id": "f0070500-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 5,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Story XIII Thabit Banani’s Salaat 83",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 83
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        },
+        {
+          "id": "f0070600-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 6,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Pursuits of a few pious Persons 84",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 84
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        },
+        {
+          "id": "f0070700-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 7,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "CHAPTER III.—QUOTATIONS FROM AHAADITH",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 86
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        },
+        {
+          "id": "f0070800-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 8,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith I Reward proportional to Sincerity 86",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 86
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        },
+        {
+          "id": "f0070900-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 9,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith II Reward of good Salaat 86",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 86
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        },
+        {
+          "id": "f0071000-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 10,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith III Benefit of Nafl Salaat 88",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 88
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        },
+        {
+          "id": "f0071100-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 11,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith IV Salaat, the first thing to be reckoned for 89",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 89
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        },
+        {
+          "id": "f0071200-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 12,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith V The worst thief 90",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 90
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        },
+        {
+          "id": "f0071300-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 13,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith VI Keeping the body at rest in Salaat 92",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 92
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        },
+        {
+          "id": "f0071400-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 14,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith VII Salaat preserves from lewdness and iniquity 94",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 94
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        },
+        {
+          "id": "f0071500-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 15,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Hadith VIII Qunoot in Salaat 95",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 95
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        },
+        {
+          "id": "f0071600-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 16,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Requisites of good Salaat suggested by the Sufis 99",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 99
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        },
+        {
+          "id": "f0071700-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 17,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Significance of wording of Salaat 102",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 102
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        },
+        {
+          "id": "f0071800-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 18,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "Salaat of a few Sahabah, Tabi-‘een and Sufis 105",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 98,
+            "pageId": "e0980000-0000-4000-8000-000000000001"
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        },
+        {
+          "id": "f0071900-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 19,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "An Important Note 110",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "navigationTarget": {
+            "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+            "printedPageNumber": 103,
+            "pageId": "e1030000-0000-4000-8000-000000000001"
+          },
+          "provenanceNotes": "Authoritative master transcription: printed page 7"
+        }
+      ]
+    },
+    {
+      "pageId": "e0080000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "pageNumber": 8,
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "8",
+      "printedPageNumber": 8,
+      "pdfPageNumber": 391,
+      "sequenceIndex": 98,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en",
+        "ar"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true
+      },
+      "structuralNodes": [],
+      "blocks": [
+        {
+          "id": "f0080000-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 0,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: printed page 8"
+        },
+        {
+          "id": "f0080100-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 1,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL.",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: printed page 8"
+        },
+        {
+          "id": "f0080200-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 2,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "AUTHOR’S FOREWORD",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: printed page 8"
+        },
+        {
+          "id": "f0080300-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 3,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "نَحْمَدُهُ وَنُصَلِّيْ وَنُسَلِّمُ عَلٰى رَسُوْلِهِ الْكَرِيْمِ وَآلِهِ وَصَحْبِهِ وَأَتْبَاعِهِ الْهُدَاةِ لِلدِّيْنِ الْقَوِيْمِ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: printed page 8"
+        },
+        {
+          "id": "f0080400-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 4,
+          "blockType": "translation",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "“We glorify Allah and ask blessings on and salute His noble Prophet, his companions and those who follow him in upholding the cause of the right religion.”",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: printed page 8"
+        },
+        {
+          "id": "f0080500-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 5,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "The indifference of Muslims towards practising Islam these days is too well known. So much so that even Salaat, which is the most important pillar of Islam (after Imaan) and the first and the foremost thing to be reckoned on the Day of Judgement, is being badly neglected. Although every call to ‘Islam’, nowadays, seems to be only a cry in the wilderness, yet experience shows that efforts in this direction are not altogether fruitless. The glorious words of the Holy Prophet (Sallallaho alaihe wasallam) are sure to benefit those with a receptive and submissive frame of mind. With this idea in view and to comply with the long-standing request of some of my dear friends, I have taken upon myself to write this booklet, which is the second of the series on ‘Tabligh’, the first one being “Virtues of Tabligh.”",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: printed page 8"
+        },
+        {
+          "id": "f0080600-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 6,
+          "blockType": "arabic",
+          "languageCode": "ar",
+          "direction": "rtl",
+          "textContent": "وَمَا تَوْفِيْقِيْ إِلَّا بِاللّٰهِ، عَلَيْهِ تَوَكَّلْتُ وَإِلَيْهِ أُنِيْبُ",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: printed page 8"
+        },
+        {
+          "id": "f0080700-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 7,
+          "blockType": "translation",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "And my success can only come from Allah! And in Him I trust and unto Him I turn ................. (XI:88)",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: printed page 8"
+        }
+      ]
+    },
+    {
+      "pageId": "e0090000-0000-4000-8000-000000000001",
+      "bookPartId": "59d7f112-fb58-4726-9c35-11485c6155e7",
+      "pageNumber": 9,
+      "sourceShowsPrintedPageLabel": true,
+      "printedPageLabel": "9",
+      "printedPageNumber": 9,
+      "pdfPageNumber": 392,
+      "sequenceIndex": 99,
+      "verificationStatus": "in_review",
+      "scanLanguages": [
+        "en"
+      ],
+      "reviewEvidence": {
+        "englishTranscriptionComplete": true,
+        "arabicTranscriptionComplete": true,
+        "blockOrderChecked": true,
+        "identifiersChecked": true,
+        "scanCompared": true
+      },
+      "structuralNodes": [],
+      "blocks": [
+        {
+          "id": "f0090000-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 0,
+          "blockType": "heading",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "FOREWORD",
+          "rawOcrText": null,
+          "ttsEligible": false,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: printed page 9"
+        },
+        {
+          "id": "f0090100-0000-4000-8000-000000000001",
+          "structuralNodeId": null,
+          "sequenceIndex": 1,
+          "blockType": "english",
+          "languageCode": "en",
+          "direction": "ltr",
+          "textContent": "The present-day Muslims, in respect of their behaviour towards Salaat, can be divided into three groups. A large number among them is totally unmindful of Salaat. Quite a few observe their Salaat, but are not particular about Jamaat. Then there are those who are regular in their Salaat (with Jamaat), but their Salaat is devoid of the care and thoroughness which it demands. I have divided the book into three parts to suit the requirements of each group. In each part, the illustrious Ahaadith of the Holy Prophet (Sallallaho alaihe wasallam) are quoted with their simple translation. The translation is idiomatic and not literal. Explanatory notes have been added wherever necessary. The names of the books of Hadith from which the quotations are taken have also been mentioned for reference.",
+          "rawOcrText": null,
+          "ttsEligible": true,
+          "verificationStatus": "in_review",
+          "provenanceNotes": "Authoritative master transcription: printed page 9"
+        }
+      ]
+    }
+  ]
+}

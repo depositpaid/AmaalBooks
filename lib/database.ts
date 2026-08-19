@@ -76,6 +76,21 @@ export async function fetchBookParts(bookId: string): Promise<BookPart[]> {
   );
 }
 
+export interface SearchableBookPart {
+  book: Book;
+  part: BookPart;
+}
+
+export async function fetchSearchableBookParts(): Promise<SearchableBookPart[]> {
+  const books = await fetchBooks();
+  const partsByBook = await Promise.all(
+    books.map(async (book) => ({ book, parts: await fetchBookParts(book.id) }))
+  );
+  return partsByBook.flatMap(({ book, parts }) =>
+    parts.map((part) => ({ book, part }))
+  );
+}
+
 /**
  * Part-scoped page access for the future Book -> Parts -> Pages navigation.
  * Existing fetchPages/fetchReaderPages behavior remains unchanged.
@@ -521,6 +536,46 @@ export async function searchInBook(
     return { page, snippet, matchIndex };
   });
 }
+
+export async function searchInBookPart(
+  book: Book,
+  bookPartId: string,
+  query: string
+): Promise<{ page: Page; book: Book; snippet: string; matchIndex: number }[]> {
+  type BlockSearchRow = ContentBlock & { page: Page };
+  const matches = await fetchAllRows<BlockSearchRow>((from, to) =>
+    supabase
+      .from('content_blocks')
+      .select('*, page:pages!inner(*)')
+      .eq('book_id', book.id)
+      .eq('page.book_part_id', bookPartId)
+      .ilike('text_content', `%${query}%`)
+      .order('page_id', { ascending: true })
+      .order('sequence_index', { ascending: true })
+      .range(from, to) as unknown as PromiseLike<PaginatedResponse<BlockSearchRow>>
+  );
+
+  const firstMatchByPage = new Map<string, BlockSearchRow>();
+  for (const match of matches) {
+    if (!firstMatchByPage.has(match.page_id)) firstMatchByPage.set(match.page_id, match);
+  }
+
+  return [...firstMatchByPage.values()]
+    .sort((first, second) => comparePagesForReading(first.page, second.page))
+    .map((match) => {
+      const matchIndex = match.text_content.toLowerCase().indexOf(query.toLowerCase());
+      const start = Math.max(0, matchIndex - 50);
+      const end = Math.min(match.text_content.length, matchIndex + query.length + 70);
+      return {
+        page: match.page,
+        book,
+        snippet: (start > 0 ? '...' : '') + match.text_content.substring(start, end) +
+          (end < match.text_content.length ? '...' : ''),
+        matchIndex,
+      };
+    });
+}
+
 
 export async function searchInAllBooks(
   query: string

@@ -10,13 +10,16 @@ import {
   Dimensions,
   Modal,
   Pressable,
+  Alert,
+  Share,
+  Linking,
+  TextInput,
   type TextStyle,
 } from 'react-native';
 import { useLocalSearchParams, useRouter, useFocusEffect } from 'expo-router';
 import {
   ChevronLeft,
   ChevronRight,
-  Bookmark,
   BookmarkCheck,
   Volume2,
   Pause,
@@ -30,6 +33,12 @@ import {
   ChevronDown,
   MonitorOff,
   Monitor,
+  House,
+  Share2,
+  Search,
+  Star,
+  ArrowLeft,
+  Flag,
 } from 'lucide-react-native';
 import { useKeepAwake, activateKeepAwakeAsync, deactivateKeepAwake } from 'expo-keep-awake';
 import { AppColors, AppFonts, AppSpacing, AppRadius } from '@/lib/theme';
@@ -98,6 +107,11 @@ export default function ReaderScreen() {
   const [controlsVisible, setControlsVisible] = useState(true);
   const [showSettings, setShowSettings] = useState(false);
   const [showToc, setShowToc] = useState(false);
+  const [showSpeedControl, setShowSpeedControl] = useState(false);
+  const [selectedBlock, setSelectedBlock] = useState<{ page: ReaderPage; block: ReaderBlock } | null>(null);
+  const [showBlockActions, setShowBlockActions] = useState(false);
+  const [showIssueReport, setShowIssueReport] = useState(false);
+  const [issueComment, setIssueComment] = useState('');
   const [themeName, setThemeName] = useState<ReadingTheme>('dark');
   const [fontSize, setFontSize] = useState(18);
   const [lineHeight, setLineHeight] = useState(1.2);
@@ -114,6 +128,8 @@ export default function ReaderScreen() {
   const [ttsPageIdx, setTtsPageIdx] = useState(-1);
   const ttsScrollTimer = useRef<ReturnType<typeof setInterval> | null>(null);
   const userIsScrolling = useRef(false);
+  const lastScrollY = useRef(0);
+  const touchStartY = useRef(0);
 
   const scrollRef = useRef<ScrollView>(null);
   const scrollPositionRef = useRef(0);
@@ -283,15 +299,28 @@ export default function ReaderScreen() {
   }, []);
 
   // Stop TTS when user manually scrolls
-  const handleTouchStart = () => {
+  const handleTouchStart = (event: any) => {
+    touchStartY.current = event.nativeEvent.pageY ?? 0;
+  };
+
+  const handleTouchEnd = (event: any) => {
+    const endY = event.nativeEvent.pageY ?? touchStartY.current;
+    if (Math.abs(endY - touchStartY.current) > 8) return;
+    if (autoScrollActive) {
+      setControlsVisible(true);
+      setShowSpeedControl(true);
+    } else if (!showSettings && !showToc && !showBlockActions && !showIssueReport) {
+      setControlsVisible((visible) => !visible);
+    }
+  };
+
+  const handleScrollBeginDrag = () => {
     if (ttsState === 'speaking') {
       tts.stop();
       setTtsSentenceIndex(-1);
       setTtsPageIdx(-1);
     }
-    if (autoScrollActive) {
-      setAutoScrollActive(false);
-    }
+    if (autoScrollActive) setAutoScrollActive(false);
   };
 
   // Auto-scroll through continuous content (manual mode)
@@ -506,6 +535,13 @@ export default function ReaderScreen() {
   const handleScroll = (event: any) => {
     const y = event.nativeEvent.contentOffset.y;
     scrollPositionRef.current = y;
+    const delta = y - lastScrollY.current;
+    const dialogOpen = showSettings || showToc || showBlockActions || showIssueReport;
+    if (!dialogOpen && Math.abs(delta) > 7) {
+      setControlsVisible(delta < 0);
+      if (delta > 0) setShowSpeedControl(false);
+    }
+    lastScrollY.current = y;
 
     // Determine current page from Y offsets
     for (let i = pageOffsets.current.length - 1; i >= 0; i--) {
@@ -686,6 +722,64 @@ export default function ReaderScreen() {
     return block.language?.toLocaleLowerCase().startsWith('ar') ? 'rtl' : 'ltr';
   };
 
+  const partShortName = () => {
+    const title = book?.title || 'Book';
+    if (/salaat/i.test(title) || bookPartId === '59d7f112-fb58-4726-9c35-11485c6155e7') return 'SALAT';
+    if (/zikr/i.test(title)) return 'ZIKR';
+    if (/ramad/i.test(title)) return 'RAMADHAN';
+    return title.replace(/virtues of/i, '').trim().toUpperCase();
+  };
+
+  const saveSelectedBlock = (kind: 'favorite' | 'reading_mark') => {
+    if (!selectedBlock || !id) return;
+    const label = kind === 'favorite' ? 'Favorite' : 'Reading Mark';
+    Alert.alert(`Save as ${label}?`, 'Confirm this saved item.', [
+      { text: 'Cancel', style: 'cancel' },
+      { text: 'Save', onPress: async () => {
+        const preview = selectedBlock.block.text.replace(/\s+/g, ' ').trim().slice(0, 110);
+        const pageLabel = selectedBlock.page.printedPageLabel || String(selectedBlock.page.legacyPageNumber);
+        await supabase.from('bookmarks').insert({
+          book_id: id,
+          page_number: selectedBlock.page.legacyPageNumber,
+          page_id: selectedBlock.page.id,
+          block_id: selectedBlock.block.id,
+          note: `${kind}|${partShortName()}|${pageLabel}|${preview}`,
+        });
+        setShowBlockActions(false);
+        Alert.alert('Saved', `${label} added.`);
+      } },
+    ]);
+  };
+
+  const issueMessage = () => {
+    const context = selectedBlock?.block.text.trim() || getPageTtsText(currentPage);
+    return `AmaalBooks — Report an Issue\n\n${partShortName()} · Page ${currentPage.printedPageLabel || currentPage.legacyPageNumber}\n\nSelected text:\n${context}\n\nComments:\n${issueComment.trim()}`;
+  };
+
+  const sendIssue = async (channel: 'whatsapp' | 'email') => {
+    const message = encodeURIComponent(issueMessage());
+    const url = channel === 'whatsapp'
+      ? `https://wa.me/447890107837?text=${message}`
+      : `mailto:4455uk@gmail.com?subject=${encodeURIComponent('AmaalBooks — Report an Issue')}&body=${message}`;
+    await Linking.openURL(url);
+  };
+
+  const shareCurrent = async () => {
+    const text = currentPage.blocks.map((block) => block.text).join('\n\n');
+    await Share.share({ message: `${partShortName()} · Page ${currentPage.printedPageLabel || currentPage.legacyPageNumber}\n\n${text}` });
+  };
+
+  const structuredBlockIsSpeaking = (page: ReaderPage, pageIdx: number, block: ReaderBlock) => {
+    if (ttsState === 'idle' || ttsPageIdx !== pageIdx || !block.ttsEligible) return false;
+    let sentenceStart = 0;
+    for (const candidate of page.blocks.filter((item) => item.ttsEligible)) {
+      const count = (candidate.text.match(/[^.!?]+[.!?]*/g) || [candidate.text]).filter((text) => text.trim()).length;
+      if (candidate.id === block.id) return ttsSentenceIndex >= sentenceStart && ttsSentenceIndex < sentenceStart + count;
+      sentenceStart += count;
+    }
+    return false;
+  };
+
   const openStructuredNavigationTarget = (block: ReaderBlock) => {
     const target = block.navigationTarget;
     if (!target || target.bookPartId !== bookPartId) return;
@@ -713,6 +807,7 @@ export default function ReaderScreen() {
       const isTranslation = block.type === 'translation';
       const isHeading = block.type === 'heading';
       const isNote = block.type === 'note';
+      const isSpeaking = structuredBlockIsSpeaking(page, pageIdx, block);
 
       const blockContent = (
         <View
@@ -721,6 +816,7 @@ export default function ReaderScreen() {
             styles.structuredBlock,
             isTranslation && { backgroundColor: theme.surface },
             isNote && { backgroundColor: theme.surface },
+            isSpeaking && styles.spokenBlock,
           ]}
         >
           <Text
@@ -763,10 +859,15 @@ export default function ReaderScreen() {
                 : targetPage.printedPageNumber === block.navigationTarget?.printedPageNumber)
           )}
           activeOpacity={0.65}
+          onLongPress={() => { setSelectedBlock({ page, block }); setShowBlockActions(true); setControlsVisible(true); }}
         >
           {blockContent}
         </TouchableOpacity>
-      ) : blockContent;
+      ) : (
+        <TouchableOpacity key={block.id} activeOpacity={0.9} onLongPress={() => { setSelectedBlock({ page, block }); setShowBlockActions(true); setControlsVisible(true); }}>
+          {blockContent}
+        </TouchableOpacity>
+      );
     });
   };
 
@@ -1013,6 +1114,8 @@ export default function ReaderScreen() {
           nestedScrollEnabled={true}
           onStartShouldSetResponder={() => false}
           onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          onScrollBeginDrag={handleScrollBeginDrag}
         >
           {pages.slice(0, renderEnd).map((page, idx) => (
             <View
@@ -1049,23 +1152,10 @@ export default function ReaderScreen() {
 
       </View>
 
-      {/* Show controls button when hidden - small floating dot */}
-      {!controlsVisible && (
-        <TouchableOpacity
-          style={styles.showControlsBtn}
-          onPress={toggleControls}
-          activeOpacity={0.7}
-          hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
-        />
-      )}
-
       {/* Top controls - overlay, no layout shift */}
       {controlsVisible && (
         <View style={[styles.topBar, { backgroundColor: theme.background, borderBottomColor: theme.surface }]}>
-          <TouchableOpacity onPress={() => router.back()} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-            <ChevronLeft size={26} color={theme.text} strokeWidth={2} />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.topBarCenter} onPress={toggleControls} activeOpacity={0.8}>
+          <TouchableOpacity style={styles.topBarCenter} onPress={() => setShowToc(true)} activeOpacity={0.8}>
             <Text style={[styles.topBarTitle, { color: theme.text }]} numberOfLines={1}>
               {book.title}
             </Text>
@@ -1077,8 +1167,8 @@ export default function ReaderScreen() {
                 : `Page ${currentPage.legacyPageNumber} of ${book.total_pages}`}
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setShowToc(true)} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-            <List size={24} color={theme.text} strokeWidth={2} />
+          <TouchableOpacity accessibilityLabel="Audio playback" onPress={toggleTts} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+            {ttsState === 'speaking' ? <Pause size={24} color={theme.accent} /> : <Play size={24} color={theme.text} />}
           </TouchableOpacity>
         </View>
       )}
@@ -1094,61 +1184,42 @@ export default function ReaderScreen() {
 
       {/* Bottom controls - overlay */}
       {controlsVisible && (
-        <View style={[styles.bottomBar, { backgroundColor: theme.background, borderTopColor: theme.surface }]}>
-          <TouchableOpacity style={styles.controlButton} onPress={prevPage} disabled={currentIndex === 0}>
-            <ChevronLeft
-              size={24}
-              color={currentIndex === 0 ? theme.secondaryText : theme.text}
-              strokeWidth={2}
-            />
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.controlButton} onPress={toggleBookmark}>
-            {isBookmarked ? (
-              <BookmarkCheck size={24} color={theme.accent} strokeWidth={2} />
-            ) : (
-              <Bookmark size={24} color={theme.text} strokeWidth={2} />
-            )}
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.controlButton} onPress={toggleAutoScroll}>
-            <Gauge
-              size={24}
-              color={autoScrollActive ? theme.accent : theme.text}
-              strokeWidth={2}
-            />
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.controlButton} onPress={toggleKeepScreenOn}>
-            {keepScreenOn ? (
-              <Monitor size={24} color={theme.accent} strokeWidth={2} />
-            ) : (
-              <MonitorOff size={24} color={theme.text} strokeWidth={2} />
-            )}
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.controlButton} onPress={toggleTts}>
-            {ttsState === 'speaking' ? (
-              <Pause size={24} color={theme.accent} strokeWidth={2} />
-            ) : ttsState === 'paused' ? (
-              <Play size={24} color={theme.accent} strokeWidth={2} />
-            ) : (
-              <Volume2 size={24} color={theme.text} strokeWidth={2} />
-            )}
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.controlButton} onPress={() => setShowSettings(true)}>
-            <Settings2 size={24} color={theme.text} strokeWidth={2} />
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.controlButton} onPress={nextPage} disabled={currentIndex >= pages.length - 1}>
-            <ChevronRight
-              size={24}
-              color={currentIndex >= pages.length - 1 ? theme.secondaryText : theme.text}
-              strokeWidth={2}
-            />
-          </TouchableOpacity>
-        </View>
+        <>
+          <TouchableOpacity style={[styles.readerBackButton, { backgroundColor: theme.surface }]} accessibilityLabel="Back" onPress={() => router.back()}><ArrowLeft size={20} color={theme.text} /></TouchableOpacity>
+          {showSpeedControl && autoScrollActive ? <View style={[styles.speedPopover, { backgroundColor: theme.surface }]}>
+            <TouchableOpacity onPress={() => setAutoScrollSpeed((speed) => Math.max(0.25, speed - 0.25))}><Text style={[styles.speedAdjust, { color: theme.text }]}>−</Text></TouchableOpacity>
+            <Text style={[styles.speedValue, { color: theme.accent }]}>{autoScrollSpeed.toFixed(2)}×</Text>
+            <TouchableOpacity onPress={() => setAutoScrollSpeed((speed) => Math.min(5, speed + 0.25))}><Text style={[styles.speedAdjust, { color: theme.text }]}>+</Text></TouchableOpacity>
+          </View> : null}
+          <View style={[styles.bottomBar, { backgroundColor: theme.background, borderTopColor: theme.surface }]}>
+            <TouchableOpacity style={styles.controlButton} onPress={() => setShowSettings(true)}><Settings2 size={22} color={theme.text} /><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Settings</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.controlButton} onPress={() => router.push('/(tabs)/bookmarks')}><Star size={22} color={theme.text} /><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Saved</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.controlButton} onPress={toggleAutoScroll}><Gauge size={22} color={autoScrollActive ? theme.accent : theme.text} /><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Scroll</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.controlButton} onPress={() => router.push({ pathname: '/(tabs)/search', params: bookPartId ? { bookPartId } : {} })}><Search size={22} color={theme.text} /><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Search</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.controlButton} onPress={shareCurrent}><Share2 size={22} color={theme.text} /><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Share</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.controlButton} onPress={() => router.replace('/')}><House size={22} color={theme.text} /><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Home</Text></TouchableOpacity>
+          </View>
+        </>
       )}
+
+      <Modal visible={showBlockActions} transparent animationType="fade" onRequestClose={() => setShowBlockActions(false)}>
+        <Pressable style={styles.modalOverlay} onPress={() => setShowBlockActions(false)}><View style={[styles.actionSheet,{backgroundColor:theme.surface}]}>
+          <Text style={[styles.modalTitle,{color:theme.text}]}>Selected text</Text>
+          <Text style={[styles.selectedPreview,{color:theme.secondaryText}]} numberOfLines={4}>{selectedBlock?.block.text}</Text>
+          <TouchableOpacity style={styles.actionItem} onPress={() => saveSelectedBlock('favorite')}><Star size={20} color={theme.accent}/><Text style={[styles.actionItemText,{color:theme.text}]}>Save as Favorite</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.actionItem} onPress={() => saveSelectedBlock('reading_mark')}><BookmarkCheck size={20} color={theme.accent}/><Text style={[styles.actionItemText,{color:theme.text}]}>Save as Reading Mark</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.actionItem} onPress={() => { setShowBlockActions(false); setShowIssueReport(true); }}><Flag size={20} color={theme.accent}/><Text style={[styles.actionItemText,{color:theme.text}]}>Report an Issue</Text></TouchableOpacity>
+        </View></Pressable>
+      </Modal>
+
+      <Modal visible={showIssueReport} transparent animationType="slide" onRequestClose={() => setShowIssueReport(false)}>
+        <Pressable style={styles.modalOverlay} onPress={() => setShowIssueReport(false)}><View style={[styles.actionSheet,{backgroundColor:theme.surface}]}>
+          <Text style={[styles.modalTitle,{color:theme.text}]}>Report an Issue</Text>
+          <Text style={[styles.selectedPreview,{color:theme.secondaryText}]} numberOfLines={4}>{selectedBlock?.block.text}</Text>
+          <TextInput style={[styles.issueInput,{color:theme.text,borderColor:theme.secondaryText}]} placeholder="Add comments" placeholderTextColor={theme.secondaryText} value={issueComment} onChangeText={setIssueComment} multiline />
+          <View style={styles.issueActions}><TouchableOpacity style={styles.issueButton} onPress={() => sendIssue('whatsapp')}><Text style={styles.issueButtonText}>WhatsApp</Text></TouchableOpacity><TouchableOpacity style={styles.issueButton} onPress={() => sendIssue('email')}><Text style={styles.issueButtonText}>Email</Text></TouchableOpacity></View>
+        </View></Pressable>
+      </Modal>
 
       {/* Unified settings panel */}
       <Modal visible={showSettings} transparent animationType="slide">
@@ -1519,6 +1590,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: AppSpacing.sm,
   },
+  topBarLeading: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: AppSpacing.sm,
+  },
   topBarTitle: {
     fontFamily: AppFonts.sansMedium,
     fontSize: 15,
@@ -1570,6 +1646,11 @@ const styles = StyleSheet.create({
     marginBottom: AppSpacing.lg,
     borderRadius: AppRadius.sm,
   },
+  spokenBlock: {
+    backgroundColor: 'rgba(57,255,20,0.22)',
+    borderLeftWidth: 3,
+    borderLeftColor: '#39FF14',
+  },
   translationBlockText: {
     fontStyle: 'italic',
     paddingHorizontal: AppSpacing.md,
@@ -1618,10 +1699,24 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
   },
   controlButton: {
-    padding: AppSpacing.xs,
+    flex: 1,
+    paddingVertical: AppSpacing.xs,
     alignItems: 'center',
     justifyContent: 'center',
   },
+  controlLabel: { fontFamily: AppFonts.sans, fontSize: 9, marginTop: 2 },
+  readerBackButton: { position: 'absolute', left: AppSpacing.sm, bottom: Platform.OS === 'web' ? 66 : 94, zIndex: 101, width: 36, height: 36, borderRadius: 18, alignItems: 'center', justifyContent: 'center' },
+  speedPopover: { position: 'absolute', right: AppSpacing.sm, bottom: Platform.OS === 'web' ? 66 : 94, zIndex: 101, flexDirection: 'row', alignItems: 'center', gap: 14, paddingHorizontal: 14, height: 38, borderRadius: 19 },
+  speedAdjust: { fontSize: 24, lineHeight: 28 },
+  speedValue: { fontFamily: AppFonts.sansBold, fontSize: 13 },
+  actionSheet: { width: '100%', maxWidth: 560, alignSelf: 'center', borderTopLeftRadius: AppRadius.xl, borderTopRightRadius: AppRadius.xl, padding: AppSpacing.lg, gap: AppSpacing.sm },
+  selectedPreview: { fontFamily: AppFonts.serif, fontSize: 14, lineHeight: 20, marginBottom: AppSpacing.sm },
+  actionItem: { minHeight: 52, flexDirection: 'row', alignItems: 'center', gap: AppSpacing.md, borderTopWidth: 1, borderTopColor: AppColors.border },
+  actionItemText: { fontFamily: AppFonts.sansMedium, fontSize: 15 },
+  issueInput: { minHeight: 110, borderWidth: 1, borderRadius: AppRadius.md, padding: AppSpacing.md, textAlignVertical: 'top', fontFamily: AppFonts.sans },
+  issueActions: { flexDirection: 'row', gap: AppSpacing.sm },
+  issueButton: { flex: 1, minHeight: 48, alignItems: 'center', justifyContent: 'center', backgroundColor: AppColors.primary, borderRadius: AppRadius.md },
+  issueButtonText: { color: AppColors.white, fontFamily: AppFonts.sansBold },
   showControlsBtn: {
     position: 'absolute',
     top: Platform.OS === 'web' ? 16 : 52,
@@ -1867,7 +1962,9 @@ function highlightedSentenceStyle(theme: ThemeColors): TextStyle {
       theme.name === 'dark' || theme.name === 'night'
         ? 'rgba(0, 255, 102, 0.25)'
         : 'rgba(0, 200, 83, 0.25)',
-    color: '#00C853',
+    color: theme.name === 'dark' || theme.name === 'night' ? '#39FF14' : '#00C853',
+    textShadowColor: '#39FF14',
+    textShadowRadius: 3,
   };
 }
 

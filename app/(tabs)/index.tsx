@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   ActivityIndicator,
   RefreshControl,
-  Dimensions,
+  useWindowDimensions,
   Image,
   Platform,
 } from 'react-native';
@@ -17,14 +17,14 @@ import { AppColors, AppFonts, AppSpacing, AppRadius } from '@/lib/theme';
 import { fetchBooks, fetchReadingProgress } from '@/lib/database';
 import type { Book, ReadingProgress } from '@/types';
 
-const screenWidth = Dimensions.get('window').width;
-const numColumns = screenWidth > 600 ? 3 : 2;
-const cardWidth = (screenWidth - AppSpacing.lg * (numColumns + 1)) / numColumns;
 const FAZAIL_AMAAL_BOOK_ID = '3cbdc749-e9c9-44f3-8330-ecc1e3b38cc8';
 const VIRTUES_OF_SALAAT_PART_ID = '59d7f112-fb58-4726-9c35-11485c6155e7';
 
 export default function LibraryScreen() {
   const router = useRouter();
+  const { width } = useWindowDimensions();
+  const listWidth = Math.min(width, 760);
+  const cardWidth = (listWidth - AppSpacing.md * 3) / 2;
   const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -84,7 +84,7 @@ export default function LibraryScreen() {
 
     return (
       <TouchableOpacity
-        style={styles.bookCard}
+        style={[styles.bookCard, { width: cardWidth }]}
         activeOpacity={0.8}
         onPress={() => openBook(item.id)}
       >
@@ -93,7 +93,7 @@ export default function LibraryScreen() {
             <Image source={{ uri: item.cover_url }} style={styles.coverImage} />
           ) : (
             <View style={[styles.coverPlaceholder, { backgroundColor: item.color_accent || AppColors.primary }]}>
-              <BookIcon size={40} color={AppColors.white} strokeWidth={1.5} />
+              <BookIcon size={30} color={AppColors.white} strokeWidth={1.5} />
               <Text style={styles.coverTitle} numberOfLines={3}>
                 {item.title}
               </Text>
@@ -162,7 +162,7 @@ export default function LibraryScreen() {
         data={books}
         renderItem={renderBook}
         keyExtractor={(item) => item.id}
-        numColumns={numColumns}
+        numColumns={2}
         contentContainerStyle={styles.list}
         columnWrapperStyle={styles.row}
         refreshControl={
@@ -200,22 +200,25 @@ const styles = StyleSheet.create({
     color: AppColors.textSecondary,
   },
   list: {
-    paddingHorizontal: AppSpacing.lg,
+    width: '100%',
+    maxWidth: 760,
+    alignSelf: 'center',
+    paddingHorizontal: AppSpacing.md,
     paddingBottom: AppSpacing.xxl,
   },
   row: {
-    gap: AppSpacing.lg,
-    marginBottom: AppSpacing.lg,
+    gap: AppSpacing.md,
+    marginBottom: AppSpacing.md,
   },
   bookCard: {
-    width: cardWidth,
+    flexShrink: 0,
   },
   coverContainer: {
     width: '100%',
-    aspectRatio: 2 / 3,
+    aspectRatio: 4 / 5,
     borderRadius: AppRadius.md,
     overflow: 'hidden',
-    marginBottom: AppSpacing.sm,
+    marginBottom: 6,
     position: 'relative',
     backgroundColor: AppColors.surface,
   },

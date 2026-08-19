@@ -1,6 +1,6 @@
 import { Tabs } from 'expo-router';
-import { StyleSheet, Platform, View, Text } from 'react-native';
-import { Library, Bookmark, Mic, Search, Settings } from 'lucide-react-native';
+import { Platform } from 'react-native';
+import { House, Search, Settings, Star } from 'lucide-react-native';
 import { AppColors, AppFonts } from '@/lib/theme';
 
 export default function TabLayout() {
@@ -32,9 +32,9 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Library',
+          title: 'Home',
           tabBarIcon: ({ size, color }) => (
-            <Library size={size} color={color} strokeWidth={2} />
+            <House size={size} color={color} strokeWidth={2} />
           ),
         }}
       />
@@ -50,16 +50,16 @@ export default function TabLayout() {
       <Tabs.Screen
         name="bookmarks"
         options={{
-          title: 'Bookmarks',
+          title: 'Favorites',
           tabBarIcon: ({ size, color }) => (
-            <Bookmark size={size} color={color} strokeWidth={2} />
+            <Star size={size} color={color} strokeWidth={2} />
           ),
         }}
       />
       <Tabs.Screen
         name="admin"
         options={{
-          title: 'Edit',
+          title: 'Settings',
           tabBarIcon: ({ size, color }) => (
             <Settings size={size} color={color} strokeWidth={2} />
           ),

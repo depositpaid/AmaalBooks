@@ -34,6 +34,7 @@ interface BookmarkWithBook extends BookmarkType {
 }
 
 type SortMode = 'recent' | 'book';
+type SavedType = 'favorite' | 'reading_mark';
 
 interface BookmarkExportItem {
   bookTitle: string;
@@ -49,6 +50,7 @@ export default function BookmarksScreen() {
   const [error, setError] = useState<string | null>(null);
   const [refreshing, setRefreshing] = useState(false);
   const [sortMode, setSortMode] = useState<SortMode>('recent');
+  const [savedType, setSavedType] = useState<SavedType>('favorite');
   const [showSortMenu, setShowSortMenu] = useState(false);
   const [importing, setImporting] = useState(false);
   const [removingId, setRemovingId] = useState<string | null>(null);
@@ -123,7 +125,11 @@ export default function BookmarksScreen() {
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   };
 
-  const sortedBookmarks = [...bookmarks].sort((first, second) => {
+  const typedBookmarks = bookmarks.filter((bookmark) => {
+    const kind = bookmark.note?.split('|')[0];
+    return savedType === 'reading_mark' ? kind === 'reading_mark' : kind !== 'reading_mark';
+  });
+  const sortedBookmarks = [...typedBookmarks].sort((first, second) => {
     if (sortMode === 'book') {
       return first.book.title.localeCompare(second.book.title) || first.page_number - second.page_number;
     }
@@ -209,12 +215,15 @@ export default function BookmarksScreen() {
           <View style={[styles.verticalLine, { backgroundColor: item.book.color_accent || AppColors.primary }]} />
         </View>
         <View style={styles.bookmarkInfo}>
-          <Text style={styles.bookmarkTitle} numberOfLines={2}>
-            {item.note || item.book.title}
-          </Text>
-          <Text style={styles.bookmarkMeta} numberOfLines={1}>
-            {item.book.title} · Page {item.page?.printed_page_label || item.page_number}
-          </Text>
+          {(() => {
+            const parts = item.note?.split('|') || [];
+            const partName = parts.length >= 4 ? parts[1] : item.book.title.toUpperCase();
+            const preview = parts.length >= 4 ? parts.slice(3).join('|') : (item.note || item.book.title);
+            return <>
+              <Text style={styles.bookmarkTitle} numberOfLines={1}>{partName} · Page {item.page?.printed_page_label || item.page_number}</Text>
+              <Text style={styles.bookmarkMeta} numberOfLines={2}>{preview}</Text>
+            </>;
+          })()}
           <Text style={styles.bookmarkDate}>
             {formatTime(item.created_at)} · {formatDate(item.created_at)}
           </Text>
@@ -250,14 +259,18 @@ export default function BookmarksScreen() {
       <View style={styles.header}>
         <View style={styles.headerTopRow}>
           <View>
-            <Text style={styles.headerTitle}>Bookmarks</Text>
+            <Text style={styles.headerTitle}>Favorites & Reading Marks</Text>
             <Text style={styles.headerSubtitle}>
-              {bookmarks.length} saved {bookmarks.length === 1 ? 'bookmark' : 'bookmarks'}
+              {bookmarks.length} saved {bookmarks.length === 1 ? 'item' : 'items'}
             </Text>
           </View>
           <View style={styles.headerIcon}>
             <Star size={24} color={AppColors.primaryLight} strokeWidth={1.8} />
           </View>
+        </View>
+        <View style={styles.typeTabs}>
+          <TouchableOpacity style={[styles.typeTab, savedType === 'favorite' && styles.typeTabActive]} onPress={() => setSavedType('favorite')}><Text style={styles.typeTabText}>Favorites</Text></TouchableOpacity>
+          <TouchableOpacity style={[styles.typeTab, savedType === 'reading_mark' && styles.typeTabActive]} onPress={() => setSavedType('reading_mark')}><Text style={styles.typeTabText}>Reading Marks</Text></TouchableOpacity>
         </View>
         <View style={styles.actionRow}>
           <TouchableOpacity style={styles.actionButton} onPress={exportBookmarks}>
@@ -309,9 +322,9 @@ export default function BookmarksScreen() {
           <View style={styles.emptyIconCircle}>
             <BookOpen size={42} color={AppColors.primaryLight} strokeWidth={1.4} />
           </View>
-          <Text style={styles.emptyTitle}>No bookmarks yet</Text>
+          <Text style={styles.emptyTitle}>No {savedType === 'favorite' ? 'favorites' : 'reading marks'} yet</Text>
           <Text style={styles.emptyText}>
-            Tap the bookmark icon while reading to save a page here.
+            Long-press text in the reader to save it here.
           </Text>
         </View>
       ) : (
@@ -390,6 +403,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: AppColors.textSecondary,
   },
+  typeTabs: { flexDirection: 'row', gap: AppSpacing.sm, marginTop: AppSpacing.md },
+  typeTab: { flex: 1, paddingVertical: 9, alignItems: 'center', borderRadius: AppRadius.md, backgroundColor: AppColors.surface },
+  typeTabActive: { backgroundColor: AppColors.primary },
+  typeTabText: { color: AppColors.text, fontFamily: AppFonts.sansMedium, fontSize: 13 },
   headerIcon: {
     width: 48,
     height: 48,

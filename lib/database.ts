@@ -547,11 +547,78 @@ export async function searchInBook(
   });
 }
 
+export type SavedItemKind = 'favorite' | 'reading_mark';
+
+export interface SaveStructuredItemInput {
+  kind: SavedItemKind;
+  bookId: string;
+  bookPartId: string;
+  pageId: string;
+  blockId: string;
+  pageNumber: number;
+  printedPageLabel: string;
+  partName: string;
+  preview: string;
+}
+
+/** Validates every permanent anchor, inserts, then reads the row back. */
+export async function saveStructuredItem(input: SaveStructuredItemInput): Promise<Bookmark> {
+  const { data: page, error: pageError } = await supabase
+    .from('pages')
+    .select('id, book_id, book_part_id, printed_page_label')
+    .eq('id', input.pageId)
+    .eq('book_id', input.bookId)
+    .eq('book_part_id', input.bookPartId)
+    .maybeSingle();
+  if (pageError) throw pageError;
+  if (!page) throw new Error('The structured page identity could not be verified.');
+
+  const { data: block, error: blockError } = await supabase
+    .from('content_blocks')
+    .select('id, page_id, book_id')
+    .eq('id', input.blockId)
+    .eq('page_id', input.pageId)
+    .eq('book_id', input.bookId)
+    .maybeSingle();
+  if (blockError) throw blockError;
+  if (!block) throw new Error('The structured content-block identity could not be verified.');
+
+  // A null session is the intended anonymous single-tenant mode. RLS explicitly
+  // permits anon and authenticated roles; any missing grant/policy is surfaced.
+  const { error: sessionError } = await supabase.auth.getSession();
+  if (sessionError) throw sessionError;
+
+  const note = `v2|${input.kind}|${input.partName}|${input.printedPageLabel}|${input.bookPartId}|${input.preview}`;
+  const { data: inserted, error: insertError } = await supabase
+    .from('bookmarks')
+    .insert({
+      book_id: input.bookId,
+      page_number: input.pageNumber,
+      page_id: input.pageId,
+      block_id: input.blockId,
+      note,
+    })
+    .select('*')
+    .single();
+  if (insertError) throw insertError;
+
+  const { data: readBack, error: readBackError } = await supabase
+    .from('bookmarks')
+    .select('*')
+    .eq('id', inserted.id)
+    .eq('page_id', input.pageId)
+    .eq('block_id', input.blockId)
+    .single();
+  if (readBackError) throw readBackError;
+  if (!readBack) throw new Error('Saved item was inserted but could not be read back.');
+  return readBack;
+}
+
 export async function searchInBookPart(
   book: Book,
   bookPartId: string,
   query: string
-): Promise<{ page: Page; book: Book; snippet: string; matchIndex: number }[]> {
+): Promise<{ page: Page; book: Book; blockId: string; snippet: string; matchIndex: number }[]> {
   const partPages = await fetchPagesForBookPart(book.id, bookPartId);
   if (partPages.length === 0) return [];
   const pageById = new Map(partPages.map((page) => [page.id, page]));
@@ -581,6 +648,7 @@ export async function searchInBookPart(
       return {
         page: pageById.get(match.page_id)!,
         book,
+        blockId: match.id,
         snippet: (start > 0 ? '...' : '') + match.text_content.substring(start, end) +
           (end < match.text_content.length ? '...' : ''),
         matchIndex,

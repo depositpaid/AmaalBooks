@@ -14,6 +14,7 @@ import {
   Dimensions,
   Linking,
   Share as NativeShare,
+  Alert,
 } from 'react-native';
 import {
   Undo2,
@@ -46,6 +47,7 @@ import {
   Shield,
   ChevronDown,
   Copy,
+  Download,
 } from 'lucide-react-native';
 import { AppColors, AppFonts, AppSpacing, AppRadius } from '@/lib/theme';
 import { useNavigation } from 'expo-router';
@@ -59,6 +61,8 @@ import {
   fetchNextPageNumber,
 } from '@/lib/database';
 import type { Book, Page } from '@/types';
+import { StructuredSalaatAdminEditor } from '@/components/StructuredSalaatAdminEditor';
+import { usePwaInstall } from '@/hooks/usePwaInstall';
 
 const ADMIN_PASSWORD = 'editor123';
 const STORAGE_KEY = 'admin_authed';
@@ -94,6 +98,7 @@ const sortAdminPages = (first: Page, second: Page) => {
 };
 
 export default function AdminScreen() {
+  const { canInstall, isIos, promptInstall } = usePwaInstall();
   const [authed, setAuthed] = useState(false);
   const [adminRequested, setAdminRequested] = useState(false);
   const [showDonation, setShowDonation] = useState(false);
@@ -144,6 +149,7 @@ export default function AdminScreen() {
 
   if (!adminRequested && !authed) {
     const settingsRows = [
+      ...(canInstall || isIos ? [{ label: 'Install AmaalBooks', icon: Download, onPress: () => isIos ? Alert.alert('Install AmaalBooks', 'Tap Share, then Add to Home Screen.') : promptInstall() }] : []),
       { label: 'Share App', icon: ChevronRight, onPress: () => NativeShare.share({ message: 'AmaalBooks' }) },
       { label: 'Contact Developer', icon: Mail, onPress: () => Linking.openURL('mailto:4455uk@gmail.com') },
       { label: 'Report an Issue', icon: Flag, onPress: () => Linking.openURL('mailto:4455uk@gmail.com?subject=AmaalBooks%20%E2%80%94%20Report%20an%20Issue') },
@@ -203,7 +209,7 @@ export default function AdminScreen() {
     );
   }
 
-  return <AdminContent onLogout={handleLogout} />;
+  return <StructuredSalaatAdminEditor onLogout={handleLogout} />;
 }
 
 interface EditingPageState {

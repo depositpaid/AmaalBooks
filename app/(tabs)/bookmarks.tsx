@@ -11,7 +11,7 @@ import {
   Modal,
   Pressable,
 } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useFocusEffect, useRouter } from 'expo-router';
 import {
   Bookmark,
   BookmarkCheck,
@@ -84,6 +84,10 @@ export default function BookmarksScreen() {
   useEffect(() => {
     loadBookmarks();
   }, [loadBookmarks]);
+
+  useFocusEffect(useCallback(() => {
+    loadBookmarks();
+  }, [loadBookmarks]));
 
   const handleRefresh = () => {
     setRefreshing(true);

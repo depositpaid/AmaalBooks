@@ -1,0 +1,16 @@
+{
+  "name": "AmaalBooks",
+  "short_name": "AmaalBooks",
+  "description": "Read and study AmaalBooks.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#121212",
+  "theme_color": "#121212",
+  "icons": [
+    { "src": "/icons/amaalbooks-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/amaalbooks-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/amaalbooks-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

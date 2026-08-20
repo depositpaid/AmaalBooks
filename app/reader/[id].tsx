@@ -26,7 +26,7 @@ import {
   Pause,
   Play,
   Square,
-  Settings2,
+  Settings,
   X,
   Gauge,
   List,
@@ -40,11 +40,12 @@ import {
   Star,
   ArrowLeft,
   Flag,
+  ChevronsDown,
 } from 'lucide-react-native';
 import { useKeepAwake, activateKeepAwakeAsync, deactivateKeepAwake } from 'expo-keep-awake';
 import { AppColors, AppFonts, AppSpacing, AppRadius } from '@/lib/theme';
 import { READING_THEMES, type ReadingTheme, type ThemeColors } from '@/types';
-import { fetchBook, fetchBookPart, fetchReaderPages, fetchReadingProgress, saveReadingProgress } from '@/lib/database';
+import { fetchBook, fetchBookPart, fetchReaderPages, fetchReadingProgress, saveReadingProgress, saveStructuredItem, type SavedItemKind } from '@/lib/database';
 import { supabase } from '@/lib/supabase';
 import { tts, type TTSState } from '@/lib/tts';
 import type { Book, BookPart, ReaderBlock, ReaderPage } from '@/types';
@@ -116,6 +117,8 @@ export default function ReaderScreen() {
   const [showAudioSpeedControl, setShowAudioSpeedControl] = useState(false);
   const [selectedBlock, setSelectedBlock] = useState<{ page: ReaderPage; block: ReaderBlock } | null>(null);
   const [showBlockActions, setShowBlockActions] = useState(false);
+  const [pendingSaveKind, setPendingSaveKind] = useState<SavedItemKind | null>(null);
+  const [savingSelected, setSavingSelected] = useState(false);
   const [showIssueReport, setShowIssueReport] = useState(false);
   const [issueComment, setIssueComment] = useState('');
   const [themeName, setThemeName] = useState<ReadingTheme>('dark');
@@ -232,7 +235,8 @@ export default function ReaderScreen() {
         }, 300);
       }
     } catch (e: any) {
-      setError(e.message || 'Failed to load book');
+      const offline = Platform.OS === 'web' && typeof navigator !== 'undefined' && !navigator.onLine;
+      setError(offline ? 'You are offline. Reconnect to load the latest book content.' : (e.message || 'Failed to load book'));
       setLoading(false);
     }
   };
@@ -737,30 +741,38 @@ export default function ReaderScreen() {
     return title.replace(/virtues of/i, '').trim().toUpperCase();
   };
 
-  const saveSelectedBlock = (kind: 'favorite' | 'reading_mark') => {
-    if (!selectedBlock || !id) return;
-    const label = kind === 'favorite' ? 'Favorite' : 'Reading Mark';
-    Alert.alert(`Save as ${label}?`, 'Confirm this saved item.', [
-      { text: 'Cancel', style: 'cancel' },
-      { text: 'Save', onPress: async () => {
-        const preview = selectedBlock.block.text.replace(/\s+/g, ' ').trim().slice(0, 110);
-        const pageLabel = selectedBlock.page.printedPageLabel || String(selectedBlock.page.legacyPageNumber);
-        const permanentPartId = selectedBlock.page.bookPartId || bookPartId || '';
-        const { error: saveError } = await supabase.from('bookmarks').insert({
-          book_id: id,
-          page_number: selectedBlock.page.legacyPageNumber,
-          page_id: selectedBlock.page.id,
-          block_id: selectedBlock.block.id,
-          note: `v2|${kind}|${partShortName()}|${pageLabel}|${permanentPartId}|${preview}`,
-        });
-        if (saveError) {
-          Alert.alert('Could not save', saveError.message);
-          return;
-        }
-        setShowBlockActions(false);
-        Alert.alert('Saved', `${label} added.`);
-      } },
-    ]);
+  const requestSelectedBlockSave = (kind: SavedItemKind) => {
+    if (!selectedBlock?.block.id || !selectedBlock.page.id || !selectedBlock.page.bookPartId) {
+      Alert.alert('Cannot save', 'This selection is missing a permanent structured identity.');
+      return;
+    }
+    setShowBlockActions(false);
+    setPendingSaveKind(kind);
+  };
+
+  const confirmSelectedBlockSave = async () => {
+    if (!selectedBlock || !id || !pendingSaveKind || !selectedBlock.page.bookPartId) return;
+    const label = pendingSaveKind === 'favorite' ? 'Favorite' : 'Reading Mark';
+    setSavingSelected(true);
+    try {
+      await saveStructuredItem({
+        kind: pendingSaveKind,
+        bookId: id,
+        bookPartId: selectedBlock.page.bookPartId,
+        pageId: selectedBlock.page.id,
+        blockId: selectedBlock.block.id,
+        pageNumber: selectedBlock.page.legacyPageNumber,
+        printedPageLabel: selectedBlock.page.printedPageLabel || String(selectedBlock.page.legacyPageNumber),
+        partName: partShortName(),
+        preview: selectedBlock.block.text.replace(/\s+/g, ' ').trim().slice(0, 110),
+      });
+      setPendingSaveKind(null);
+      Alert.alert('Saved', `${label} added.`);
+    } catch (saveError: any) {
+      Alert.alert('Could not save', saveError?.message || 'The saved item could not be verified.');
+    } finally {
+      setSavingSelected(false);
+    }
   };
 
   const issueMessage = () => {
@@ -845,7 +857,7 @@ export default function ReaderScreen() {
             style={[
               pageTextStyle(theme, isArabic ? fontSize + 3 : fontSize, lineHeight),
               {
-                textAlign: isArabic ? 'right' : 'left',
+                textAlign: isArabic ? 'right' : isHeading ? 'center' : 'justify',
                 writingDirection: direction,
                 fontFamily: isArabic
                   ? Platform.select({
@@ -1216,9 +1228,9 @@ export default function ReaderScreen() {
             <TouchableOpacity onPress={() => setTtsRate((rate) => AUDIO_RATES[Math.min(AUDIO_RATES.length - 1, AUDIO_RATES.indexOf(rate) + 1)])}><Text style={[styles.speedAdjust, { color: theme.text }]}>+</Text></TouchableOpacity>
           </View> : null}
           <View style={[styles.bottomBar, { backgroundColor: theme.background, borderTopColor: theme.surface }]}>
-            <TouchableOpacity style={styles.controlButton} onPress={() => setShowSettings(true)}><View style={[styles.controlCircle,{backgroundColor:theme.surface}]}><Settings2 size={18} color={theme.text} /></View><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Settings</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.controlButton} onPress={() => setShowSettings(true)}><View style={[styles.controlCircle,{backgroundColor:theme.surface}]}><Settings size={18} color={theme.text} /></View><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Settings</Text></TouchableOpacity>
             <TouchableOpacity style={styles.controlButton} onPress={() => router.push('/(tabs)/bookmarks')}><View style={[styles.controlCircle,{backgroundColor:theme.surface}]}><Star size={18} color={theme.text} /></View><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Saved</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.controlButton} onPress={toggleAutoScroll}><View style={[styles.controlCircle,{backgroundColor:autoScrollActive ? theme.accent : theme.surface}]}><Gauge size={18} color={autoScrollActive ? theme.background : theme.text} /></View><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Scroll</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.controlButton} onPress={toggleAutoScroll}><View style={[styles.controlCircle,{backgroundColor:autoScrollActive ? theme.accent : theme.surface}]}><ChevronsDown size={18} color={autoScrollActive ? theme.background : theme.text} /></View><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Scroll</Text></TouchableOpacity>
             <TouchableOpacity style={styles.controlButton} onPress={toggleTts} onLongPress={() => setShowAudioSpeedControl((visible) => !visible)}><View style={[styles.controlCircle,{backgroundColor:ttsState === 'speaking' ? theme.accent : theme.surface}]}>{ttsState === 'speaking' ? <Pause size={18} color={theme.background} /> : <Play size={18} color={theme.text} />}</View><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Play</Text></TouchableOpacity>
             <TouchableOpacity style={styles.controlButton} onPress={() => router.push({ pathname: '/(tabs)/search', params: bookPartId ? { bookPartId } : {} })}><View style={[styles.controlCircle,{backgroundColor:theme.surface}]}><Search size={18} color={theme.text} /></View><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Search</Text></TouchableOpacity>
             <TouchableOpacity style={styles.controlButton} onPress={shareCurrent}><View style={[styles.controlCircle,{backgroundColor:theme.surface}]}><Share2 size={18} color={theme.text} /></View><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Share</Text></TouchableOpacity>
@@ -1231,10 +1243,23 @@ export default function ReaderScreen() {
         <Pressable style={styles.modalOverlay} onPress={() => setShowBlockActions(false)}><View style={[styles.actionSheet,{backgroundColor:theme.surface}]}>
           <Text style={[styles.modalTitle,{color:theme.text}]}>Selected text</Text>
           <Text style={[styles.selectedPreview,{color:theme.secondaryText}]} numberOfLines={4}>{selectedBlock?.block.text}</Text>
-          <TouchableOpacity style={styles.actionItem} onPress={() => saveSelectedBlock('favorite')}><Star size={20} color={theme.accent}/><Text style={[styles.actionItemText,{color:theme.text}]}>Save as Favorite</Text></TouchableOpacity>
-          <TouchableOpacity style={styles.actionItem} onPress={() => saveSelectedBlock('reading_mark')}><BookmarkCheck size={20} color={theme.accent}/><Text style={[styles.actionItemText,{color:theme.text}]}>Save as Reading Mark</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.actionItem} onPress={() => requestSelectedBlockSave('favorite')}><Star size={20} color={theme.accent}/><Text style={[styles.actionItemText,{color:theme.text}]}>Save as Favorite</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.actionItem} onPress={() => requestSelectedBlockSave('reading_mark')}><BookmarkCheck size={20} color={theme.accent}/><Text style={[styles.actionItemText,{color:theme.text}]}>Save as Reading Mark</Text></TouchableOpacity>
           <TouchableOpacity style={styles.actionItem} onPress={() => { setShowBlockActions(false); setShowIssueReport(true); }}><Flag size={20} color={theme.accent}/><Text style={[styles.actionItemText,{color:theme.text}]}>Report an Issue</Text></TouchableOpacity>
         </View></Pressable>
+      </Modal>
+
+      <Modal visible={pendingSaveKind !== null} transparent animationType="fade" onRequestClose={() => !savingSelected && setPendingSaveKind(null)}>
+        <Pressable style={styles.modalOverlay} onPress={() => !savingSelected && setPendingSaveKind(null)}>
+          <Pressable style={[styles.actionSheet, { backgroundColor: theme.surface }]} onPress={(event) => event.stopPropagation()}>
+            <Text style={[styles.modalTitle, { color: theme.text }]}>Save as {pendingSaveKind === 'favorite' ? 'Favorite' : 'Reading Mark'}?</Text>
+            <Text style={[styles.selectedPreview, { color: theme.secondaryText }]} numberOfLines={4}>{selectedBlock?.block.text}</Text>
+            <View style={styles.issueActions}>
+              <TouchableOpacity style={[styles.issueButton, { backgroundColor: theme.background }]} disabled={savingSelected} onPress={() => setPendingSaveKind(null)}><Text style={[styles.issueButtonText, { color: theme.text }]}>Cancel</Text></TouchableOpacity>
+              <TouchableOpacity style={styles.issueButton} disabled={savingSelected} onPress={confirmSelectedBlockSave}>{savingSelected ? <ActivityIndicator color={AppColors.white} /> : <Text style={styles.issueButtonText}>Save</Text>}</TouchableOpacity>
+            </View>
+          </Pressable>
+        </Pressable>
       </Modal>
 
       <Modal visible={showIssueReport} transparent animationType="slide" onRequestClose={() => setShowIssueReport(false)}>
@@ -1976,7 +2001,8 @@ function pageTextStyle(theme: ThemeColors, fs: number, lh: number): TextStyle {
     fontSize: fs,
     lineHeight: fs * lh,
     color: theme.text,
-    textAlign: 'left',
+    textAlign: 'justify',
+    ...(Platform.OS === 'web' ? ({ textAlignLast: 'left' } as any) : {}),
   };
 }
 

@@ -24,6 +24,23 @@ export function normalizeTextForTts(text: string): string {
 type ProgressListener = (sentenceIndex: number, totalSentences: number) => void;
 type PageEndListener = () => void;
 
+const MALE_VOICE_HINTS = ['male', 'daniel', 'david', 'mark', 'alex', 'fred', 'george', 'james', 'arthur', 'guy', 'ryan'];
+const FEMALE_VOICE_HINTS = ['female', 'samantha', 'victoria', 'karen', 'zira', 'susan', 'hazel'];
+
+export function scoreEnglishVoice(voice: Pick<SpeechSynthesisVoice, 'name' | 'lang' | 'default'>): number {
+  const name = voice.name.toLocaleLowerCase();
+  const lang = voice.lang.toLocaleLowerCase();
+  if (!lang.startsWith('en')) return -1000;
+  let score = 10;
+  if (lang.startsWith('en-gb')) score += 40;
+  else if (lang.startsWith('en-us')) score += 25;
+  if (MALE_VOICE_HINTS.some((hint) => name.includes(hint))) score += 100;
+  if (FEMALE_VOICE_HINTS.some((hint) => name.includes(hint))) score -= 80;
+  if (/natural|neural|premium|enhanced/.test(name)) score += 8;
+  if (voice.default) score += 1;
+  return score;
+}
+
 class TTSEngine {
   private utterance: SpeechSynthesisUtterance | null = null;
   private state: TTSState = 'idle';
@@ -34,6 +51,8 @@ class TTSEngine {
   private sentences: string[] = [];
   private currentIndex: number = 0;
   private pageEndListener: PageEndListener | null = null;
+  private lifecycleToken = 0;
+  private voiceWaitAttempts = 0;
 
   constructor() {
     if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
@@ -45,17 +64,9 @@ class TTSEngine {
 
   private getEnglishVoice(): SpeechSynthesisVoice | null {
     if (typeof window === 'undefined' || !('speechSynthesis' in window)) return null;
-    const voices = window.speechSynthesis.getVoices();
-    const maleKeywords = ['male', 'daniel', 'david', 'mark', 'alex', 'fred', 'george', 'james', 'arthur'];
-    return (
-      voices.find((v) => v.lang.startsWith('en') && maleKeywords.some((kw) => v.name.toLowerCase().includes(kw))) ||
-      voices.find((v) => v.lang.startsWith('en-GB') && v.name.toLowerCase().includes('male')) ||
-      voices.find((v) => v.lang.startsWith('en-US') && v.name.toLowerCase().includes('male')) ||
-      voices.find((v) => v.lang.startsWith('en-GB')) ||
-      voices.find((v) => v.lang.startsWith('en-US')) ||
-      voices.find((v) => v.lang.startsWith('en')) ||
-      null
-    );
+    return [...window.speechSynthesis.getVoices()]
+      .filter((voice) => voice.lang.toLocaleLowerCase().startsWith('en'))
+      .sort((first, second) => scoreEnglishVoice(second) - scoreEnglishVoice(first))[0] || null;
   }
 
   getState(): TTSState {
@@ -103,32 +114,46 @@ class TTSEngine {
       return;
     }
 
-    this.stop();
+    this.lifecycleToken++;
+    window.speechSynthesis.cancel();
+    this.utterance = null;
 
     const normalizedText = normalizeTextForTts(text);
     const rawSentences = normalizedText.match(/[^.!?]+[.!?]*/g) || [normalizedText];
     this.sentences = rawSentences.map((s) => s.trim()).filter(Boolean);
+    this.voiceWaitAttempts = 0;
     this.currentIndex = startIndex;
     this.pageEndListener = pageEndListener ?? null;
 
     this.setState('speaking');
     this.notifyProgress();
-    this.speakCurrentSentence();
+    this.queueCurrentSentence();
   }
 
   speakFromIndex(index: number) {
     if (this.state === 'idle' || index >= this.sentences.length) return;
     this.currentIndex = index;
     if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      this.lifecycleToken++;
       window.speechSynthesis.cancel();
     }
     this.utterance = null;
     this.setState('speaking');
     this.notifyProgress();
-    this.speakCurrentSentence();
+    this.queueCurrentSentence();
   }
 
-  private speakCurrentSentence() {
+  private queueCurrentSentence() {
+    const token = this.lifecycleToken;
+    // Android WebView/Chrome completes cancel asynchronously. A fresh task
+    // prevents the replacement utterance being swallowed by the old cancel.
+    setTimeout(() => {
+      if (token === this.lifecycleToken && this.state === 'speaking') this.speakCurrentSentence(token);
+    }, 60);
+  }
+
+  private speakCurrentSentence(token: number = this.lifecycleToken) {
+    if (token !== this.lifecycleToken) return;
     if (this.currentIndex >= this.sentences.length) {
       this.utterance = null;
       this.setState('idle');
@@ -139,6 +164,13 @@ class TTSEngine {
     }
 
     const sentence = this.sentences[this.currentIndex];
+    const availableVoices = window.speechSynthesis.getVoices();
+    if (availableVoices.length === 0 && this.voiceWaitAttempts < 10) {
+      this.voiceWaitAttempts++;
+      setTimeout(() => this.speakCurrentSentence(token), 100);
+      return;
+    }
+    this.voiceWaitAttempts = 0;
     this.utterance = new SpeechSynthesisUtterance(sentence);
     this.utterance.rate = this.currentRate;
     this.utterance.pitch = 0.6;
@@ -153,17 +185,19 @@ class TTSEngine {
     this.notifyProgress();
 
     this.utterance.onstart = () => {
+      if (token !== this.lifecycleToken) return;
       this.notifyProgress();
     };
 
     this.utterance.onend = () => {
-      if (this.state === 'speaking') {
+      if (token === this.lifecycleToken && this.state === 'speaking') {
         this.currentIndex++;
-        this.speakCurrentSentence();
+        this.queueCurrentSentence();
       }
     };
 
     this.utterance.onerror = (e) => {
+      if (token !== this.lifecycleToken) return;
       console.warn('TTS error:', e.error);
       if (e.error !== 'interrupted' && e.error !== 'canceled') {
         this.setState('idle');
@@ -177,12 +211,11 @@ class TTSEngine {
     if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
     if (this.state !== 'speaking') return;
 
-    // Use the native pause API so we can resume without losing position
-    if (window.speechSynthesis.paused) {
-      // already paused somehow
-    }
+    // Native pause/resume is unreliable in Android Chrome/WebView. Cancel the
+    // current utterance but retain its sentence index, then create a new one on Play.
+    this.lifecycleToken++;
+    window.speechSynthesis.cancel();
     this.utterance = null;
-    window.speechSynthesis.pause();
     this.setState('paused');
   }
 
@@ -190,19 +223,17 @@ class TTSEngine {
     if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
     if (this.state !== 'paused') return;
 
-    // If the browser still has the utterance paused, resume it
-    if (window.speechSynthesis.paused) {
-      this.setState('speaking');
-      window.speechSynthesis.resume();
-    } else {
-      // Fallback: re-speak the current sentence (some browsers cancel on pause)
-      this.setState('speaking');
-      this.speakCurrentSentence();
-    }
+    this.lifecycleToken++;
+    window.speechSynthesis.cancel();
+    this.utterance = null;
+    this.setState('speaking');
+    this.notifyProgress();
+    this.queueCurrentSentence();
   }
 
   stop() {
     if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      this.lifecycleToken++;
       window.speechSynthesis.cancel();
     }
     this.sentences = [];

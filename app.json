@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "My Books",
-    "slug": "my-books-reader",
+    "name": "AmaalBooks",
+    "slug": "amaalbooks",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -14,7 +14,7 @@
     "web": {
       "bundler": "metro",
       "output": "single",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./public/icons/amaalbooks-192.png"
     },
     "plugins": ["expo-router", "expo-font", "expo-web-browser"],
     "experiments": {

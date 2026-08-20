@@ -33,6 +33,20 @@ export default function RootLayout() {
     }
   }, [fontsLoaded, fontError]);
 
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+      const registerServiceWorker = () => {
+        navigator.serviceWorker.register('/service-worker.js').catch(console.error);
+      };
+      if (document.readyState === 'complete') {
+        registerServiceWorker();
+      } else {
+        window.addEventListener('load', registerServiceWorker, { once: true });
+        return () => window.removeEventListener('load', registerServiceWorker);
+      }
+    }
+  }, []);
+
   if (!fontsLoaded && !fontError) {
     return null;
   }

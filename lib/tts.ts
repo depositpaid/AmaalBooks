@@ -1,5 +1,26 @@
 export type TTSState = 'idle' | 'speaking' | 'paused';
 
+export const TTS_NORMALIZATION_MAP = {
+  'Sallallaho alaihe wasallam': 'May Allah bless him and grant him peace',
+  'Radhiyallaho anho': 'May Allah be pleased with him',
+  'Radhiyallaho anha': 'May Allah be pleased with her',
+  'Radhiyallaho anhum': 'May Allah be pleased with them',
+  'Rahmatullah alaih': 'May Allah have mercy upon him',
+  'Rahmatullah alaihim': 'May Allah have mercy upon them',
+  'Alayhis salaam': 'Peace be upon him',
+  'Alayhimus salaam': 'Peace be upon them',
+  Aameen: 'Amen',
+  'Inshaa-allaah': 'God willing',
+  'Ma’athallaah': 'Allah forbid',
+} as const;
+
+export function normalizeTextForTts(text: string): string {
+  return Object.entries(TTS_NORMALIZATION_MAP).reduce(
+    (normalized, [visibleText, spokenText]) => normalized.replaceAll(visibleText, spokenText),
+    text
+  );
+}
+
 type ProgressListener = (sentenceIndex: number, totalSentences: number) => void;
 type PageEndListener = () => void;
 
@@ -8,7 +29,7 @@ class TTSEngine {
   private state: TTSState = 'idle';
   private stateListeners: Set<(state: TTSState) => void> = new Set();
   private progressListeners: Set<ProgressListener> = new Set();
-  private currentRate: number = 1.0;
+  private currentRate: number = 0.5;
   private currentVoice: SpeechSynthesisVoice | null = null;
   private sentences: string[] = [];
   private currentIndex: number = 0;
@@ -84,7 +105,8 @@ class TTSEngine {
 
     this.stop();
 
-    const rawSentences = text.match(/[^.!?]+[.!?]*/g) || [text];
+    const normalizedText = normalizeTextForTts(text);
+    const rawSentences = normalizedText.match(/[^.!?]+[.!?]*/g) || [normalizedText];
     this.sentences = rawSentences.map((s) => s.trim()).filter(Boolean);
     this.currentIndex = startIndex;
     this.pageEndListener = pageEndListener ?? null;

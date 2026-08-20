@@ -14,6 +14,7 @@ import {
   Share,
   Linking,
   TextInput,
+  KeyboardAvoidingView,
   type TextStyle,
 } from 'react-native';
 import { useLocalSearchParams, useRouter, useFocusEffect } from 'expo-router';
@@ -43,10 +44,10 @@ import {
 import { useKeepAwake, activateKeepAwakeAsync, deactivateKeepAwake } from 'expo-keep-awake';
 import { AppColors, AppFonts, AppSpacing, AppRadius } from '@/lib/theme';
 import { READING_THEMES, type ReadingTheme, type ThemeColors } from '@/types';
-import { fetchBook, fetchReaderPages, fetchReadingProgress, saveReadingProgress } from '@/lib/database';
+import { fetchBook, fetchBookPart, fetchReaderPages, fetchReadingProgress, saveReadingProgress } from '@/lib/database';
 import { supabase } from '@/lib/supabase';
 import { tts, type TTSState } from '@/lib/tts';
-import type { Book, ReaderBlock, ReaderPage } from '@/types';
+import type { Book, BookPart, ReaderBlock, ReaderPage } from '@/types';
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 
@@ -57,18 +58,21 @@ const SCROLL_SPEEDS = [
   { label: '3x', value: 3 },
   { label: '4x', value: 4 },
 ];
+const AUDIO_RATES = [0.5, 0.75, 1, 1.25, 1.5, 2];
 
 export default function ReaderScreen() {
   const {
     id,
     page: pageParam,
     pageId: pageIdParam,
+    blockId: blockIdParam,
     bookPartId,
     highlight: highlightParam,
   } = useLocalSearchParams<{
     id: string;
     page?: string;
     pageId?: string;
+    blockId?: string;
     bookPartId?: string;
     highlight?: string;
   }>();
@@ -100,6 +104,7 @@ export default function ReaderScreen() {
   }, []);
 
   const [book, setBook] = useState<Book | null>(null);
+  const [bookPart, setBookPart] = useState<BookPart | null>(null);
   const [pages, setPages] = useState<ReaderPage[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -108,6 +113,7 @@ export default function ReaderScreen() {
   const [showSettings, setShowSettings] = useState(false);
   const [showToc, setShowToc] = useState(false);
   const [showSpeedControl, setShowSpeedControl] = useState(false);
+  const [showAudioSpeedControl, setShowAudioSpeedControl] = useState(false);
   const [selectedBlock, setSelectedBlock] = useState<{ page: ReaderPage; block: ReaderBlock } | null>(null);
   const [showBlockActions, setShowBlockActions] = useState(false);
   const [showIssueReport, setShowIssueReport] = useState(false);
@@ -119,7 +125,7 @@ export default function ReaderScreen() {
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [bookmarkId, setBookmarkId] = useState<string | null>(null);
   const [ttsState, setTtsState] = useState<TTSState>('idle');
-  const [ttsRate, setTtsRate] = useState(1.0);
+  const [ttsRate, setTtsRate] = useState(0.5);
   const [autoScrollActive, setAutoScrollActive] = useState(false);
   const [autoScrollSpeed, setAutoScrollSpeed] = useState(0.5);
   const [highlightQuery, setHighlightQuery] = useState<string | null>(null);
@@ -136,6 +142,7 @@ export default function ReaderScreen() {
   const autoScrollTimer = useRef<ReturnType<typeof setInterval> | null>(null);
   const progressSaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pageOffsets = useRef<number[]>([]);
+  const blockOffsets = useRef<Record<string, number>>({});
   const [renderEnd, setRenderEnd] = useState(15);
   const [contentHeight, setContentHeight] = useState(0);
 
@@ -145,7 +152,7 @@ export default function ReaderScreen() {
   // Load book data on mount and refetch when returning from other tabs (e.g. admin edits)
   useEffect(() => {
     loadBookData();
-  }, [id, bookPartId, pageIdParam, pageParam]);
+  }, [id, bookPartId, pageIdParam, pageParam, blockIdParam]);
 
   useFocusEffect(
     useCallback(() => {
@@ -162,9 +169,10 @@ export default function ReaderScreen() {
     setLoading(true);
     setError(null);
     try {
-      const [bookData, pagesData] = await Promise.all([
+      const [bookData, pagesData, partData] = await Promise.all([
         fetchBook(id),
         fetchReaderPages(id, bookPartId),
+        bookPartId ? fetchBookPart(bookPartId) : Promise.resolve(null),
       ]);
 
       if (!bookData) {
@@ -174,6 +182,7 @@ export default function ReaderScreen() {
       }
 
       setBook(bookData);
+      setBookPart(partData);
       setPages(pagesData);
 
       // Determine starting page
@@ -215,13 +224,11 @@ export default function ReaderScreen() {
       setLoading(false);
 
       // Scroll to saved page after render
-      if (startIndex > 0) {
+      if (startIndex > 0 || blockIdParam) {
         setTimeout(() => {
-          const y = pageOffsets.current[startIndex];
-          if (y !== undefined) {
-            scrollRef.current?.scrollTo({ y, animated: false });
-            scrollPositionRef.current = y;
-          }
+          const y = (pageOffsets.current[startIndex] || 0) + (blockIdParam ? (blockOffsets.current[blockIdParam] || 0) : 0);
+          scrollRef.current?.scrollTo({ y, animated: false });
+          scrollPositionRef.current = y;
         }, 300);
       }
     } catch (e: any) {
@@ -738,13 +745,18 @@ export default function ReaderScreen() {
       { text: 'Save', onPress: async () => {
         const preview = selectedBlock.block.text.replace(/\s+/g, ' ').trim().slice(0, 110);
         const pageLabel = selectedBlock.page.printedPageLabel || String(selectedBlock.page.legacyPageNumber);
-        await supabase.from('bookmarks').insert({
+        const permanentPartId = selectedBlock.page.bookPartId || bookPartId || '';
+        const { error: saveError } = await supabase.from('bookmarks').insert({
           book_id: id,
           page_number: selectedBlock.page.legacyPageNumber,
           page_id: selectedBlock.page.id,
           block_id: selectedBlock.block.id,
-          note: `${kind}|${partShortName()}|${pageLabel}|${preview}`,
+          note: `v2|${kind}|${partShortName()}|${pageLabel}|${permanentPartId}|${preview}`,
         });
+        if (saveError) {
+          Alert.alert('Could not save', saveError.message);
+          return;
+        }
         setShowBlockActions(false);
         Alert.alert('Saved', `${label} added.`);
       } },
@@ -759,7 +771,7 @@ export default function ReaderScreen() {
   const sendIssue = async (channel: 'whatsapp' | 'email') => {
     const message = encodeURIComponent(issueMessage());
     const url = channel === 'whatsapp'
-      ? `https://wa.me/447890107837?text=${message}`
+      ? `https://wa.me/447890197837?text=${message}`
       : `mailto:4455uk@gmail.com?subject=${encodeURIComponent('AmaalBooks — Report an Issue')}&body=${message}`;
     await Linking.openURL(url);
   };
@@ -767,6 +779,15 @@ export default function ReaderScreen() {
   const shareCurrent = async () => {
     const text = currentPage.blocks.map((block) => block.text).join('\n\n');
     await Share.share({ message: `${partShortName()} · Page ${currentPage.printedPageLabel || currentPage.legacyPageNumber}\n\n${text}` });
+  };
+
+  const openContents = () => {
+    const target = pages.find((page) =>
+      page.bookPartId === bookPartId &&
+      (page.printedPageNumber === 5 || page.printedPageLabel === '5')
+    );
+    if (target) scrollToPageIndex(pages.indexOf(target));
+    else setShowToc(true);
   };
 
   const structuredBlockIsSpeaking = (page: ReaderPage, pageIdx: number, block: ReaderBlock) => {
@@ -812,9 +833,10 @@ export default function ReaderScreen() {
       const blockContent = (
         <View
           key={block.id}
+          onLayout={(event) => { blockOffsets.current[block.id] = event.nativeEvent.layout.y; }}
           style={[
             styles.structuredBlock,
-            isTranslation && { backgroundColor: theme.surface },
+            isTranslation && styles.translationBlock,
             isNote && { backgroundColor: theme.surface },
             isSpeaking && styles.spokenBlock,
           ]}
@@ -1104,7 +1126,7 @@ export default function ReaderScreen() {
       <View style={styles.readingArea}>
         <ScrollView
           ref={scrollRef}
-          style={styles.scrollView}
+          style={[styles.scrollView, { backgroundColor: theme.background }]}
           contentContainerStyle={styles.scrollContent}
           onScroll={handleScroll}
           onContentSizeChange={(_, h) => setContentHeight(h)}
@@ -1123,7 +1145,7 @@ export default function ReaderScreen() {
               onLayout={(e) => {
                 pageOffsets.current[idx] = e.nativeEvent.layout.y;
               }}
-              style={[styles.pageBorder, { borderColor: theme.accent, marginBottom: AppSpacing.xl }]}
+              style={[styles.pageBorder, { marginBottom: AppSpacing.lg }]}
             >
               {!page.isStructured && page.legacyChapterTitle && (
                 <Text style={[styles.chapterTitle, { color: theme.accent }]}>
@@ -1157,7 +1179,7 @@ export default function ReaderScreen() {
         <View style={[styles.topBar, { backgroundColor: theme.background, borderBottomColor: theme.surface }]}>
           <TouchableOpacity style={styles.topBarCenter} onPress={() => setShowToc(true)} activeOpacity={0.8}>
             <Text style={[styles.topBarTitle, { color: theme.text }]} numberOfLines={1}>
-              {book.title}
+              {bookPart?.display_title || bookPart?.source_title || book.title}
             </Text>
             <Text style={[styles.topBarSubtitle, { color: theme.secondaryText }]}>
               {currentPage.isStructured
@@ -1166,9 +1188,6 @@ export default function ReaderScreen() {
                   : 'Unnumbered front matter'
                 : `Page ${currentPage.legacyPageNumber} of ${book.total_pages}`}
             </Text>
-          </TouchableOpacity>
-          <TouchableOpacity accessibilityLabel="Audio playback" onPress={toggleTts} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-            {ttsState === 'speaking' ? <Pause size={24} color={theme.accent} /> : <Play size={24} color={theme.text} />}
           </TouchableOpacity>
         </View>
       )}
@@ -1185,19 +1204,25 @@ export default function ReaderScreen() {
       {/* Bottom controls - overlay */}
       {controlsVisible && (
         <>
-          <TouchableOpacity style={[styles.readerBackButton, { backgroundColor: theme.surface }]} accessibilityLabel="Back" onPress={() => router.back()}><ArrowLeft size={20} color={theme.text} /></TouchableOpacity>
+          <TouchableOpacity style={[styles.readerBackButton, { backgroundColor: theme.surface }]} accessibilityLabel="Back to My Books" onPress={() => router.replace('/')}><ArrowLeft size={20} color={theme.text} /></TouchableOpacity>
           {showSpeedControl && autoScrollActive ? <View style={[styles.speedPopover, { backgroundColor: theme.surface }]}>
             <TouchableOpacity onPress={() => setAutoScrollSpeed((speed) => Math.max(0.25, speed - 0.25))}><Text style={[styles.speedAdjust, { color: theme.text }]}>−</Text></TouchableOpacity>
             <Text style={[styles.speedValue, { color: theme.accent }]}>{autoScrollSpeed.toFixed(2)}×</Text>
             <TouchableOpacity onPress={() => setAutoScrollSpeed((speed) => Math.min(5, speed + 0.25))}><Text style={[styles.speedAdjust, { color: theme.text }]}>+</Text></TouchableOpacity>
           </View> : null}
+          {showAudioSpeedControl ? <View style={[styles.audioSpeedPopover, { backgroundColor: theme.surface }]}>
+            <TouchableOpacity onPress={() => setTtsRate((rate) => AUDIO_RATES[Math.max(0, AUDIO_RATES.indexOf(rate) - 1)])}><Text style={[styles.speedAdjust, { color: theme.text }]}>−</Text></TouchableOpacity>
+            <Text style={[styles.speedValue, { color: theme.accent }]}>{ttsRate.toFixed(ttsRate % 1 ? 2 : 1)}×</Text>
+            <TouchableOpacity onPress={() => setTtsRate((rate) => AUDIO_RATES[Math.min(AUDIO_RATES.length - 1, AUDIO_RATES.indexOf(rate) + 1)])}><Text style={[styles.speedAdjust, { color: theme.text }]}>+</Text></TouchableOpacity>
+          </View> : null}
           <View style={[styles.bottomBar, { backgroundColor: theme.background, borderTopColor: theme.surface }]}>
-            <TouchableOpacity style={styles.controlButton} onPress={() => setShowSettings(true)}><Settings2 size={22} color={theme.text} /><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Settings</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.controlButton} onPress={() => router.push('/(tabs)/bookmarks')}><Star size={22} color={theme.text} /><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Saved</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.controlButton} onPress={toggleAutoScroll}><Gauge size={22} color={autoScrollActive ? theme.accent : theme.text} /><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Scroll</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.controlButton} onPress={() => router.push({ pathname: '/(tabs)/search', params: bookPartId ? { bookPartId } : {} })}><Search size={22} color={theme.text} /><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Search</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.controlButton} onPress={shareCurrent}><Share2 size={22} color={theme.text} /><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Share</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.controlButton} onPress={() => router.replace('/')}><House size={22} color={theme.text} /><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Home</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.controlButton} onPress={() => setShowSettings(true)}><View style={[styles.controlCircle,{backgroundColor:theme.surface}]}><Settings2 size={18} color={theme.text} /></View><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Settings</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.controlButton} onPress={() => router.push('/(tabs)/bookmarks')}><View style={[styles.controlCircle,{backgroundColor:theme.surface}]}><Star size={18} color={theme.text} /></View><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Saved</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.controlButton} onPress={toggleAutoScroll}><View style={[styles.controlCircle,{backgroundColor:autoScrollActive ? theme.accent : theme.surface}]}><Gauge size={18} color={autoScrollActive ? theme.background : theme.text} /></View><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Scroll</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.controlButton} onPress={toggleTts} onLongPress={() => setShowAudioSpeedControl((visible) => !visible)}><View style={[styles.controlCircle,{backgroundColor:ttsState === 'speaking' ? theme.accent : theme.surface}]}>{ttsState === 'speaking' ? <Pause size={18} color={theme.background} /> : <Play size={18} color={theme.text} />}</View><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Play</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.controlButton} onPress={() => router.push({ pathname: '/(tabs)/search', params: bookPartId ? { bookPartId } : {} })}><View style={[styles.controlCircle,{backgroundColor:theme.surface}]}><Search size={18} color={theme.text} /></View><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Search</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.controlButton} onPress={shareCurrent}><View style={[styles.controlCircle,{backgroundColor:theme.surface}]}><Share2 size={18} color={theme.text} /></View><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Share</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.controlButton} onPress={openContents}><View style={[styles.controlCircle,{backgroundColor:theme.surface}]}><List size={18} color={theme.text} /></View><Text style={[styles.controlLabel,{color:theme.secondaryText}]}>Contents</Text></TouchableOpacity>
           </View>
         </>
       )}
@@ -1213,12 +1238,13 @@ export default function ReaderScreen() {
       </Modal>
 
       <Modal visible={showIssueReport} transparent animationType="slide" onRequestClose={() => setShowIssueReport(false)}>
-        <Pressable style={styles.modalOverlay} onPress={() => setShowIssueReport(false)}><View style={[styles.actionSheet,{backgroundColor:theme.surface}]}>
+        <KeyboardAvoidingView style={styles.modalOverlay} behavior={Platform.OS === 'ios' ? 'padding' : 'height'} keyboardVerticalOffset={16}>
+        <Pressable style={styles.modalOverlay} onPress={() => setShowIssueReport(false)}><Pressable onPress={(event) => event.stopPropagation()} style={[styles.actionSheet,{backgroundColor:theme.surface}]}>
           <Text style={[styles.modalTitle,{color:theme.text}]}>Report an Issue</Text>
           <Text style={[styles.selectedPreview,{color:theme.secondaryText}]} numberOfLines={4}>{selectedBlock?.block.text}</Text>
           <TextInput style={[styles.issueInput,{color:theme.text,borderColor:theme.secondaryText}]} placeholder="Add comments" placeholderTextColor={theme.secondaryText} value={issueComment} onChangeText={setIssueComment} multiline />
           <View style={styles.issueActions}><TouchableOpacity style={styles.issueButton} onPress={() => sendIssue('whatsapp')}><Text style={styles.issueButtonText}>WhatsApp</Text></TouchableOpacity><TouchableOpacity style={styles.issueButton} onPress={() => sendIssue('email')}><Text style={styles.issueButtonText}>Email</Text></TouchableOpacity></View>
-        </View></Pressable>
+        </Pressable></Pressable></KeyboardAvoidingView>
       </Modal>
 
       {/* Unified settings panel */}
@@ -1612,15 +1638,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollContent: {
-    paddingHorizontal: AppSpacing.xl,
+    flexGrow: 1,
+    backgroundColor: 'transparent',
+    paddingHorizontal: 6,
     paddingTop: Platform.OS === 'web' ? 70 : 110,
     paddingBottom: 120,
   },
   pageBorder: {
-    borderWidth: 3,
-    borderRadius: AppRadius.lg,
-    padding: AppSpacing.xl,
-    borderStyle: 'dashed' as any,
+    paddingHorizontal: 6,
+    paddingVertical: AppSpacing.md,
   },
   pageNumberRow: {
     flexDirection: 'row',
@@ -1646,6 +1672,12 @@ const styles = StyleSheet.create({
     marginBottom: AppSpacing.lg,
     borderRadius: AppRadius.sm,
   },
+  translationBlock: {
+    backgroundColor: 'rgba(57,255,20,0.045)',
+    shadowColor: '#39FF14',
+    shadowOpacity: 0.08,
+    shadowRadius: 8,
+  },
   spokenBlock: {
     backgroundColor: 'rgba(57,255,20,0.22)',
     borderLeftWidth: 3,
@@ -1653,7 +1685,7 @@ const styles = StyleSheet.create({
   },
   translationBlockText: {
     fontStyle: 'italic',
-    paddingHorizontal: AppSpacing.md,
+    paddingHorizontal: 8,
     paddingVertical: AppSpacing.sm,
   },
   structuredHeading: {
@@ -1704,9 +1736,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  controlCircle: { width: 34, height: 34, borderRadius: 17, alignItems: 'center', justifyContent: 'center' },
   controlLabel: { fontFamily: AppFonts.sans, fontSize: 9, marginTop: 2 },
   readerBackButton: { position: 'absolute', left: AppSpacing.sm, bottom: Platform.OS === 'web' ? 66 : 94, zIndex: 101, width: 36, height: 36, borderRadius: 18, alignItems: 'center', justifyContent: 'center' },
   speedPopover: { position: 'absolute', right: AppSpacing.sm, bottom: Platform.OS === 'web' ? 66 : 94, zIndex: 101, flexDirection: 'row', alignItems: 'center', gap: 14, paddingHorizontal: 14, height: 38, borderRadius: 19 },
+  audioSpeedPopover: { position: 'absolute', alignSelf: 'center', bottom: Platform.OS === 'web' ? 66 : 94, zIndex: 102, flexDirection: 'row', alignItems: 'center', gap: 14, paddingHorizontal: 14, height: 38, borderRadius: 19 },
   speedAdjust: { fontSize: 24, lineHeight: 28 },
   speedValue: { fontFamily: AppFonts.sansBold, fontSize: 13 },
   actionSheet: { width: '100%', maxWidth: 560, alignSelf: 'center', borderTopLeftRadius: AppRadius.xl, borderTopRightRadius: AppRadius.xl, padding: AppSpacing.lg, gap: AppSpacing.sm },

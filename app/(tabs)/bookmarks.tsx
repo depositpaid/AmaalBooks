@@ -33,6 +33,14 @@ interface BookmarkWithBook extends BookmarkType {
   page: Pick<Page, 'id' | 'printed_page_label' | 'book_part_id'> | null;
 }
 
+function parseSavedNote(note: string | null) {
+  const parts = note?.split('|') || [];
+  if (parts[0] === 'v2' && parts.length >= 6) {
+    return { kind: parts[1], partName: parts[2], pageLabel: parts[3], bookPartId: parts[4], preview: parts.slice(5).join('|') };
+  }
+  return { kind: parts[0], partName: parts[1], pageLabel: parts[2], bookPartId: '', preview: parts.slice(3).join('|') };
+}
+
 type SortMode = 'recent' | 'book';
 type SavedType = 'favorite' | 'reading_mark';
 
@@ -99,7 +107,8 @@ export default function BookmarksScreen() {
     bookId: string,
     pageNumber: number,
     pageId?: string | null,
-    bookPartId?: string | null
+    bookPartId?: string | null,
+    blockId?: string | null
   ) => {
     router.push({
       pathname: `/reader/${bookId}`,
@@ -107,6 +116,7 @@ export default function BookmarksScreen() {
         page: String(pageNumber),
         ...(pageId ? { pageId } : {}),
         ...(bookPartId ? { bookPartId } : {}),
+        ...(blockId ? { blockId } : {}),
       },
     });
   };
@@ -126,7 +136,7 @@ export default function BookmarksScreen() {
   };
 
   const typedBookmarks = bookmarks.filter((bookmark) => {
-    const kind = bookmark.note?.split('|')[0];
+    const kind = parseSavedNote(bookmark.note).kind;
     return savedType === 'reading_mark' ? kind === 'reading_mark' : kind !== 'reading_mark';
   });
   const sortedBookmarks = [...typedBookmarks].sort((first, second) => {
@@ -205,7 +215,7 @@ export default function BookmarksScreen() {
         style={styles.bookmarkMain}
         activeOpacity={0.75}
         onPress={() =>
-          openBook(item.book_id, item.page_number, item.page_id, item.page?.book_part_id)
+          openBook(item.book_id, item.page_number, item.page_id, item.page?.book_part_id, item.block_id)
         }
       >
         <View style={styles.iconColumn}>
@@ -216,9 +226,9 @@ export default function BookmarksScreen() {
         </View>
         <View style={styles.bookmarkInfo}>
           {(() => {
-            const parts = item.note?.split('|') || [];
-            const partName = parts.length >= 4 ? parts[1] : item.book.title.toUpperCase();
-            const preview = parts.length >= 4 ? parts.slice(3).join('|') : (item.note || item.book.title);
+            const saved = parseSavedNote(item.note);
+            const partName = saved.partName || item.book.title.toUpperCase();
+            const preview = saved.preview || item.note || item.book.title;
             return <>
               <Text style={styles.bookmarkTitle} numberOfLines={1}>{partName} · Page {item.page?.printed_page_label || item.page_number}</Text>
               <Text style={styles.bookmarkMeta} numberOfLines={2}>{preview}</Text>
